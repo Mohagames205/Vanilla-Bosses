@@ -1,0 +1,24 @@
+name: VanillaBosses
+version: ${project.version}
+main: shreb.me.vanillabosses.main.Main
+api-version: 1.17
+authors: [ Shreb ]
+description: A plugin to put bosses in the game for Vanilla mobs
+commands:
+  boss:
+    description: Summons a boss of the specified type
+    usage: /<command> <list/BossType>
+  vbh:
+    description: gives you information about the plugin
+    usage: /<command>
+  items:
+    description: gives you the specified special Item
+    usage: /<command> <list/itemtype>
+
+permissions:
+  VB.SummonBosses:
+    description: allows Player to summon all bosses
+    default: op
+  VB.SummonItems:
+    description: allows Player to spawn in items
+    default: op

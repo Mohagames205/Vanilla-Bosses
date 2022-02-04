@@ -1,6 +1,5 @@
 package shreb.me.vanillabosses.listeners;
 
-import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

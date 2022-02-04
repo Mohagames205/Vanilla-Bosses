@@ -7,6 +7,7 @@ Bosses:
   #For the resetConfig setting to work, you must restart your server or type '/rl confirm'. The command for reloading the config file will not work here.
 
   enableBossKilledMessage: true
+  disableBlazeBossesSpawningFromSpawners: false #no bosses except for the blaze boss can spawn from spawners. setting this to true will disable Blaze bosses from spawning from spawners aswell.
 
 # The following 4 lines are for people who want to discourage autoclicking to farm mobs/bosses.
   # enable the setting a

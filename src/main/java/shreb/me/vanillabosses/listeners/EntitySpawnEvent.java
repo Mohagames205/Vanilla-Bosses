@@ -22,7 +22,14 @@ public class EntitySpawnEvent implements Listener {
 
         if (!spawn) return;
 
-        if(event.getSpawnReason() == CreatureSpawnEvent.SpawnReason.SPAWNER && event.getEntityType() != EntityType.BLAZE) return;
+        if(event.getSpawnReason() == CreatureSpawnEvent.SpawnReason.SPAWNER ) {
+
+            if(event.getEntityType() != EntityType.BLAZE) {
+                return;
+            } else if(config.getBoolean("Bosses.disableBlazeBossesSpawningFromSpawners")){
+                return;
+            }
+        }
 
 /**
  * SkeletonBoss

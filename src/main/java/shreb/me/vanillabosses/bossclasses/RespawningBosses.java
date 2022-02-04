@@ -1,13 +1,11 @@
 package shreb.me.vanillabosses.bossclasses;
 
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.NamespacedKey;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
+import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
@@ -114,12 +112,31 @@ public class RespawningBosses {
                         loc.add(new Vector(Double.parseDouble(stringArray[1]), Double.parseDouble(stringArray[2]), Double.parseDouble(stringArray[3])));
 
                         LivingEntity entity = bossSpawnMethod(type, loc, w);
+                        entity.getScoreboardTags().add("removeOnDisable");
+                        entity.setRemoveWhenFarAway(false);
 
                         PersistentDataContainer container = entity.getPersistentDataContainer();
 
                         if (stringArray.length >= 6) {
 
+                            try {
+                                if (Integer.parseInt(stringArray[5]) >= deathCommands.size()) {
+
+                                    Main.getInstance().getServer().getConsoleSender().sendMessage(ChatColor.RED + "Vanilla Bosses: Error: There was an error loading command number " + stringArray[5] + ".");
+                                    Main.getInstance().getServer().getConsoleSender().sendMessage(ChatColor.YELLOW + "Respawning Bosses Were not spawned correctly, it is recommended to fix the error in the config and reload/restart the server.");
+                                    entity.remove();
+                                    return;
+                                }
+                            } catch (NumberFormatException e) {
+                                Main.getInstance().getServer().getConsoleSender().sendMessage(ChatColor.RED + "Vanilla Bosses: Error: " + stringArray[5] + " is not an accepted numerical value.");
+                                Main.getInstance().getServer().getConsoleSender().sendMessage(ChatColor.YELLOW + "Respawning Bosses Were not spawned correctly, it is recommended to fix the error in the config and reload/restart the server.");
+                                entity.remove();
+                                return;
+                            }
+
                             String command = deathCommands.get(Integer.parseInt(stringArray[5]));
+
+
                             container.set(new NamespacedKey(Main.getInstance(), "VanillaBossesCommandOnDeath"), PersistentDataType.STRING, command);
                             if (stringArray.length >= 7) {
                                 int timer = Integer.parseInt(stringArray[6]);
@@ -132,8 +149,6 @@ public class RespawningBosses {
                         container.set(new NamespacedKey(Main.getInstance(), "VanillaBossesSpawnLocationY"), PersistentDataType.DOUBLE, Double.parseDouble(stringArray[2]));
                         container.set(new NamespacedKey(Main.getInstance(), "VanillaBossesSpawnLocationZ"), PersistentDataType.DOUBLE, Double.parseDouble(stringArray[3]));
                         container.set(new NamespacedKey(Main.getInstance(), "VanillaBossesRespawnTime"), PersistentDataType.INTEGER, Integer.parseInt(stringArray[4]));
-                        entity.getScoreboardTags().add("removeOnDisable");
-                        entity.setRemoveWhenFarAway(false);
                         respawningBosses.get(entity.getType()).add(entity.getUniqueId());
                     }
                 }
@@ -190,7 +205,7 @@ public class RespawningBosses {
                     uuidsToRemove.add(id);
                 }
 
-                if(bossBarHashMap.get(id) == null){
+                if (bossBarHashMap.get(id) == null) {
                     uuidsToRemove.add(id);
                 }
 

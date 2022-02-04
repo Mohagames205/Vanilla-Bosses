@@ -31,9 +31,8 @@ public class EntitySpawnEvent implements Listener {
             }
         }
 
-/**
- * SkeletonBoss
- */
+//SkeletonBoss
+
         if (event.getEntityType().equals(EntityType.SKELETON)) {
 
             if (!config.getBoolean("Bosses.SkeletonBoss.enabled")) return;
@@ -53,9 +52,7 @@ public class EntitySpawnEvent implements Listener {
             }
         }
 
-/**
- * CreeperBoss
- */
+//CreeperBoss
 
         if (event.getEntityType().equals(EntityType.CREEPER)) {
 
@@ -76,9 +73,7 @@ public class EntitySpawnEvent implements Listener {
             }
         }
 
-/**
- * SpiderBoss
- */
+//SpiderBoss
 
         if (event.getEntityType().equals(EntityType.SPIDER)) {
 
@@ -100,9 +95,7 @@ public class EntitySpawnEvent implements Listener {
             }
         }
 
-/**
- * BlazeBoss
- */
+//BlazeBoss
 
         if (event.getEntityType().equals(EntityType.BLAZE)) {
 
@@ -124,9 +117,7 @@ public class EntitySpawnEvent implements Listener {
             }
         }
 
-/**
- * EndermanBoss
- */
+//Enderman Boss
 
         if (event.getEntityType().equals(EntityType.ENDERMAN)) {
 
@@ -148,9 +139,7 @@ public class EntitySpawnEvent implements Listener {
             }
         }
 
-/**
- * ZombieBoss
- */
+//ZombieBoss
 
         if (event.getEntityType().equals(EntityType.ZOMBIE)) {
 
@@ -175,9 +164,7 @@ public class EntitySpawnEvent implements Listener {
             }
         }
 
-/**
- * Zombified_PiglinBoss
- */
+//Zombified_PiglinBoss
 
         if (event.getEntityType().equals(EntityType.ZOMBIFIED_PIGLIN)) {
 
@@ -199,9 +186,7 @@ public class EntitySpawnEvent implements Listener {
             }
         }
 
-/**
- * WitchBoss
- */
+//WitchBoss
 
         if (event.getEntityType().equals(EntityType.WITCH)) {
 
@@ -223,9 +208,7 @@ public class EntitySpawnEvent implements Listener {
             }
         }
 
-/**
- * SlimeBoss
- */
+//SlimeBoss
 
         if (event.getEntityType() == EntityType.SLIME) {
 

@@ -32,9 +32,8 @@ public class Slingshot implements Listener {
         if (!event.getPlayer().isSneaking()) return;
 
         if (event.getItem().getItemMeta().getPersistentDataContainer().has(new NamespacedKey(Main.getInstance(), "Slingshot"), PersistentDataType.INTEGER)) {
-            if (!event.getPlayer().getScoreboardTags().contains("NoFallDMG")) {
-                event.getPlayer().getScoreboardTags().add("NoFallDMG");
-            }
+            event.getPlayer().getScoreboardTags().add("NoFallDMG");
+
             if(taskID != 0){
 
                 Bukkit.getScheduler().cancelTask(taskID);

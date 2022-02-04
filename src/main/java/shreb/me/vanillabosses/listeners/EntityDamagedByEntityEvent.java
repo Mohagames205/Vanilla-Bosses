@@ -204,11 +204,7 @@ public class EntityDamagedByEntityEvent implements Listener {
                     spider.teleport(tempLoc);
 
                     if (config.getBoolean("Bosses.SpiderBoss.onHitEvents.invisibility.teleportBack")) {
-                        Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () -> {
-
-                            spider.teleport(originalLoc);
-
-                        }, 20L * config.getInt("Bosses.SpiderBoss.onHitEvents.invisibility.duration"));
+                        Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () -> spider.teleport(originalLoc), 20L * config.getInt("Bosses.SpiderBoss.onHitEvents.invisibility.duration"));
                     }
                 }
 

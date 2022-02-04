@@ -74,7 +74,11 @@ public class EntityDeathEvent implements Listener {
 
             event.getDrops().remove(new ItemStack(Material.NETHER_STAR));
 
-            event.getEntity().getServer().broadcastMessage(event.getEntity().getCustomName() + " has been killed by " + event.getEntity().getKiller().getName());
+            if(event.getEntity().getKiller() == null){
+                event.getEntity().getServer().broadcastMessage(event.getEntity().getCustomName() + " has been killed by " + event.getEntity().getKiller().getName());
+            } else {
+                event.getEntity().getServer().broadcastMessage(event.getEntity().getCustomName() + " has died");
+            }
 
         }
 
@@ -140,9 +144,7 @@ public class EntityDeathEvent implements Listener {
 
             Configuration config = Main.getInstance().getConfig();
 
-            if (config.getInt("Bosses.SkeletonBoss.droppedXP") >= 0) {
-                event.setDroppedExp(config.getInt("Bosses.SkeletonBoss.droppedXP"));
-            } else event.setDroppedExp(0);
+            event.setDroppedExp(Math.max(config.getInt("Bosses.SkeletonBoss.droppedXP"), 0));
 
             event.getDrops().addAll(Methods.addItemsFromConfig(config.getStringList("Bosses.SkeletonBoss.droppedItems")));
 
@@ -159,9 +161,7 @@ public class EntityDeathEvent implements Listener {
 
             Configuration config = Main.getInstance().getConfig();
 
-            if (config.getInt("Bosses.BlazeBoss.droppedXP") >= 0) {
-                event.setDroppedExp(config.getInt("Bosses.BlazeBoss.droppedXP"));
-            } else event.setDroppedExp(0);
+            event.setDroppedExp(Math.max(config.getInt("Bosses.BlazeBoss.droppedXP"), 0));
 
             if (config.getBoolean("Bosses.BlazeBoss.disableVanillaDrops")) {
                 event.getDrops().clear();
@@ -186,9 +186,7 @@ public class EntityDeathEvent implements Listener {
 
             Configuration config = Main.getInstance().getConfig();
 
-            if (config.getInt("Bosses.EndermanBoss.droppedXP") >= 0) {
-                event.setDroppedExp(config.getInt("Bosses.EndermanBoss.droppedXP"));
-            } else event.setDroppedExp(0);
+            event.setDroppedExp(Math.max(config.getInt("Bosses.EndermanBoss.droppedXP"), 0));
 
             if (config.getBoolean("Bosses.EndermanBoss.disableVanillaDrops")) {
                 event.getDrops().clear();
@@ -214,9 +212,7 @@ public class EntityDeathEvent implements Listener {
 
             Configuration config = Main.getInstance().getConfig();
 
-            if (config.getInt("Bosses.ZombieBoss.droppedXP") >= 0) {
-                event.setDroppedExp(config.getInt("Bosses.ZombieBoss.droppedXP"));
-            } else event.setDroppedExp(0);
+            event.setDroppedExp(Math.max(config.getInt("Bosses.ZombieBoss.droppedXP"), 0));
 
             event.getDrops().addAll(Methods.addItemsFromConfig(config.getStringList("Bosses.ZombieBoss.droppedItems")));
 
@@ -233,9 +229,7 @@ public class EntityDeathEvent implements Listener {
 
             Configuration config = Main.getInstance().getConfig();
 
-            if (config.getInt("Bosses.Zombified_PiglinBoss.droppedXP") >= 0) {
-                event.setDroppedExp(config.getInt("Bosses.Zombified_PiglinBoss.droppedXP"));
-            } else event.setDroppedExp(0);
+            event.setDroppedExp(Math.max(config.getInt("Bosses.Zombified_PiglinBoss.droppedXP"), 0));
 
             event.getDrops().addAll(Methods.addItemsFromConfig(config.getStringList("Bosses.Zombified_PiglinBoss.droppedItems")));
 
@@ -252,9 +246,7 @@ public class EntityDeathEvent implements Listener {
 
             Configuration config = Main.getInstance().getConfig();
 
-            if (config.getInt("Bosses.WitchBoss.droppedXP") >= 0) {
-                event.setDroppedExp(config.getInt("Bosses.WitchBoss.droppedXP"));
-            } else event.setDroppedExp(0);
+            event.setDroppedExp(Math.max(config.getInt("Bosses.WitchBoss.droppedXP"), 0));
 
             event.getDrops().addAll(Methods.addItemsFromConfig(config.getStringList("Bosses.WitchBoss.droppedItems")));
 
@@ -301,9 +293,7 @@ public class EntityDeathEvent implements Listener {
 
             Configuration config = Main.getInstance().getConfig();
 
-            if (config.getInt("Bosses.SlimeBoss.droppedXP") >= 0) {
-                event.setDroppedExp(config.getInt("Bosses.SlimeBoss.droppedXP"));
-            } else event.setDroppedExp(0);
+            event.setDroppedExp(Math.max(config.getInt("Bosses.SlimeBoss.droppedXP"), 0));
 
             event.getDrops().addAll(Methods.addItemsFromConfig(config.getStringList("Bosses.SlimeBoss.droppedItems")));
 
@@ -318,7 +308,10 @@ public class EntityDeathEvent implements Listener {
 
 //Respawning of bosses if set to in the config
 
-        if (event.getEntity().getPersistentDataContainer().has(new NamespacedKey(Main.getInstance(), "VanillaBossesRespawnTime"), PersistentDataType.INTEGER) && event.getEntity().getPersistentDataContainer().get(new NamespacedKey(Main.getInstance(), "VanillaBossesRespawnTime"), PersistentDataType.INTEGER) != -1) {
+
+        if (event.getEntity().getPersistentDataContainer().has(new NamespacedKey(Main.getInstance(), "VanillaBossesRespawnTime"), PersistentDataType.INTEGER) &&
+                event.getEntity().getPersistentDataContainer().get(new NamespacedKey(Main.getInstance(), "VanillaBossesRespawnTime"), PersistentDataType.INTEGER) != -1
+        ) {
 
             BarColor color = BarColor.BLUE;
 

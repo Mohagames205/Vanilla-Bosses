@@ -22,7 +22,7 @@ public class EntityDamageEvent implements Listener {
             }
         }
 
-        if (RespawningBosses.bossBarHashMap.keySet().contains(entity.getUniqueId()) && RespawningBosses.bossBarHashMap.get(entity.getUniqueId()) != null) {
+        if (RespawningBosses.bossBarHashMap.containsKey(entity.getUniqueId()) && RespawningBosses.bossBarHashMap.get(entity.getUniqueId()) != null) {
             RespawningBosses.bossBarHashMap.get(entity.getUniqueId()).setProgress(entity.getHealth() / entity.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
         }
     }

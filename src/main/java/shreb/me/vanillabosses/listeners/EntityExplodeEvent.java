@@ -27,9 +27,8 @@ public class EntityExplodeEvent implements Listener {
     @EventHandler
     public void onEntityExplode(org.bukkit.event.entity.EntityExplodeEvent event) {
 
-/**
- * BossCreeper
- */
+//BossCreeper
+
         if (event.getEntity().getScoreboardTags().contains("BossCreeper") && event.getEntityType() == EntityType.CREEPER) {
 
             Configuration config = Main.getInstance().getConfig();
@@ -143,9 +142,9 @@ public class EntityExplodeEvent implements Listener {
         }
 
 
-/**
- * Exploding Arrow cancelling
- */
+
+//Exploding Arrow cancelling
+
         if (event.getEntity().getScoreboardTags().contains("CancelOnExplode")) {
 
             event.setCancelled(true);

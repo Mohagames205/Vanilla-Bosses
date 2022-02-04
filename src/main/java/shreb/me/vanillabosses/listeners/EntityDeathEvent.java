@@ -34,9 +34,9 @@ public class EntityDeathEvent implements Listener {
     @EventHandler
     public void onBossDeath(org.bukkit.event.entity.EntityDeathEvent event) {
 
-/**
- * BossWither death
- */
+
+//BossWither death
+
 
         if (event.getEntityType().equals(EntityType.WITHER) && event.getEntity().getScoreboardTags().contains("BossWither") && Main.getInstance().getConfig().getBoolean("Items.WitherEgg.witherBossDropsEgg")) {
 
@@ -64,9 +64,9 @@ public class EntityDeathEvent implements Listener {
 
         }
 
-/**
- * PassiveWither death
- */
+
+//PassiveWither death
+
 
         if (event.getEntityType().equals(EntityType.WITHER) && event.getEntity().getScoreboardTags().contains("PassiveWither")) {
 
@@ -78,9 +78,9 @@ public class EntityDeathEvent implements Listener {
 
         }
 
-/**
- * BossCreeper
- */
+
+//BossCreeper
+
 
         if (event.getEntity().getScoreboardTags().contains("BossCreeper")) {
 
@@ -104,9 +104,9 @@ public class EntityDeathEvent implements Listener {
 
         }
 
-/**
- * BossSpider
- */
+
+//BossSpider
+
 
         if (event.getEntity().getScoreboardTags().contains("BossSpider")) {
 
@@ -132,9 +132,9 @@ public class EntityDeathEvent implements Listener {
 
         }
 
-/**
- * BossSkeleton
- */
+
+//BossSkeleton
+
 
         if (event.getEntity().getScoreboardTags().contains("BossSkeleton")) {
 
@@ -152,9 +152,9 @@ public class EntityDeathEvent implements Listener {
 
         }
 
-/**
- * BossBlaze
- */
+
+//BossBlaze
+
         if (event.getEntity().getScoreboardTags().contains("BossBlaze")) {
 
             Configuration config = Main.getInstance().getConfig();
@@ -179,9 +179,9 @@ public class EntityDeathEvent implements Listener {
 
             BossBlaze.bossBlazeTargetMap.remove(event.getEntity().getEntityId());
         }
-/**
- * BossEnderman
- */
+
+//BossEnderman
+
         if (event.getEntity().getScoreboardTags().contains("BossEnderman")) {
 
             Configuration config = Main.getInstance().getConfig();
@@ -206,9 +206,9 @@ public class EntityDeathEvent implements Listener {
 
         }
 
-/**
- * BossZombie
- */
+
+//BossZombie
+
 
         if (event.getEntity().getScoreboardTags().contains("BossZombie")) {
 
@@ -225,9 +225,9 @@ public class EntityDeathEvent implements Listener {
             }
         }
 
-/**
- * BossZombified_Piglin
- */
+
+//BossZombified_Piglin
+
 
         if (event.getEntity().getScoreboardTags().contains("BossZombified_Piglin")) {
 
@@ -244,9 +244,9 @@ public class EntityDeathEvent implements Listener {
             }
         }
 
-/**
- * BossWitch
- */
+
+//BossWitch
+
 
         if (event.getEntity().getScoreboardTags().contains("BossWitch")) {
 
@@ -280,9 +280,9 @@ public class EntityDeathEvent implements Listener {
 
         }
 
-/**
- * BossSlime
- */
+
+//BossSlime
+
 
         if (event.getEntity().getScoreboardTags().contains("BossSlime")) {
 

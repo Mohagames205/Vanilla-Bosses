@@ -16,11 +16,14 @@ import org.bukkit.inventory.meta.ItemMeta;
 import shreb.me.vanillabosses.main.Main;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 
 public class BossWither implements Listener {
 
     private static final Configuration config = Main.getInstance().getConfig();
+    public static List<UUID> passiveWitherList = new ArrayList<>();
 
     @EventHandler
     public void onPlaceWitherEgg(BlockPlaceEvent event) {
@@ -53,13 +56,12 @@ public class BossWither implements Listener {
                         wither.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Main.getInstance().getConfig().getDouble("Items.WitherEgg.petWitherHP"));
                         wither.setHealth(Main.getInstance().getConfig().getDouble("Items.WitherEgg.petWitherHP"));
 
-                        wither.setSilent(true);
-
                         eggLoc.getBlock().setType(Material.AIR);
                         anvilLoc.getBlock().setType(Material.AIR);
 
                         Location loc = wither.getLocation();
                         wither.getWorld().spawnParticle(Particle.CAMPFIRE_SIGNAL_SMOKE, loc, 150);
+                        passiveWitherList.add(wither.getUniqueId());
 
                     } else if(eggLoc.getBlock().getType().equals(Material.DRAGON_EGG) && eggLoc.getBlock().getBlockData().matches(data)) {
                         eggLoc.getBlock().setType(Material.AIR);
@@ -119,7 +121,8 @@ public class BossWither implements Listener {
 
                 Objects.requireNonNull(wither.getAttribute(Attribute.GENERIC_MAX_HEALTH)).setBaseValue(Main.getInstance().getConfig().getDouble("Bosses.WitherBoss.Health"));
                 wither.setHealth(Objects.requireNonNull(wither.getAttribute(Attribute.GENERIC_MAX_HEALTH)).getBaseValue());
-
+                wither.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(wither.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getBaseValue() * config.getDouble("Bosses.WitherBoss.DamageModifier"));
+                
                 wither.setCustomName(config.getString("Bosses.WitherBoss.displayName"));
                 wither.setCustomNameVisible(config.getBoolean("Bosses.WitherBoss.showDisplayNameAlways"));
 
@@ -138,7 +141,8 @@ public class BossWither implements Listener {
 
         Objects.requireNonNull(wither.getAttribute(Attribute.GENERIC_MAX_HEALTH)).setBaseValue(Main.getInstance().getConfig().getDouble("Bosses.WitherBoss.Health"));
         wither.setHealth(Objects.requireNonNull(wither.getAttribute(Attribute.GENERIC_MAX_HEALTH)).getBaseValue());
-
+        wither.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(wither.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getBaseValue() * config.getDouble("Bosses.WitherBoss.DamageModifier"));
+        
         wither.setCustomName(config.getString("Bosses.WitherBoss.displayName"));
         wither.setCustomNameVisible(config.getBoolean("Bosses.WitherBoss.showDisplayNameAlways"));
 

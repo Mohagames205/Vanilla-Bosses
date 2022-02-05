@@ -62,6 +62,7 @@ public class BossCreeper implements Listener {
         creeper.addScoreboardTag("BossCreeper");
         creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.CreeperBoss.health"));
         creeper.setHealth(creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        creeper.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(creeper.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getBaseValue() * config.getDouble("Bosses.CreeperBoss.DamageModifier"));
         creeper.setMaxFuseTicks(40);
         creeper.setFuseTicks(40);
         PersistentDataContainer container = creeper.getPersistentDataContainer();
@@ -82,6 +83,7 @@ public class BossCreeper implements Listener {
         creeper.addScoreboardTag("BossCreeper");
         creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.CreeperBoss.health"));
         creeper.setHealth(creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        creeper.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(creeper.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getBaseValue() * config.getDouble("Bosses.CreeperBoss.DamageModifier"));
         creeper.setMaxFuseTicks(40);
         creeper.setFuseTicks(40);
         PersistentDataContainer container = creeper.getPersistentDataContainer();

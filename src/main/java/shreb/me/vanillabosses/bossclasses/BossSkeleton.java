@@ -4,6 +4,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.EntityType;
@@ -31,6 +32,7 @@ public class BossSkeleton implements Listener {
         skeleton.addScoreboardTag("BossSkeleton");
         skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.SkeletonBoss.health"));
         skeleton.setHealth(skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        skeleton.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(skeleton.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getBaseValue() * config.getDouble("Bosses.SkeletonBoss.DamageModifier"));
         skeleton.addScoreboardTag("removeInvulnerableOnDisable");
         skeleton.setCustomName(config.getString("Bosses.SkeletonBoss.displayName"));
         skeleton.setCustomNameVisible(config.getBoolean("Bosses.SkeletonBoss.showDisplayNameAlways"));
@@ -116,6 +118,7 @@ public class BossSkeleton implements Listener {
         skeleton.addScoreboardTag("BossSkeleton");
         skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.SkeletonBoss.health"));
         skeleton.setHealth(skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        skeleton.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(skeleton.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getBaseValue() * config.getDouble("Bosses.SkeletonBoss.DamageModifier"));
         skeleton.addScoreboardTag("removeInvulnerableOnDisable");
         skeleton.setCustomName(config.getString("Bosses.SkeletonBoss.displayName"));
         skeleton.setCustomNameVisible(config.getBoolean("Bosses.SkeletonBoss.showDisplayNameAlways"));

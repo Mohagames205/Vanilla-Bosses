@@ -60,6 +60,7 @@ public class BossEnderman implements Listener {
         enderman.addScoreboardTag("BossEnderman");
         enderman.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.EndermanBoss.health"));
         enderman.setHealth(enderman.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        enderman.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(enderman.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getBaseValue() * config.getDouble("Bosses.EndermanBoss.DamageModifier"));
         enderman.setCustomName(config.getString("Bosses.EndermanBoss.displayName"));
         enderman.setCustomNameVisible(config.getBoolean("Bosses.EndermanBoss.showDisplayNameAlways"));
         return enderman;
@@ -75,6 +76,7 @@ public class BossEnderman implements Listener {
         enderman.addScoreboardTag("BossEnderman");
         enderman.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.EndermanBoss.health"));
         enderman.setHealth(enderman.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        enderman.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(enderman.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getBaseValue() * config.getDouble("Bosses.EndermanBoss.DamageModifier"));
         enderman.setCustomName(config.getString("Bosses.EndermanBoss.displayName"));
         enderman.setCustomNameVisible(config.getBoolean("Bosses.EndermanBoss.showDisplayNameAlways"));
     }

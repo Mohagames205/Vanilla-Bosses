@@ -106,6 +106,11 @@ public final class Main extends JavaPlugin {
 
         getServer().getConsoleSender().sendMessage(ChatColor.DARK_GREEN + "The Vanilla Bosses plugin is enabled");
 
+        for(World w: getServer().getWorlds()){
+            w.getEntities().stream()
+                    .filter(n -> n.getScoreboardTags().contains("PassiveWither"))
+                    .forEach(n -> BossWither.passiveWitherList.add(n.getUniqueId()));
+        }
     }
 
     @Override

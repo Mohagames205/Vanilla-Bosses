@@ -40,6 +40,7 @@ Bosses:
     displayName: "The Skeleton King"  # To remove the name, replace with "" and set 'showDisplayNameAlways' to 'false'
     showDisplayNameAlways: true
     health: 25
+    DamageModifier: 1.0
     spawnChance: 5        # 1 = 0.1% of Skeletons will be bosses. 1000 = 100% of Skeletons will be bosses.
     dropArmorChance: 0.0  # recommended to keep at 0 or at least pretty low since the armor is pretty op.
     dropOffHandChance: 1  # 0.1 = 10% chance of dropping the item. 1 = 100% chance of dropping it.
@@ -97,6 +98,7 @@ Bosses:
     enableSummonCommand: true
     displayName: "Bomby the Bomber"
     showDisplayNameAlways: true
+    DamageModifier: 1.0
     health: 50
     spawnChance: 20
     thrownTNT:
@@ -129,6 +131,7 @@ Bosses:
     enableSummonCommand: true
     displayName: "Dolores"
     showDisplayNameAlways: true
+    DamageModifier: 1.0
     health: 30
     spawnChance: 20
     droppedItems:
@@ -166,6 +169,7 @@ Bosses:
     enableSummonCommand: true
     displayName: "Blaze Warden"
     showDisplayNameAlways: true
+    DamageModifier: 1.0
     health: 75
     spawnChance: 50
     droppedItems:
@@ -200,6 +204,7 @@ Bosses:
     enableSummonCommand: true
     displayName: "Edna"
     showDisplayNameAlways: true
+    DamageModifier: 1.0
     health: 50
     spawnChance: 15
     droppedItems:
@@ -242,6 +247,7 @@ Bosses:
     enableSummonCommand: true
     displayName: "Bob"
     showDisplayNameAlways: true
+    DamageModifier: 1.0
     health: 50
     spawnChance: 5
     droppedItems:
@@ -267,6 +273,7 @@ Bosses:
     enableSummonCommand: true
     displayName: "The Butcher"
     showDisplayNameAlways: true
+    DamageModifier: 1.0
     health: 50
     spawnChance: 10
     droppedItems:
@@ -356,6 +363,7 @@ Bosses:
     enableSummonCommand: true
     displayName: "Chester"
     showDisplayNameAlways: true
+    DamageModifier: 1.0
     health: 45
     spawnChance: 50
 
@@ -387,6 +395,7 @@ Bosses:
     removeNetheriteBlockOnSpawn: true
     displayName: "X AE A-12"
     showDisplayNameAlways: true
+    DamageModifier: 1.0
     Health: 750  #standard health of the boss is 750 (pretty hard without spectral arrows)
 
     droppedItems:

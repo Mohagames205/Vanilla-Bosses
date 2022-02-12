@@ -32,7 +32,7 @@ public class BossSkeleton implements Listener {
         skeleton.addScoreboardTag("BossSkeleton");
         skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.SkeletonBoss.health"));
         skeleton.setHealth(skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
-        skeleton.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(skeleton.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getBaseValue() * config.getDouble("Bosses.SkeletonBoss.DamageModifier"));
+        skeleton.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(skeleton.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getValue() * config.getDouble("Bosses.SkeletonBoss.DamageModifier"));
         skeleton.addScoreboardTag("removeInvulnerableOnDisable");
         skeleton.setCustomName(config.getString("Bosses.SkeletonBoss.displayName"));
         skeleton.setCustomNameVisible(config.getBoolean("Bosses.SkeletonBoss.showDisplayNameAlways"));
@@ -43,17 +43,20 @@ public class BossSkeleton implements Listener {
         ItemStack boots = new ItemStack(Material.DIAMOND_BOOTS);
         ItemStack bow = Skeletor.makeSkeletor();
 
-        helmet.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, Methods.randomNumber(5, 12));
+        int minProt = config.getInt("Bosses.SkeletonBoss.ProtectionMin");
+        int maxProt = config.getInt("Bosses.SkeletonBoss.ProtectionMax");
+
+        helmet.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, Methods.randomNumber(minProt, maxProt));
         helmet.addUnsafeEnchantment(Enchantment.DURABILITY, Methods.randomNumber(10, 15));
 
-        chest.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, Methods.randomNumber(5, 12));
+        chest.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, Methods.randomNumber(minProt, maxProt));
         chest.addUnsafeEnchantment(Enchantment.DURABILITY, Methods.randomNumber(5, 15));
 
-        legs.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, Methods.randomNumber(5, 12));
+        legs.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, Methods.randomNumber(minProt, maxProt));
         legs.addUnsafeEnchantment(Enchantment.DURABILITY, Methods.randomNumber(5, 15));
 
         boots.addUnsafeEnchantment(Enchantment.DURABILITY, Methods.randomNumber(5, 15));
-        boots.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, Methods.randomNumber(5, 12));
+        boots.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, Methods.randomNumber(minProt, maxProt));
         boots.addUnsafeEnchantment(Enchantment.DEPTH_STRIDER, Methods.randomNumber(1, 3));
 
         bow.addUnsafeEnchantment(Enchantment.ARROW_DAMAGE, Methods.randomNumber(5, 10));
@@ -118,7 +121,7 @@ public class BossSkeleton implements Listener {
         skeleton.addScoreboardTag("BossSkeleton");
         skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.SkeletonBoss.health"));
         skeleton.setHealth(skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
-        skeleton.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(skeleton.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getBaseValue() * config.getDouble("Bosses.SkeletonBoss.DamageModifier"));
+        skeleton.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(skeleton.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getValue() * config.getDouble("Bosses.SkeletonBoss.DamageModifier"));
         skeleton.addScoreboardTag("removeInvulnerableOnDisable");
         skeleton.setCustomName(config.getString("Bosses.SkeletonBoss.displayName"));
         skeleton.setCustomNameVisible(config.getBoolean("Bosses.SkeletonBoss.showDisplayNameAlways"));

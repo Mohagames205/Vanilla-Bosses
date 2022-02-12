@@ -1,6 +1,6 @@
 Bosses:
 
-  configVersion: 1.5.1  # This is important to check for an outdated config file. do not change or remove it. to update your config, please consider saving your current config file and using the "resetConfig" Option below.
+  configVersion: 1.5.2  # This is important to check for an outdated config file. do not change or remove it. to update your config, please consider saving your current config file and using the "resetConfig" Option below.
                         # after this you can paste your original values at the appropriate positions if you wish to. (Alternatively to reset the config you can delete the entire config file instead of using the reset option)
   enablePlugin: true
   resetConfig: false  #If set true this will set your configuration to a state that definitely works, aka the state you found it in when you first opened this file.
@@ -44,6 +44,8 @@ Bosses:
     spawnChance: 5        # 1 = 0.1% of Skeletons will be bosses. 1000 = 100% of Skeletons will be bosses.
     dropArmorChance: 0.0  # recommended to keep at 0 or at least pretty low since the armor is pretty op.
     dropOffHandChance: 1  # 0.1 = 10% chance of dropping the item. 1 = 100% chance of dropping it.
+    ProtectionMin: 5      # Armor Protection Enchantment level
+    ProtectionMax: 12     # ^^
 
 
   # MaterialToDrop: the item you wish the entity to drop upon death

@@ -147,7 +147,6 @@ public class BossBlaze implements Listener {
         blaze.getScoreboardTags().add("BossBlaze");
         blaze.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.BlazeBoss.health"));
         blaze.setHealth(blaze.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
-        blaze.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(blaze.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getBaseValue() * config.getDouble("Bosses.BlazeBoss.DamageModifier"));
         blaze.setCustomName(config.getString("Bosses.BlazeBoss.displayName"));
         blaze.setCustomNameVisible(config.getBoolean("Bosses.BlazeBoss.showDisplayNameAlways"));
 
@@ -165,7 +164,6 @@ public class BossBlaze implements Listener {
         blaze.getScoreboardTags().add("BossBlaze");
         blaze.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.BlazeBoss.health"));
         blaze.setHealth(blaze.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
-        blaze.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(blaze.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getBaseValue() * config.getDouble("Bosses.BlazeBoss.DamageModifier"));
         blaze.setCustomName(config.getString("Bosses.BlazeBoss.displayName"));
         blaze.setCustomNameVisible(config.getBoolean("Bosses.BlazeBoss.showDisplayNameAlways"));
 

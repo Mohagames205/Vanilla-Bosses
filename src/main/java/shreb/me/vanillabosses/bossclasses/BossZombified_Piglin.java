@@ -29,7 +29,6 @@ public class BossZombified_Piglin  implements Listener {
         pigzombie.addScoreboardTag("BossZombified_Piglin");
         pigzombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.Zombified_PiglinBoss.health"));
         pigzombie.setHealth(pigzombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
-        pigzombie.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(pigzombie.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getBaseValue() * config.getDouble("Bosses.Zombified_PiglinBoss.DamageModifier"));
         pigzombie.setCustomName(config.getString("Bosses.Zombified_PiglinBoss.displayName"));
         pigzombie.setCustomNameVisible(config.getBoolean("Bosses.Zombified_PiglinBoss.showDisplayNameAlways"));
 
@@ -69,7 +68,6 @@ public class BossZombified_Piglin  implements Listener {
         pigzombie.addScoreboardTag("BossZombified_Piglin");
         pigzombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.Zombified_PiglinBoss.health"));
         pigzombie.setHealth(pigzombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
-        pigzombie.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(pigzombie.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getBaseValue() * config.getDouble("Bosses.Zombified_PiglinBoss.DamageModifier"));
         pigzombie.setCustomName(config.getString("Bosses.Zombified_PiglinBoss.displayName"));
         pigzombie.setCustomNameVisible(config.getBoolean("Bosses.Zombified_PiglinBoss.showDisplayNameAlways"));
 

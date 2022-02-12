@@ -32,7 +32,6 @@ public class BossSkeleton implements Listener {
         skeleton.addScoreboardTag("BossSkeleton");
         skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.SkeletonBoss.health"));
         skeleton.setHealth(skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
-        skeleton.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(skeleton.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getValue() * config.getDouble("Bosses.SkeletonBoss.DamageModifier"));
         skeleton.addScoreboardTag("removeInvulnerableOnDisable");
         skeleton.setCustomName(config.getString("Bosses.SkeletonBoss.displayName"));
         skeleton.setCustomNameVisible(config.getBoolean("Bosses.SkeletonBoss.showDisplayNameAlways"));
@@ -121,7 +120,6 @@ public class BossSkeleton implements Listener {
         skeleton.addScoreboardTag("BossSkeleton");
         skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.SkeletonBoss.health"));
         skeleton.setHealth(skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
-        skeleton.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(skeleton.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getValue() * config.getDouble("Bosses.SkeletonBoss.DamageModifier"));
         skeleton.addScoreboardTag("removeInvulnerableOnDisable");
         skeleton.setCustomName(config.getString("Bosses.SkeletonBoss.displayName"));
         skeleton.setCustomNameVisible(config.getBoolean("Bosses.SkeletonBoss.showDisplayNameAlways"));

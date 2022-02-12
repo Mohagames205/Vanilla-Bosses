@@ -81,6 +81,7 @@ public class Skeletor implements Listener {
 
         if (Objects.requireNonNull(Objects.requireNonNull(((LivingEntity) entity).getEquipment()).getItemInMainHand().getItemMeta().getPersistentDataContainer()).has(new NamespacedKey(Main.getInstance(), "shootsTnT"), PersistentDataType.STRING)) {
             event.getEntity().addScoreboardTag("ArrowExplode");
+            if(entity instanceof Skeleton) event.getEntity().addScoreboardTag("applyModifier");
         }
     }
 

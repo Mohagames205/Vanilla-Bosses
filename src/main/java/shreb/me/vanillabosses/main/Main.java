@@ -65,6 +65,7 @@ public final class Main extends JavaPlugin {
         pm.registerEvents(new Blazer(), this);
         pm.registerEvents(new ItemEnchantmentsListener(), this);
         pm.registerEvents(new EntitySpawnEvent(), this);
+        pm.registerEvents(new BossAttackDamageChanger(), this);
         if(config.getBoolean("Items.DisableRepairAndEnchant"))pm.registerEvents(new AntiRepairListener(), this);
 
         Objects.requireNonNull(getCommand("boss")).setExecutor(new Boss());

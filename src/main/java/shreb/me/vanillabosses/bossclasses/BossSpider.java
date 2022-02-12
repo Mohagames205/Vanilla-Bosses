@@ -26,7 +26,6 @@ public class BossSpider implements Listener {
         spider.addScoreboardTag("BossSpider");
         spider.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.SpiderBoss.health"));
         spider.setHealth(spider.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
-        spider.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(spider.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getBaseValue() * config.getDouble("Bosses.SpiderBoss.DamageModifier"));
         spider.addScoreboardTag("removeInvisibilityOnDisable");
         spider.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 3));
         spider.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 2));
@@ -45,7 +44,6 @@ public class BossSpider implements Listener {
         spider.addScoreboardTag("BossSpider");
         spider.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.SpiderBoss.health"));
         spider.setHealth(spider.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
-        spider.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(spider.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).getBaseValue() * config.getDouble("Bosses.SpiderBoss.DamageModifier"));
         spider.addScoreboardTag("removeInvisibilityOnDisable");
         spider.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 3));
         spider.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 2));

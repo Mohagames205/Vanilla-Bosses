@@ -58,8 +58,8 @@ public class BossEnderman implements Listener {
 
         Enderman enderman = (Enderman) w.spawnEntity(location, EntityType.ENDERMAN);
         enderman.addScoreboardTag("BossEnderman");
-        enderman.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.EndermanBoss.health"));
-        enderman.setHealth(enderman.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        enderman.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.ENDERMAN.health);
+        enderman.setHealth(Bosses.ENDERMAN.health);
         enderman.setCustomName(config.getString("Bosses.EndermanBoss.displayName"));
         enderman.setCustomNameVisible(config.getBoolean("Bosses.EndermanBoss.showDisplayNameAlways"));
         return enderman;
@@ -73,8 +73,8 @@ public class BossEnderman implements Listener {
     public static void editToBossEnderman(Enderman enderman){
 
         enderman.addScoreboardTag("BossEnderman");
-        enderman.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.EndermanBoss.health"));
-        enderman.setHealth(enderman.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        enderman.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.ENDERMAN.health);
+        enderman.setHealth(Bosses.ENDERMAN.health);
         enderman.setCustomName(config.getString("Bosses.EndermanBoss.displayName"));
         enderman.setCustomNameVisible(config.getBoolean("Bosses.EndermanBoss.showDisplayNameAlways"));
     }

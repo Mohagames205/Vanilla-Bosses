@@ -145,8 +145,8 @@ public class BossBlaze implements Listener {
 
         Blaze blaze = (Blaze) w.spawnEntity(location, EntityType.BLAZE);
         blaze.getScoreboardTags().add("BossBlaze");
-        blaze.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.BlazeBoss.health"));
-        blaze.setHealth(blaze.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        blaze.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.BLAZE.health);
+        blaze.setHealth(Bosses.BLAZE.health);
         blaze.setCustomName(config.getString("Bosses.BlazeBoss.displayName"));
         blaze.setCustomNameVisible(config.getBoolean("Bosses.BlazeBoss.showDisplayNameAlways"));
 
@@ -162,8 +162,8 @@ public class BossBlaze implements Listener {
     public static void editToBossBlaze(Blaze blaze) {
 
         blaze.getScoreboardTags().add("BossBlaze");
-        blaze.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.BlazeBoss.health"));
-        blaze.setHealth(blaze.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        blaze.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.BLAZE.health);
+        blaze.setHealth(Bosses.BLAZE.health);
         blaze.setCustomName(config.getString("Bosses.BlazeBoss.displayName"));
         blaze.setCustomNameVisible(config.getBoolean("Bosses.BlazeBoss.showDisplayNameAlways"));
 

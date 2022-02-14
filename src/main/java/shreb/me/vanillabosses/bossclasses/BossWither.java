@@ -119,8 +119,8 @@ public class BossWither implements Listener {
 
                 wither.addScoreboardTag("BossWither");
 
-                Objects.requireNonNull(wither.getAttribute(Attribute.GENERIC_MAX_HEALTH)).setBaseValue(Main.getInstance().getConfig().getDouble("Bosses.WitherBoss.Health"));
-                wither.setHealth(Objects.requireNonNull(wither.getAttribute(Attribute.GENERIC_MAX_HEALTH)).getBaseValue());
+                Objects.requireNonNull(wither.getAttribute(Attribute.GENERIC_MAX_HEALTH)).setBaseValue(Bosses.WITHER.health);
+                wither.setHealth(Bosses.WITHER.health);
 
                 wither.setCustomName(config.getString("Bosses.WitherBoss.displayName"));
                 wither.setCustomNameVisible(config.getBoolean("Bosses.WitherBoss.showDisplayNameAlways"));
@@ -138,8 +138,8 @@ public class BossWither implements Listener {
         Wither wither = (Wither) w.spawnEntity(loc, EntityType.WITHER);
         wither.addScoreboardTag("BossWither");
 
-        Objects.requireNonNull(wither.getAttribute(Attribute.GENERIC_MAX_HEALTH)).setBaseValue(Main.getInstance().getConfig().getDouble("Bosses.WitherBoss.Health"));
-        wither.setHealth(Objects.requireNonNull(wither.getAttribute(Attribute.GENERIC_MAX_HEALTH)).getBaseValue());
+        wither.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.WITHER.health);
+        wither.setHealth(Bosses.WITHER.health);
 
         wither.setCustomName(config.getString("Bosses.WitherBoss.displayName"));
         wither.setCustomNameVisible(config.getBoolean("Bosses.WitherBoss.showDisplayNameAlways"));

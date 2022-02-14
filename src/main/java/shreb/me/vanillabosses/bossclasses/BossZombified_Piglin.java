@@ -27,8 +27,8 @@ public class BossZombified_Piglin  implements Listener {
         PigZombie pigzombie = (PigZombie) w.spawnEntity(location, EntityType.ZOMBIFIED_PIGLIN);
 
         pigzombie.addScoreboardTag("BossZombified_Piglin");
-        pigzombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.Zombified_PiglinBoss.health"));
-        pigzombie.setHealth(pigzombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        pigzombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.ZOMBIEPIGMAN.health);
+        pigzombie.setHealth(Bosses.ZOMBIEPIGMAN.health);
         pigzombie.setCustomName(config.getString("Bosses.Zombified_PiglinBoss.displayName"));
         pigzombie.setCustomNameVisible(config.getBoolean("Bosses.Zombified_PiglinBoss.showDisplayNameAlways"));
 
@@ -66,8 +66,8 @@ public class BossZombified_Piglin  implements Listener {
 
 
         pigzombie.addScoreboardTag("BossZombified_Piglin");
-        pigzombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.Zombified_PiglinBoss.health"));
-        pigzombie.setHealth(pigzombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        pigzombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.ZOMBIEPIGMAN.health);
+        pigzombie.setHealth(Bosses.ZOMBIEPIGMAN.health);
         pigzombie.setCustomName(config.getString("Bosses.Zombified_PiglinBoss.displayName"));
         pigzombie.setCustomNameVisible(config.getBoolean("Bosses.Zombified_PiglinBoss.showDisplayNameAlways"));
 

@@ -30,8 +30,8 @@ public class BossSkeleton implements Listener {
         Skeleton skeleton = (Skeleton) w.spawnEntity(location, EntityType.SKELETON);
 
         skeleton.addScoreboardTag("BossSkeleton");
-        skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.SkeletonBoss.health"));
-        skeleton.setHealth(skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.SKELETON.health);
+        skeleton.setHealth(Bosses.SKELETON.health);
         skeleton.addScoreboardTag("removeInvulnerableOnDisable");
         skeleton.setCustomName(config.getString("Bosses.SkeletonBoss.displayName"));
         skeleton.setCustomNameVisible(config.getBoolean("Bosses.SkeletonBoss.showDisplayNameAlways"));
@@ -118,8 +118,8 @@ public class BossSkeleton implements Listener {
 
 
         skeleton.addScoreboardTag("BossSkeleton");
-        skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.SkeletonBoss.health"));
-        skeleton.setHealth(skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.SKELETON.health);
+        skeleton.setHealth(Bosses.SKELETON.health);
         skeleton.addScoreboardTag("removeInvulnerableOnDisable");
         skeleton.setCustomName(config.getString("Bosses.SkeletonBoss.displayName"));
         skeleton.setCustomNameVisible(config.getBoolean("Bosses.SkeletonBoss.showDisplayNameAlways"));

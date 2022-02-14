@@ -60,8 +60,8 @@ public class BossCreeper implements Listener {
 
         Creeper creeper = (Creeper) w.spawnEntity(location, EntityType.CREEPER);
         creeper.addScoreboardTag("BossCreeper");
-        creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.CreeperBoss.health"));
-        creeper.setHealth(creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.CREEPER.health);
+        creeper.setHealth(Bosses.CREEPER.health);
         creeper.setMaxFuseTicks(40);
         creeper.setFuseTicks(40);
         PersistentDataContainer container = creeper.getPersistentDataContainer();
@@ -80,8 +80,8 @@ public class BossCreeper implements Listener {
     public static void editToBossCreeper(Creeper creeper){
 
         creeper.addScoreboardTag("BossCreeper");
-        creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.CreeperBoss.health"));
-        creeper.setHealth(creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.CREEPER.health);
+        creeper.setHealth(Bosses.CREEPER.health);
         creeper.setMaxFuseTicks(40);
         creeper.setFuseTicks(40);
         PersistentDataContainer container = creeper.getPersistentDataContainer();

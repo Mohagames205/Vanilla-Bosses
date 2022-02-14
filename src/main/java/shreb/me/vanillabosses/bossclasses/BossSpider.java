@@ -24,8 +24,8 @@ public class BossSpider implements Listener {
 
         Spider spider = (Spider) w.spawnEntity(location, EntityType.SPIDER);
         spider.addScoreboardTag("BossSpider");
-        spider.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.SpiderBoss.health"));
-        spider.setHealth(spider.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        spider.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.SPIDER.health);
+        spider.setHealth(Bosses.SPIDER.health);
         spider.addScoreboardTag("removeInvisibilityOnDisable");
         spider.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 3));
         spider.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 2));

@@ -43,7 +43,7 @@ public enum Bosses {
             Main.getInstance().getConfig().getDouble("Bosses.ZombieBoss.health"),
             Main.getInstance().getConfig().getDouble("Bosses.ZombieBoss.DamageModifier")),
 
-    ZombiePigMan(Main.getInstance().getConfig().getInt("Bosses.Zombified_PiglinBoss.spawnChance"),
+    ZOMBIEPIGMAN(Main.getInstance().getConfig().getInt("Bosses.Zombified_PiglinBoss.spawnChance"),
             Main.getInstance().getConfig().getDouble("Bosses.Zombified_PiglinBoss.health"),
             Main.getInstance().getConfig().getDouble("Bosses.Zombified_PiglinBoss.DamageModifier"));
 

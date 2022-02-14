@@ -169,8 +169,8 @@ public class BossWitch implements Listener {
 
         Witch witch = (Witch) w.spawnEntity(location, EntityType.WITCH);
         witch.addScoreboardTag("BossWitch");
-        witch.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.WitchBoss.health"));
-        witch.setHealth(witch.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        witch.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.WITCH.health);
+        witch.setHealth(Bosses.WITCH.health);
         witch.setCustomName(config.getString("Bosses.WitchBoss.displayName"));
         witch.setCustomNameVisible(config.getBoolean("Bosses.WitchBoss.showDisplayNameAlways"));
 
@@ -185,8 +185,8 @@ public class BossWitch implements Listener {
     public static void editToBossWitch(Witch witch){
 
         witch.addScoreboardTag("BossWitch");
-        witch.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.WitchBoss.health"));
-        witch.setHealth(witch.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        witch.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.WITCH.health);
+        witch.setHealth(Bosses.WITCH.health);
         witch.setCustomName(config.getString("Bosses.WitchBoss.displayName"));
         witch.setCustomNameVisible(config.getBoolean("Bosses.WitchBoss.showDisplayNameAlways"));
     }

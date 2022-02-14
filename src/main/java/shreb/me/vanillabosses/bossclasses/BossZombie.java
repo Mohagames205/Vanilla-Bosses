@@ -35,8 +35,8 @@ public class BossZombie implements Listener {
         Zombie zombie = (Zombie) w.spawnEntity(location, EntityType.ZOMBIE);
 
         zombie.addScoreboardTag("BossZombie");
-        zombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.ZombieBoss.health"));
-        zombie.setHealth(zombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        zombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.ZOMBIE.health);
+        zombie.setHealth(Bosses.ZOMBIE.health);
         zombie.setCustomName(config.getString("Bosses.ZombieBoss.displayName"));
         zombie.setCustomNameVisible(config.getBoolean("Bosses.ZombieBoss.showDisplayNameAlways"));
 
@@ -75,8 +75,8 @@ public class BossZombie implements Listener {
         zombie.setAdult();
 
         zombie.addScoreboardTag("BossZombie");
-        zombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.ZombieBoss.health"));
-        zombie.setHealth(zombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
+        zombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.ZOMBIE.health);
+        zombie.setHealth(Bosses.ZOMBIE.health);
         zombie.setCustomName(config.getString("Bosses.ZombieBoss.displayName"));
         zombie.setCustomNameVisible(config.getBoolean("Bosses.ZombieBoss.showDisplayNameAlways"));
 

@@ -29,10 +29,9 @@ public class BossSlime implements Listener {
 
         Slime slime = (Slime) w.spawnEntity(location, EntityType.SLIME);
         slime.addScoreboardTag("BossSlime");
-        slime.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.SlimeBoss.health"));
+        slime.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.SLIME.health);
 
-        Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () -> slime.setHealth(slime.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue()), 5);
-
+        Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () -> slime.setHealth(Bosses.SLIME.health), 5);
 
         slime.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 3));
         slime.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 2));
@@ -50,8 +49,10 @@ public class BossSlime implements Listener {
     public static void editToBossSlime(Slime slime){
 
         slime.addScoreboardTag("BossSlime");
-        slime.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.SlimeBoss.health"));
-        Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () -> slime.setHealth(slime.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue()), 5);
+        slime.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.SLIME.health);
+
+        Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () -> slime.setHealth(Bosses.SLIME.health), 5);
+
         slime.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 3));
         slime.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 2));
         slime.setCustomName(displayName);

@@ -172,7 +172,7 @@ public class EntitySpawnEvent implements Listener {
 
             if (config.getBoolean("Bosses.CreeperBoss.spawnNaturally")) {
 
-                if (Methods.randomNumber(0, 1000) < Bosses.ZOMBIEPIGMAN.spawnChance) {
+                if (Methods.randomNumber(0, 1000) < Bosses.ZOMBIFIED_PIGLIN.spawnChance) {
 
                     BossZombified_Piglin.editToBossZombified_Piglin((PigZombie) event.getEntity());
 

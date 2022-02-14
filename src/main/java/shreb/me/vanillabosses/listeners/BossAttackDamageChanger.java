@@ -62,7 +62,7 @@ public class BossAttackDamageChanger implements Listener {
 
             case ZOMBIFIED_PIGLIN:
                 if(e.getScoreboardTags().contains("BossZombified_Piglin")){
-                    event.setDamage(event.getDamage() * Bosses.ZOMBIEPIGMAN.damageModifier);
+                    event.setDamage(event.getDamage() * Bosses.ZOMBIFIED_PIGLIN.damageModifier);
                 }
                 break;
 

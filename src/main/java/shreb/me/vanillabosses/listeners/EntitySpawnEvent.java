@@ -39,7 +39,7 @@ public class EntitySpawnEvent implements Listener {
 
             if (config.getBoolean("Bosses.SkeletonBoss.spawnNaturally")) {
 
-                if (Methods.randomNumber(0, 1000) <= config.getInt("Bosses.SkeletonBoss.spawnChance")) {
+                if (Methods.randomNumber(0, 1000) <= Bosses.SKELETON.spawnChance) {
 
                     BossSkeleton.editToBossSkeleton((Skeleton) event.getEntity());
 
@@ -60,7 +60,7 @@ public class EntitySpawnEvent implements Listener {
 
             if (config.getBoolean("Bosses.CreeperBoss.spawnNaturally")) {
 
-                if (Methods.randomNumber(0, 1000) < config.getInt("Bosses.CreeperBoss.spawnChance")) {
+                if (Methods.randomNumber(0, 1000) < Bosses.CREEPER.spawnChance) {
 
                     BossCreeper.editToBossCreeper((Creeper) event.getEntity());
 
@@ -81,7 +81,7 @@ public class EntitySpawnEvent implements Listener {
 
             if (config.getBoolean("Bosses.SpiderBoss.spawnNaturally")) {
 
-                if (Methods.randomNumber(0, 1000) < config.getInt("Bosses.SpiderBoss.spawnChance")) {
+                if (Methods.randomNumber(0, 1000) < Bosses.SPIDER.spawnChance) {
 
                     BossSpider.editToBossSpider((Spider) event.getEntity());
 
@@ -103,7 +103,7 @@ public class EntitySpawnEvent implements Listener {
 
             if (config.getBoolean("Bosses.BlazeBoss.spawnNaturally")) {
 
-                if (Methods.randomNumber(0, 1000) < config.getInt("Bosses.BlazeBoss.spawnChance")) {
+                if (Methods.randomNumber(0, 1000) < Bosses.BLAZE.spawnChance) {
 
                     BossBlaze.editToBossBlaze((Blaze) event.getEntity());
 
@@ -125,7 +125,7 @@ public class EntitySpawnEvent implements Listener {
 
             if (config.getBoolean("Bosses.CreeperBoss.spawnNaturally")) {
 
-                if (Methods.randomNumber(0, 1000) < config.getInt("Bosses.EndermanBoss.spawnChance")) {
+                if (Methods.randomNumber(0, 1000) < Bosses.ENDERMAN.spawnChance) {
 
                     BossEnderman.editToBossEnderman((Enderman) event.getEntity());
 
@@ -147,7 +147,7 @@ public class EntitySpawnEvent implements Listener {
 
             if (config.getBoolean("Bosses.CreeperBoss.spawnNaturally")) {
 
-                if (Methods.randomNumber(0, 1000) < config.getInt("Bosses.ZombieBoss.spawnChance")) {
+                if (Methods.randomNumber(0, 1000) < Bosses.ZOMBIE.spawnChance) {
 
                     BossZombie.editToBossZombie((Zombie) event.getEntity());
 
@@ -172,7 +172,7 @@ public class EntitySpawnEvent implements Listener {
 
             if (config.getBoolean("Bosses.CreeperBoss.spawnNaturally")) {
 
-                if (Methods.randomNumber(0, 1000) < config.getInt("Bosses.Zombified_PiglinBoss.spawnChance")) {
+                if (Methods.randomNumber(0, 1000) < Bosses.ZOMBIEPIGMAN.spawnChance) {
 
                     BossZombified_Piglin.editToBossZombified_Piglin((PigZombie) event.getEntity());
 
@@ -194,7 +194,7 @@ public class EntitySpawnEvent implements Listener {
 
             if (config.getBoolean("Bosses.CreeperBoss.spawnNaturally")) {
 
-                if (Methods.randomNumber(0, 1000) < config.getInt("Bosses.WitchBoss.spawnChance")) {
+                if (Methods.randomNumber(0, 1000) < Bosses.WITCH.spawnChance) {
 
                     BossWitch.editToBossWitch((Witch) event.getEntity());
 
@@ -223,7 +223,7 @@ public class EntitySpawnEvent implements Listener {
 
             if (config.getBoolean("Bosses.CreeperBoss.spawnNaturally")) {
 
-                if (Methods.randomNumber(0, 1000) < config.getInt("Bosses.SlimeBoss.spawnChance")) {
+                if (Methods.randomNumber(0, 1000) < Bosses.SLIME.spawnChance) {
 
                     BossSlime.editToBossSlime((Slime) event.getEntity());
 

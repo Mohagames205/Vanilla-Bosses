@@ -47,9 +47,9 @@ public enum Bosses {
             Main.getInstance().getConfig().getDouble("Bosses.Zombified_PiglinBoss.health"),
             Main.getInstance().getConfig().getDouble("Bosses.Zombified_PiglinBoss.DamageModifier"));
 
-    int spawnChance; //out of 1000
-    double health;
-    double damageModifier;
+    public int spawnChance; //out of 1000
+    public double health;
+    public double damageModifier;
 
 
     Bosses(int spawnChance, double health, double damageModifier){

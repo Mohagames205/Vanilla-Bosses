@@ -55,6 +55,7 @@ public final class Main extends JavaPlugin {
         pm.registerEvents(new BossZombie(), this);
         pm.registerEvents(new BossZombified_Piglin(), this);
         pm.registerEvents(new BossSlime(), this);
+        pm.registerEvents(new BossMagmacube(), this);
         pm.registerEvents(new EntityDamagedByEntityEvent(), this);
         pm.registerEvents(new EntityDamageEvent(), this);
         pm.registerEvents(new EntityDeathEvent(), this);
@@ -66,6 +67,7 @@ public final class Main extends JavaPlugin {
         pm.registerEvents(new ItemEnchantmentsListener(), this);
         pm.registerEvents(new EntitySpawnEvent(), this);
         pm.registerEvents(new BossAttackDamageChanger(), this);
+
         if(config.getBoolean("Items.DisableRepairAndEnchant"))pm.registerEvents(new AntiRepairListener(), this);
 
         Objects.requireNonNull(getCommand("boss")).setExecutor(new Boss());

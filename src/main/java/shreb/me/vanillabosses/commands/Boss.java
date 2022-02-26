@@ -48,6 +48,7 @@ public class Boss implements CommandExecutor {
             sender.sendMessage(ChatColor.GOLD + " -Zombie");
             sender.sendMessage(ChatColor.GOLD + " -Zombified_Piglin");
             sender.sendMessage(ChatColor.GOLD + " -Slime");
+            sender.sendMessage(ChatColor.GOLD + " -Magmacube");
             sender.sendMessage(ChatColor.AQUA + "####");
 
             return true;
@@ -437,6 +438,8 @@ public class Boss implements CommandExecutor {
 
         }
 
+//BossSlime
+
         if (args[0].equalsIgnoreCase("slime")) {
 
             if (!(config.getBoolean("Bosses.SlimeBoss.enableSummonCommand"))) {
@@ -466,6 +469,44 @@ public class Boss implements CommandExecutor {
             sender.sendMessage(ChatColor.AQUA + "The Boss Slime has been summoned successfully");
             PersistentDataContainer container = entity.getPersistentDataContainer();
             String cmd = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.SlimeBoss.CommandToBeExecutedOnDeath"));
+            if (!cmd.equals("")) {
+                container.set(new NamespacedKey(Main.getInstance(), "VanillaBossesCommandOnDeath"), PersistentDataType.STRING, cmd);
+            }
+            return true;
+
+        }
+
+//BossMagmacube
+
+        if (args[0].equalsIgnoreCase("magmacube")) {
+
+            if (!(config.getBoolean("Bosses.MagmacubeBoss.enableSummonCommand"))) {
+                sender.sendMessage("This command is disabled in the config");
+                return true;
+            }
+
+            if (!(config.getBoolean("Bosses.MagmacubeBoss.enabled"))) {
+                sender.sendMessage("This Boss is disabled in the config file. To run this command the boss must be enabled");
+                return true;
+            }
+
+            Location loc;
+            if (p != null) {
+                loc = p.getTargetBlock(null, 5).getLocation();
+
+                if (loc.getBlock().getType() != Material.AIR) loc = p.getTargetBlock(null, 1).getLocation();
+                if (loc.getBlock().getType() != Material.AIR) loc = p.getLocation();
+            } else if (specLoc != null) {
+                loc = specLoc;
+            } else {
+                sender.sendMessage("Vanilla Bosses: Something went wrong, check if you entered the command correctly");
+                return true;
+            }
+
+            Entity entity = BossMagmacube.makeBossMagmacube(loc, world);
+            sender.sendMessage(ChatColor.AQUA + "The Boss Magmacube has been summoned successfully");
+            PersistentDataContainer container = entity.getPersistentDataContainer();
+            String cmd = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.MagmacubeBoss.CommandToBeExecutedOnDeath"));
             if (!cmd.equals("")) {
                 container.set(new NamespacedKey(Main.getInstance(), "VanillaBossesCommandOnDeath"), PersistentDataType.STRING, cmd);
             }

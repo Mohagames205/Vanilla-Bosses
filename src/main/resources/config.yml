@@ -412,7 +412,37 @@ Bosses:
 
     worldsLocationsTimer:
 
+  ######################################################################################################################
 
+  MagmacubeBoss:
+    enabled: true
+    enableSummonCommand: true
+    displayName: "Chester"
+    showDisplayNameAlways: true
+    DamageModifier: 1.0
+    health: 45
+    spawnChance: 50
+
+    droppedItems:
+      - magma_cream:6:12:66
+
+    droppedXP: 50
+
+    CommandToBeExecutedOnDeath: 0
+
+    disableVanillaDrops: false
+
+    onHitEvents:
+      BurningAir: # makes an area around the boss burn entities
+        enabled: true
+        chance: 5 # in %
+
+    spawnNaturally: true
+
+    worldsLocationsTimer:
+
+    enableBossBars: true
+    bossBarColor: blue
 
 Items:
 

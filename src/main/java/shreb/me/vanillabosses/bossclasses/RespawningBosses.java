@@ -34,7 +34,8 @@ public class RespawningBosses {
             "Witch",
             "Zombie",
             "Wither",
-            "Zombified_Piglin"
+            "Zombified_Piglin",
+            "Magmacube"
     };
 
     public static LivingEntity bossSpawnMethod(EntityType type, Location loc, World w) {
@@ -81,6 +82,10 @@ public class RespawningBosses {
 
             case WITHER:
                 entity = BossWither.makeBossWither(loc, w);
+                break;
+
+            case MAGMA_CUBE:
+                entity = BossMagmacube.makeBossMagmacube(loc, w);
                 break;
 
             default:

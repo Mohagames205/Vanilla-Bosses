@@ -123,7 +123,7 @@ public class EntitySpawnEvent implements Listener {
 
             if (!config.getBoolean("Bosses.EndermanBoss.enabled")) return;
 
-            if (config.getBoolean("Bosses.CreeperBoss.spawnNaturally")) {
+            if (config.getBoolean("Bosses.EndermanBoss.spawnNaturally")) {
 
                 if (Methods.randomNumber(0, 1000) < Bosses.ENDERMAN.spawnChance) {
 
@@ -145,7 +145,7 @@ public class EntitySpawnEvent implements Listener {
 
             if (!config.getBoolean("Bosses.ZombieBoss.enabled")) return;
 
-            if (config.getBoolean("Bosses.CreeperBoss.spawnNaturally")) {
+            if (config.getBoolean("Bosses.ZombieBoss.spawnNaturally")) {
 
                 if (Methods.randomNumber(0, 1000) < Bosses.ZOMBIE.spawnChance) {
 
@@ -170,7 +170,7 @@ public class EntitySpawnEvent implements Listener {
 
             if (!config.getBoolean("Bosses.Zombified_PiglinBoss.enabled")) return;
 
-            if (config.getBoolean("Bosses.CreeperBoss.spawnNaturally")) {
+            if (config.getBoolean("Bosses.Zombified_PiglinBoss.spawnNaturally")) {
 
                 if (Methods.randomNumber(0, 1000) < Bosses.ZOMBIFIED_PIGLIN.spawnChance) {
 
@@ -192,7 +192,7 @@ public class EntitySpawnEvent implements Listener {
 
             if (!config.getBoolean("Bosses.WitchBoss.enabled")) return;
 
-            if (config.getBoolean("Bosses.CreeperBoss.spawnNaturally")) {
+            if (config.getBoolean("Bosses.WitchBoss.spawnNaturally")) {
 
                 if (Methods.randomNumber(0, 1000) < Bosses.WITCH.spawnChance) {
 
@@ -221,7 +221,7 @@ public class EntitySpawnEvent implements Listener {
 
             if (!config.getBoolean("Bosses.SlimeBoss.enabled")) return;
 
-            if (config.getBoolean("Bosses.CreeperBoss.spawnNaturally")) {
+            if (config.getBoolean("Bosses.SlimeBoss.spawnNaturally")) {
 
                 if (Methods.randomNumber(0, 1000) < Bosses.SLIME.spawnChance) {
 
@@ -236,5 +236,35 @@ public class EntitySpawnEvent implements Listener {
                 }
             }
         }
+
+//MagmacubeBoss
+
+        if (event.getEntityType() == EntityType.MAGMA_CUBE) {
+
+            if (event.getSpawnReason() == CreatureSpawnEvent.SpawnReason.SLIME_SPLIT) {
+
+                event.getEntity().setCustomName("");
+
+                return;
+            }
+
+            if (!config.getBoolean("Bosses.MagmacubeBoss.enabled")) return;
+
+            if (config.getBoolean("Bosses.MagmacubeBoss.spawnNaturally")) {
+
+                if (Methods.randomNumber(0, 1000) < Bosses.MAGMACUBE.spawnChance) {
+
+                    BossMagmacube.editToBossMagmacube((MagmaCube) event.getEntity());
+
+                    PersistentDataContainer container = event.getEntity().getPersistentDataContainer();
+                    String command = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.MagmacubeBoss.CommandToBeExecutedOnDeath"));
+                    if(!command.equals("")){
+                        container.set(new NamespacedKey(Main.getInstance(), "VanillaBossesCommandOnDeath"), PersistentDataType.STRING, command);
+                    }
+
+                }
+            }
+        }
+
     }
 }

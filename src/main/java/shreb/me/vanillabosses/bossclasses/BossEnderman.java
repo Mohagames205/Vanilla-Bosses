@@ -12,6 +12,8 @@ import org.bukkit.event.entity.EntityTargetEvent;
 import org.bukkit.event.entity.EntityTeleportEvent;
 import shreb.me.vanillabosses.main.Main;
 
+import java.util.HashMap;
+
 public class BossEnderman implements Listener {
 
     static Configuration config = Main.getInstance().getConfig();

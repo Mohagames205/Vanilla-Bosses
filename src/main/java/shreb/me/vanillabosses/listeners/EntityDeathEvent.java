@@ -384,6 +384,8 @@ public class EntityDeathEvent implements Listener {
                 livingEntity.getScoreboardTags().add("removeOnDisable");
                 livingEntity.setRemoveWhenFarAway(false);
 
+
+
                 RespawningBosses.respawningBosses.get(event.getEntityType()).add(livingEntity.getUniqueId());
 
                 BossBar bossBar = Bukkit.createBossBar(

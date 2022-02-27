@@ -478,7 +478,7 @@ Items:
       - I:Iron_Ingot
       - P:pot             #pot = invisibility potion.
                           #to include items from this plugin in crafting recipes, use the following words: (BaseballBat, Blazer, ButchersAxe, InvisibilityCloak,
-                          #                                                                             Skeletor, Slimeboots, BouncySlime, Slingshot, Pot)
+                          #                                                                             Skeletor, Slimeboots, BouncySlime, Slingshot, Pot, HeatedCream1, HeatedCream2, HeatedCream3)
                           # Using one of these words as a materialType in the syntax for recipeIngredients will make the recipe require the specified special Item at the specified slot.
 
   slingshot:
@@ -597,9 +597,24 @@ Items:
 
   HeatedMagmaCream:         #3 levels of this item
     enableSpawnCommand: true
-    dropChances:
-      level1: 20
-      level2: 10
-      level3: 5
-    enableCraftingBetter: true #craft the better version of the item by combining 2 of the same level (level 1 or 2)
+    enableImproving: true #craft the better version of the item by combining 2 of the same level (level 1 or 2)
                                #result is a heated Magmacream of a level one higher than the ingredients
+    amountToImprove: 3 #The amount of Heated Magmacream you have to put into a crafting table to make the next level
+
+    Level1:
+      dropChance: 20
+      maxDropped: 3
+      radius: 3
+      burnTime: 2 #in seconds
+
+    Level2:
+      dropChance: 10
+      maxDropped: 2
+      radius: 5
+      burnTime: 4
+
+    Level3:
+      dropChance: 0
+      maxDropped: 0
+      radius: 7
+      burnTime: 6

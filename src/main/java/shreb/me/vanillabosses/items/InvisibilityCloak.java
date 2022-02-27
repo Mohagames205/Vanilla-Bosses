@@ -55,7 +55,7 @@ public class InvisibilityCloak {
         meta.setDisplayName(ChatColor.GRAY + "The Cloak of Invisibility");
         meta.setLore(lore);
         PersistentDataContainer container = meta.getPersistentDataContainer();
-        container.set(new NamespacedKey(Main.getInstance(), "CloakOfInvisibility"), PersistentDataType.INTEGER, 1);
+        container.set(Items.INVISIBILITYCLOAK.identifyingPDCKey, PersistentDataType.INTEGER, 1);
 
         cloak.setItemMeta(meta);
 

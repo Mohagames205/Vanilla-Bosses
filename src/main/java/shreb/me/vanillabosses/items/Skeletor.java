@@ -63,7 +63,7 @@ public class Skeletor implements Listener {
 
             if (Main.getInstance().getConfig().getBoolean("Items.Skeletor.ShootTNTFromOffHand.enabled")) {
 
-                if (Objects.requireNonNull(Objects.requireNonNull(((Player) entity).getEquipment()).getItemInMainHand().getItemMeta().getPersistentDataContainer()).has(new NamespacedKey(Main.getInstance(), "shootsTnT"), PersistentDataType.STRING)) {
+                if (Objects.requireNonNull(Objects.requireNonNull(((Player) entity).getEquipment()).getItemInMainHand().getItemMeta().getPersistentDataContainer()).has(Items.SKELETOR.identifyingPDCKey, PersistentDataType.STRING)) {
                     Player p = (Player) entity;
                     if(p.getGameMode().equals(GameMode.SURVIVAL))Objects.requireNonNull(p.getEquipment()).getItemInOffHand().setAmount(p.getEquipment().getItemInOffHand().getAmount() - 1);
                     Vector v = event.getEntity().getVelocity();
@@ -79,7 +79,7 @@ public class Skeletor implements Listener {
 
         if(Objects.requireNonNull(((LivingEntity) entity).getEquipment()).getItemInMainHand().getItemMeta() == null) return;
 
-        if (Objects.requireNonNull(Objects.requireNonNull(((LivingEntity) entity).getEquipment()).getItemInMainHand().getItemMeta().getPersistentDataContainer()).has(new NamespacedKey(Main.getInstance(), "shootsTnT"), PersistentDataType.STRING)) {
+        if (Objects.requireNonNull(Objects.requireNonNull(((LivingEntity) entity).getEquipment()).getItemInMainHand().getItemMeta().getPersistentDataContainer()).has(Items.SKELETOR.identifyingPDCKey, PersistentDataType.STRING)) {
             event.getEntity().addScoreboardTag("ArrowExplode");
             if(entity instanceof Skeleton) event.getEntity().addScoreboardTag("applyModifier");
         }
@@ -101,7 +101,7 @@ public class Skeletor implements Listener {
             }
         }
         PersistentDataContainer container = meta.getPersistentDataContainer();
-        container.set(new NamespacedKey(Main.getInstance(), "shootsTnT"), PersistentDataType.STRING, "Shoots TNT");
+        container.set(Items.SKELETOR.identifyingPDCKey, PersistentDataType.STRING, "Shoots TNT");
         meta.setLore(lore);
         bow.setItemMeta(meta);
 

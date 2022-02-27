@@ -30,7 +30,7 @@ public class ButchersAxe implements Listener {
 
         ItemMeta meta = axe.getItemMeta();
         PersistentDataContainer container = meta.getPersistentDataContainer();
-        container.set(new NamespacedKey(Main.getInstance(), "BindII"), PersistentDataType.STRING, "Bind II");
+        container.set(Items.BUTCHERSAXE.identifyingPDCKey, PersistentDataType.STRING, "Bind II");
 
         ArrayList<String> lore = new ArrayList<>();
         meta.setDisplayName(ChatColor.DARK_RED + "The Butchers Axe");

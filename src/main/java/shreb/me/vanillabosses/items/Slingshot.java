@@ -31,7 +31,7 @@ public class Slingshot implements Listener {
         if (!event.getItem().hasItemMeta()) return;
         if (!event.getPlayer().isSneaking()) return;
 
-        if (event.getItem().getItemMeta().getPersistentDataContainer().has(new NamespacedKey(Main.getInstance(), "Slingshot"), PersistentDataType.INTEGER)) {
+        if (event.getItem().getItemMeta().getPersistentDataContainer().has(Items.SLINGSHOT.identifyingPDCKey, PersistentDataType.INTEGER)) {
             event.getPlayer().getScoreboardTags().add("NoFallDMG");
 
             if(taskID != 0){
@@ -86,7 +86,7 @@ public class Slingshot implements Listener {
 
         //This is for the Slimeboots, didnt wanna make a new event.
         if(((Player)event.getEntity()).getEquipment().getBoots() != null){
-            if(((Player)event.getEntity()).getEquipment().getBoots().getItemMeta().getPersistentDataContainer().has(new NamespacedKey(Main.getInstance(), "slimeBoots"), PersistentDataType.STRING)){
+            if(((Player)event.getEntity()).getEquipment().getBoots().getItemMeta().getPersistentDataContainer().has(Items.SLINGSHOT.identifyingPDCKey, PersistentDataType.STRING)){
 
                 event.setDamage(event.getDamage() / 5);
 
@@ -130,7 +130,7 @@ public class Slingshot implements Listener {
         lore.addAll(Main.getInstance().getConfig().getStringList("Items.slingshot.Lore"));
         meta.setLore(lore);
         PersistentDataContainer container = meta.getPersistentDataContainer();
-        container.set(new NamespacedKey(Main.getInstance(), "Slingshot"), PersistentDataType.INTEGER,  1);
+        container.set(Items.SLINGSHOT.identifyingPDCKey, PersistentDataType.INTEGER,  1);
         slingshot.setItemMeta(meta);
 
         return slingshot;

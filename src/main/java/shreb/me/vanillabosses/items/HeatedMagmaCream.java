@@ -15,14 +15,13 @@ import shreb.me.vanillabosses.main.Main;
 import shreb.me.vanillabosses.main.Methods;
 
 public class HeatedMagmaCream implements Listener {
-    ItemStack magmaCream;
-    int level;
+
     /**
      *
      * @param level has to be 1, 2 or 3 to indicate the level of the created HeatedMagmaCream
      * @throws IllegalArgumentException is thrown when values except 1, 2 or 3 are entered
      */
-    public HeatedMagmaCream(int level) throws IllegalArgumentException {
+    public static ItemStack makeHeatedMagmaCream(int level) throws IllegalArgumentException {
 
         ItemStack cream = new ItemStack(Material.MAGMA_CREAM);
 
@@ -43,22 +42,9 @@ public class HeatedMagmaCream implements Listener {
             default:
                 throw new IllegalArgumentException(ChatColor.RED + "VanillaBosses: Error with HeatedMagmaCream. Please notify the Author of the plugin about this Error.");
         }
-        cream.getItemMeta().getPersistentDataContainer().set(new NamespacedKey(Main.getInstance(), "MagmaCreamLevel"), PersistentDataType.INTEGER, level);
+        cream.getItemMeta().getPersistentDataContainer().set(Items.HEATEDMAGMACREAM1.identifyingPDCKey, PersistentDataType.INTEGER, level);
 
-        magmaCream = cream;
-        this.level = level;
-    }
-
-    public HeatedMagmaCream() {
-
-    }
-
-    public ItemStack getMagmaCream() {
-        return magmaCream;
-    }
-
-    public int getLevel() {
-        return level;
+        return cream;
     }
 
     @EventHandler
@@ -67,7 +53,7 @@ public class HeatedMagmaCream implements Listener {
         if(event.getItem() == null || event.getHand() == null) return;
 
         if(event.getItem().getType() == Material.MAGMA_CREAM
-        && event.getItem().getItemMeta().getPersistentDataContainer().has(new NamespacedKey(Main.getInstance(), "MagmaCreamLevel"), PersistentDataType.INTEGER)
+        && event.getItem().getItemMeta().getPersistentDataContainer().has(Items.HEATEDMAGMACREAM1.identifyingPDCKey, PersistentDataType.INTEGER)
         ){
 
             if( event.getItem().getItemMeta().getPersistentDataContainer().get(new NamespacedKey(Main.getInstance(), "MagmaCreamLevel"), PersistentDataType.INTEGER) == null) return;
@@ -79,7 +65,7 @@ public class HeatedMagmaCream implements Listener {
             int radius;
 
             try{
-            level = cream.getItemMeta().getPersistentDataContainer().get(new NamespacedKey(Main.getInstance(), "MagmaCreamLevel"), PersistentDataType.INTEGER);
+            level = cream.getItemMeta().getPersistentDataContainer().get(Items.HEATEDMAGMACREAM1.identifyingPDCKey, PersistentDataType.INTEGER);
             } catch(NullPointerException e){
                 e.printStackTrace();
                 Main.getInstance().getServer().getConsoleSender().sendMessage(ChatColor.RED + "VanillaBosses: Error 1 on HeatedMagmaCream use. Please notify the Author of the plugin about this");

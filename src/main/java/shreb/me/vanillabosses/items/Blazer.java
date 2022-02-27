@@ -38,7 +38,7 @@ public class Blazer implements Listener {
 
         ItemMeta armorMeta = blazer.getItemMeta();
         PersistentDataContainer container = armorMeta.getPersistentDataContainer();
-        container.set(new NamespacedKey(Main.getInstance(), "BlazerOnHit"), PersistentDataType.INTEGER, 1);
+        container.set(Items.BLAZER.identifyingPDCKey, PersistentDataType.INTEGER, 1);
 
         armorMeta.setDisplayName(ChatColor.DARK_BLUE + "Blazer");
         ArrayList<String> lore = new ArrayList<>();
@@ -65,7 +65,7 @@ public class Blazer implements Listener {
             LivingEntity entity = (LivingEntity) event.getEntity();
             if(entity.getEquipment().getChestplate() != null){
                 if(!entity.getEquipment().getChestplate().hasItemMeta()) return;
-                if(!entity.getEquipment().getChestplate().getItemMeta().getPersistentDataContainer().has(new NamespacedKey(Main.getInstance(), "BlazerOnHit"), PersistentDataType.INTEGER)) return;
+                if(!entity.getEquipment().getChestplate().getItemMeta().getPersistentDataContainer().has(Items.BLAZER.identifyingPDCKey, PersistentDataType.INTEGER)) return;
 
                 int rn = Methods.randomNumber(0,100);
                 int chance = Main.getInstance().getConfig().getInt("Items.Blazer.chanceToCombust");

@@ -80,7 +80,11 @@ public final class Main extends JavaPlugin {
         if(config.getBoolean("Items.Skeletor.enableCraftingRecipe"))            CraftingRecipes.skeletorRecipe();           //enables skeletor recipe
         if(config.getBoolean("Items.cloakOfInvisibility.enableCraftingRecipe")) CraftingRecipes.cloakRecipe();              //enables the cloak recipe
         if(config.getBoolean("Items.SlimeBoots.enableCraftingRecipe"))          CraftingRecipes.slimeBootsRecipe();         //enables the slime boots recipe
-        if(config.getBoolean("Items.Blazer.enableCraftingRecipe"))              CraftingRecipes.blazerRecipe();             //enables the blazer recipe
+        if(config.getBoolean("Items.Blazer.enableCraftingRecipe"))              CraftingRecipes.blazerRecipe();//enables the blazer recipe
+        if(config.getBoolean("Items.HeatedMagmaCream.enableImproving")){        CraftingRecipes.heatedMagmaCreamRecipeLv2();
+                                                                                     CraftingRecipes.heatedMagmaCreamRecipeLv3();}
+
+
 
         final String version = this.getDescription().getVersion();
 
@@ -98,7 +102,6 @@ public final class Main extends JavaPlugin {
         }
 
         Slingshot.removeNoFallDMGTagTimer();
-
 
         if(config.getBoolean("Items.cloakOfInvisibility.enableChecks")) InvisibilityCloak.invisCloakTimer();        // enable the check timer for the cloak of invisibility
 

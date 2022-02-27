@@ -7,6 +7,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
+import org.bukkit.inventory.ShapelessRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionData;
@@ -36,13 +37,16 @@ public class CraftingRecipes {
         specialItems.put("BOUNCYSLIME", SlimeBoots.makeBouncySlime());
         specialItems.put("SLINGSHOT", Slingshot.makeSlingshot());
         specialItems.put("POT", potion);
+        specialItems.put("HeatedCream1", HeatedMagmaCream.makeHeatedMagmaCream(1));
+        specialItems.put("HeatedCream2", HeatedMagmaCream.makeHeatedMagmaCream(2));
+        specialItems.put("HeatedCream3", HeatedMagmaCream.makeHeatedMagmaCream(3));
 
         return specialItems;
     }
 
-    private static HashMap<String, ItemStack> specialItems = initializeSpecialItems();
+    private static final HashMap<String, ItemStack> specialItems = initializeSpecialItems();
 
-    private static FileConfiguration config = Main.getInstance().getConfig();
+    private static final FileConfiguration config = Main.getInstance().getConfig();
 
     public static void slingshotRecipe() {
         ItemStack slingshot = Slingshot.makeSlingshot();
@@ -224,5 +228,35 @@ public class CraftingRecipes {
         }
 
         Bukkit.addRecipe(blazer);
+    }
+
+    public static void heatedMagmaCreamRecipeLv2(){
+
+        ItemStack heatedCreamLv1 = HeatedMagmaCream.makeHeatedMagmaCream(1);
+        ItemStack heatedCreamLv2 = HeatedMagmaCream.makeHeatedMagmaCream(2);
+
+        NamespacedKey key = new NamespacedKey(Main.getInstance(), "heatedCream2");
+        ShapelessRecipe creamRecipe2 = new ShapelessRecipe(key, heatedCreamLv2);
+
+        for(int i = 0; i < config.getInt("Items.HeatedMagmaCream.amountToImprove"); i++){
+            creamRecipe2.addIngredient(new RecipeChoice.ExactChoice(heatedCreamLv1));
+        }
+
+        Bukkit.addRecipe(creamRecipe2);
+    }
+
+    public static void heatedMagmaCreamRecipeLv3(){
+
+        ItemStack heatedCreamLv2 = HeatedMagmaCream.makeHeatedMagmaCream(2);
+        ItemStack heatedCreamLv3 = HeatedMagmaCream.makeHeatedMagmaCream(3);
+
+        NamespacedKey key = new NamespacedKey(Main.getInstance(), "heatedCream3");
+        ShapelessRecipe creamRecipe3 = new ShapelessRecipe(key, heatedCreamLv3);
+
+        for(int i = 0; i < config.getInt("Items.HeatedMagmaCream.amountToImprove"); i++){
+            creamRecipe3.addIngredient(new RecipeChoice.ExactChoice(heatedCreamLv2));
+        }
+
+        Bukkit.addRecipe(creamRecipe3);
     }
 }

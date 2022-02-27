@@ -13,24 +13,24 @@ public enum Items {
 
     BUTCHERSAXE("ButchersAxe",
             new NamespacedKey(Main.getInstance(), "BindII")),
-    /**
-     * level of MagmaCream is saved inside the PDC, accessible by the PDC.get() method.
-     */
 
     HEATEDMAGMACREAM1("HeatedMagmaCream",
-            new NamespacedKey(Main.getInstance(), "MagmaCreamLevel")),
-    /**
-     * level of MagmaCream is saved inside the PDC, accessible by the PDC.get() method.
-     */
+            new NamespacedKey(Main.getInstance(), "MagmaCreamLevel"),
+            Main.getInstance().getConfig().getInt("Items.HeatedMagmaCream.Level1.radius"),
+            Main.getInstance().getConfig().getInt("Items.HeatedMagmaCream.Level1.burnTime"),
+            1),
 
     HEATEDMAGMACREAM2("HeatedMagmaCream",
-            new NamespacedKey(Main.getInstance(), "MagmaCreamLevel")),
-    /**
-     * level of MagmaCream is saved inside the PDC, accessible by the PDC.get() method.
-     */
+            new NamespacedKey(Main.getInstance(), "MagmaCreamLevel"),
+            Main.getInstance().getConfig().getInt("Items.HeatedMagmaCream.Level2.radius"),
+            Main.getInstance().getConfig().getInt("Items.HeatedMagmaCream.Level2.burnTime"),
+            2),
 
     HEATEDMAGMACREAM3("HeatedMagmaCream",
-            new NamespacedKey(Main.getInstance(), "MagmaCreamLevel")),
+            new NamespacedKey(Main.getInstance(), "MagmaCreamLevel"),
+            Main.getInstance().getConfig().getInt("Items.HeatedMagmaCream.Level3.radius"),
+            Main.getInstance().getConfig().getInt("Items.HeatedMagmaCream.Level3.burnTime"),
+            3),
 
     INVISIBILITYCLOAK("cloakOfInvisibility",
             new NamespacedKey(Main.getInstance(), "CloakOfInvisibility")),
@@ -49,6 +49,9 @@ public enum Items {
 
     public String configSection;
     public NamespacedKey identifyingPDCKey;
+    public int radius;
+    public int time;
+    public int level;
 
 
     Items(String configSection, NamespacedKey identifyingPDCKey){
@@ -56,5 +59,12 @@ public enum Items {
         this.identifyingPDCKey = identifyingPDCKey;
     }
 
+    Items(String configSection, NamespacedKey identifyingPDCKey, int radius, int time, int level){
+        this.configSection = configSection;
+        this.identifyingPDCKey = identifyingPDCKey;
+        this.radius = radius;
+        this.time = time;
+        this.level = level;
+    }
 
 }

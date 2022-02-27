@@ -22,7 +22,7 @@ public class SlimeBoots {
         PersistentDataContainer container = meta.getPersistentDataContainer();
         ArrayList<String> lore = new ArrayList<>(Main.getInstance().getConfig().getStringList("Items.SlimeBoots.BouncySlime.Lore"));
         meta.setLore(lore);
-        container.set(new NamespacedKey(Main.getInstance(), "bouncySlime"), PersistentDataType.STRING, "bouncySlime");
+        container.set(Items.BOUNCYSLIME.identifyingPDCKey, PersistentDataType.STRING, "bouncySlime");
         meta.setDisplayName(ChatColor.DARK_GREEN + "Bouncy Slime");
         bouncySlime.setItemMeta(meta);
 
@@ -40,7 +40,7 @@ public class SlimeBoots {
 
         meta.setLore(lore);
         PersistentDataContainer container = meta.getPersistentDataContainer();
-        container.set(new NamespacedKey(Main.getInstance(), "slimeBoots"), PersistentDataType.STRING, "negateFallDamage");
+        container.set(Items.SLIMEBOOTS.identifyingPDCKey, PersistentDataType.STRING, "negateFallDamage");
         slimeBoots.setItemMeta(meta);
 
         return slimeBoots;

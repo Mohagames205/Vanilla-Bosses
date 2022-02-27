@@ -24,7 +24,7 @@ public class BaseballBat {
 
         PersistentDataContainer container = meta.getPersistentDataContainer();
 
-        container.set(new NamespacedKey(Main.getInstance(), "ConcussI"), PersistentDataType.STRING, "Concuss I");
+        container.set(Items.BASEBALLBAT.identifyingPDCKey, PersistentDataType.STRING, "Concuss I");
 
         lore.add("Concuss I");
         lore.addAll(Main.getInstance().getConfig().getStringList("Items.BaseballBat.Lore"));

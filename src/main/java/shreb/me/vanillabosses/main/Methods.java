@@ -24,7 +24,7 @@ public class Methods {
 
     public static int randomNumber(int min, int max) {
         min = (int) Math.ceil(min);
-        max = (int) Math.floor(max);
+        max = (int) Math.floor(max) + 1;
         return (int) (Math.floor(Math.random() * (max - min)) + min);
     }
 

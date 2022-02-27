@@ -15,10 +15,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.util.Vector;
-import shreb.me.vanillabosses.bossclasses.BossBlaze;
-import shreb.me.vanillabosses.bossclasses.BossWitch;
-import shreb.me.vanillabosses.bossclasses.BossWither;
-import shreb.me.vanillabosses.bossclasses.RespawningBosses;
+import shreb.me.vanillabosses.bossclasses.*;
 import shreb.me.vanillabosses.items.Blazer;
 import shreb.me.vanillabosses.items.InvisibilityCloak;
 import shreb.me.vanillabosses.items.SlimeBoots;
@@ -296,6 +293,31 @@ public class EntityDeathEvent implements Listener {
             event.setDroppedExp(Math.max(config.getInt("Bosses.SlimeBoss.droppedXP"), 0));
 
             event.getDrops().addAll(Methods.addItemsFromConfig(config.getStringList("Bosses.SlimeBoss.droppedItems")));
+
+            if (event.getEntity().getKiller() != null && config.getBoolean("Bosses.enableBossKilledMessage") && event.getEntity().getCustomName() != null) {
+                event.getEntity().getServer().broadcastMessage(ChatColor.DARK_GREEN + event.getEntity().getCustomName() + ChatColor.WHITE + "has been slain by " + ChatColor.AQUA + event.getEntity().getKiller().getName());
+            }
+        }
+
+        //BossMagmacube
+
+
+        if (event.getEntity().getScoreboardTags().contains(Bosses.MAGMACUBE.scoreboardBossTag)) {
+
+            int chance = Main.getInstance().getConfig().getInt("Items.SlimeBoots.BouncySlime.dropChance");
+            for (int i = 0; i < Main.getInstance().getConfig().getInt("Items.SlimeBoots.BouncySlime.maxDropped"); i++) {
+
+                if (Methods.randomNumber(0, 100) < chance) {
+                    event.getDrops().add(SlimeBoots.makeBouncySlime());
+                }
+
+            }
+
+            Configuration config = Main.getInstance().getConfig();
+
+            event.setDroppedExp(Math.max(config.getInt("Bosses.MagmacubeBoss.droppedXP"), 0));
+
+            event.getDrops().addAll(Methods.addItemsFromConfig(config.getStringList("Bosses.MagmacubeBoss.droppedItems")));
 
             if (event.getEntity().getKiller() != null && config.getBoolean("Bosses.enableBossKilledMessage") && event.getEntity().getCustomName() != null) {
                 event.getEntity().getServer().broadcastMessage(ChatColor.DARK_GREEN + event.getEntity().getCustomName() + ChatColor.WHITE + "has been slain by " + ChatColor.AQUA + event.getEntity().getKiller().getName());

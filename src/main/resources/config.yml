@@ -594,3 +594,12 @@ Items:
       - N:Netherrack
       - F:Flint_And_Steel
       - D:Diamond
+
+  HeatedMagmaCream:         #3 levels of this item
+    enableSpawnCommand: true
+    dropChances:
+      level1: 20
+      level2: 10
+      level3: 5
+    enableCraftingBetter: true #craft the better version of the item by combining 2 of the same level (level 1 or 2)
+                               #result is a heated Magmacream of a level one higher than the ingredients

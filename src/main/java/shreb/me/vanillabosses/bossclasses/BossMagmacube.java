@@ -73,8 +73,9 @@ public class BossMagmacube implements Listener {
                     e.setFireTicks(60);
                 }
 
-            }, 60L);
+                //TODO Test
 
+            }, 60L);
         }
     }
 }

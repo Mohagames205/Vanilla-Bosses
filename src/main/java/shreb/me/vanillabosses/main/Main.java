@@ -64,6 +64,7 @@ public final class Main extends JavaPlugin {
         pm.registerEvents(new Slingshot(), this);
         pm.registerEvents(new ButchersAxe(), this);
         pm.registerEvents(new Blazer(), this);
+        pm.registerEvents(new HeatedMagmaCream(), this);
         pm.registerEvents(new ItemEnchantmentsListener(), this);
         pm.registerEvents(new EntitySpawnEvent(), this);
         pm.registerEvents(new BossAttackDamageChanger(), this);

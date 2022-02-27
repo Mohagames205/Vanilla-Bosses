@@ -11,7 +11,7 @@ import shreb.me.vanillabosses.bossclasses.BossWither;
 import shreb.me.vanillabosses.items.*;
 import shreb.me.vanillabosses.main.Main;
 
-public class Items implements CommandExecutor {
+public class ItemCommands implements CommandExecutor {
 
     static ItemStack skeletor = Skeletor.makeSkeletor();
     static ItemStack cloak = InvisibilityCloak.makeCloak();

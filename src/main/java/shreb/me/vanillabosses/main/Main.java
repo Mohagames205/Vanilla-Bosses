@@ -12,7 +12,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import shreb.me.vanillabosses.bossclasses.*;
 import shreb.me.vanillabosses.commands.Boss;
-import shreb.me.vanillabosses.commands.Items;
+import shreb.me.vanillabosses.commands.ItemCommands;
 import shreb.me.vanillabosses.commands.VBHelp;
 import shreb.me.vanillabosses.items.*;
 import shreb.me.vanillabosses.listeners.*;
@@ -73,7 +73,7 @@ public final class Main extends JavaPlugin {
 
         Objects.requireNonNull(getCommand("boss")).setExecutor(new Boss());
         Objects.requireNonNull(getCommand("vbh")).setExecutor(new VBHelp());
-        Objects.requireNonNull(getCommand("items")).setExecutor(new Items());
+        Objects.requireNonNull(getCommand("items")).setExecutor(new ItemCommands());
 
 
         if(config.getBoolean("Items.slingshot.enableCraftingRecipe"))           CraftingRecipes.slingshotRecipe();          //enables Slingshot recipe

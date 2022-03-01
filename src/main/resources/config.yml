@@ -417,14 +417,14 @@ Bosses:
   MagmacubeBoss:
     enabled: true
     enableSummonCommand: true
-    displayName: "Chester"
+    displayName: "Chesters' younger brother"
     showDisplayNameAlways: true
     DamageModifier: 1.0
     health: 45
     spawnChance: 50
 
     droppedItems:
-      - magma_cream:6:12:66
+      - MAGMA_CREAM:2:12:66
 
     droppedXP: 50
 
@@ -436,6 +436,8 @@ Bosses:
       BurningAir: # makes an area around the boss burn entities
         enabled: true
         chance: 5 # in %
+        range: 10 #range of this ability in blocks
+        time: 10  #how long the entities within the range stay on fire for in seconds
 
     spawnNaturally: true
 
@@ -597,24 +599,25 @@ Items:
 
   HeatedMagmaCream:         #3 levels of this item
     enableSpawnCommand: true
-    enableImproving: true #craft the better version of the item by combining 2 of the same level (level 1 or 2)
+    enableImproving: true #craft the better version of the item by combining 3 of the same level (level 1 or 2)
                                #result is a heated Magmacream of a level one higher than the ingredients
-    amountToImprove: 3 #The amount of Heated Magmacream you have to put into a crafting table to make the next level
+    #to improve the level you have to fill out the top line of a crafting table with 3 heatedMagmaCream of level 1 or 2.
 
-    Level1:
-      dropChance: 20
+
+    Level1:   #dropped by the magmacube boss
+      dropChance: 50
       maxDropped: 3
-      radius: 3
-      burnTime: 2 #in seconds
+      radius: 4
+      burnTime: 3 #in seconds
 
     Level2:
-      dropChance: 10
+      dropChance: 25
       maxDropped: 2
-      radius: 5
-      burnTime: 4
+      radius: 6
+      burnTime: 5
 
     Level3:
-      dropChance: 0
-      maxDropped: 0
-      radius: 7
-      burnTime: 6
+      dropChance: 10
+      maxDropped: 1
+      radius: 8
+      burnTime: 7

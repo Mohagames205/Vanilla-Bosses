@@ -18,7 +18,7 @@ import java.util.HashMap;
 
 public class CraftingRecipes {
 
-    public static HashMap<String, ItemStack> initializeSpecialItems(){
+    public static HashMap<String, ItemStack> initializeSpecialItems() {
 
         ItemStack potion = new ItemStack(Material.SPLASH_POTION);
         ItemMeta meta = potion.getItemMeta();
@@ -65,13 +65,13 @@ public class CraftingRecipes {
             char recipeKey = strings[0].charAt(0);
             String materialType = strings[1];
 
-            if(specialItems.containsKey(materialType.toUpperCase())) {
+            if (specialItems.containsKey(materialType.toUpperCase())) {
 
                 choice = new RecipeChoice.ExactChoice(specialItems.get(materialType.toUpperCase()));
 
             } else if (Material.getMaterial(materialType.toUpperCase()) != null) {
 
-                choice = new RecipeChoice.MaterialChoice(Material.getMaterial(materialType.toUpperCase()));;
+                choice = new RecipeChoice.MaterialChoice(Material.getMaterial(materialType.toUpperCase()));
 
             } else {
                 Main.getInstance().getServer().getConsoleSender().sendMessage("Vanilla Bosses: Couldnt find recipeIngredient " + materialType);
@@ -102,7 +102,7 @@ public class CraftingRecipes {
             char recipeKey = strings[0].charAt(0);
             String materialType = strings[1];
 
-            if(specialItems.containsKey(materialType.toUpperCase())) {
+            if (specialItems.containsKey(materialType.toUpperCase())) {
 
                 choice = new RecipeChoice.ExactChoice(specialItems.get(materialType.toUpperCase()));
 
@@ -138,7 +138,7 @@ public class CraftingRecipes {
             char recipeKey = strings[0].charAt(0);
             String materialType = strings[1];
 
-            if(specialItems.containsKey(materialType.toUpperCase())) {
+            if (specialItems.containsKey(materialType.toUpperCase())) {
 
                 choice = new RecipeChoice.ExactChoice(specialItems.get(materialType.toUpperCase()));
 
@@ -175,7 +175,7 @@ public class CraftingRecipes {
             char recipeKey = strings[0].charAt(0);
             String materialType = strings[1];
 
-            if(specialItems.containsKey(materialType.toUpperCase())) {
+            if (specialItems.containsKey(materialType.toUpperCase())) {
 
                 choice = new RecipeChoice.ExactChoice(specialItems.get(materialType.toUpperCase()));
 
@@ -211,7 +211,7 @@ public class CraftingRecipes {
             String materialType = strings[1];
 
 
-            if(specialItems.containsKey(materialType.toUpperCase())) {
+            if (specialItems.containsKey(materialType.toUpperCase())) {
 
                 choice = new RecipeChoice.ExactChoice(specialItems.get(materialType.toUpperCase()));
 
@@ -230,33 +230,25 @@ public class CraftingRecipes {
         Bukkit.addRecipe(blazer);
     }
 
-    public static void heatedMagmaCreamRecipeLv2(){
+    public static void heatedMagmaCreamRecipeLv2() {
 
-        ItemStack heatedCreamLv1 = HeatedMagmaCream.makeHeatedMagmaCream(1);
-        ItemStack heatedCreamLv2 = HeatedMagmaCream.makeHeatedMagmaCream(2);
+        NamespacedKey key = new NamespacedKey(Main.getInstance(), "heatedCreamFirst");
+        ShapedRecipe heatedCreamFirst = new ShapedRecipe(key, HeatedMagmaCream.makeHeatedMagmaCream(2));
 
-        NamespacedKey key = new NamespacedKey(Main.getInstance(), "heatedCream2");
-        ShapelessRecipe creamRecipe2 = new ShapelessRecipe(key, heatedCreamLv2);
+        heatedCreamFirst.shape("AAA", "   ", "   ");
+        heatedCreamFirst.setIngredient('A',new RecipeChoice.ExactChoice(specialItems.get("HeatedCream1")));
 
-        for(int i = 0; i < config.getInt("Items.HeatedMagmaCream.amountToImprove"); i++){
-            creamRecipe2.addIngredient(new RecipeChoice.ExactChoice(heatedCreamLv1));
-        }
-
-        Bukkit.addRecipe(creamRecipe2);
+        Bukkit.addRecipe(heatedCreamFirst);
     }
 
-    public static void heatedMagmaCreamRecipeLv3(){
+    public static void heatedMagmaCreamRecipeLv3() {
 
-        ItemStack heatedCreamLv2 = HeatedMagmaCream.makeHeatedMagmaCream(2);
-        ItemStack heatedCreamLv3 = HeatedMagmaCream.makeHeatedMagmaCream(3);
+        NamespacedKey key = new NamespacedKey(Main.getInstance(), "heatedCreamSecond");
+        ShapedRecipe heatedCreamSecond = new ShapedRecipe(key, HeatedMagmaCream.makeHeatedMagmaCream(3));
 
-        NamespacedKey key = new NamespacedKey(Main.getInstance(), "heatedCream3");
-        ShapelessRecipe creamRecipe3 = new ShapelessRecipe(key, heatedCreamLv3);
+        heatedCreamSecond.shape("AAA", "   ", "   ");
+        heatedCreamSecond.setIngredient('A',new RecipeChoice.ExactChoice(specialItems.get("HeatedCream2")));
 
-        for(int i = 0; i < config.getInt("Items.HeatedMagmaCream.amountToImprove"); i++){
-            creamRecipe3.addIngredient(new RecipeChoice.ExactChoice(heatedCreamLv2));
-        }
-
-        Bukkit.addRecipe(creamRecipe3);
+        Bukkit.addRecipe(heatedCreamSecond);
     }
 }

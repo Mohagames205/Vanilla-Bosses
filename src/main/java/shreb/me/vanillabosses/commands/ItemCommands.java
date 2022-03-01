@@ -37,13 +37,13 @@ public class ItemCommands implements CommandExecutor {
 
         if (args.length >= 2 && Main.getInstance().getServer().getOnlinePlayers().contains(Main.getInstance().getServer().getPlayer(args[1]))) {
             p = Main.getInstance().getServer().getPlayer(args[1]);
-        } else if(!(sender instanceof Player)){
+        } else if (!(sender instanceof Player)) {
             sender.sendMessage("Vanilla Bosses: In case youre typing this command into the console, you will have to specify an online player");
             return true;
         } else {
             try {
                 p = (Player) sender;
-            } catch (ClassCastException e){
+            } catch (ClassCastException e) {
                 sender.sendMessage("Vanilla Bosses: Something went wrong! Please message the author with the command you sent and tell them the Error code was 'Error 11'");
                 return true;
             }
@@ -233,8 +233,29 @@ public class ItemCommands implements CommandExecutor {
             }
 
             if (p.getInventory().firstEmpty() != -1) {
-                p.getInventory().addItem(bouncyslime);
-                p.sendMessage(ChatColor.AQUA + "You have been given Bouncy Slime!");
+                int amount;
+
+                if (args.length == 1) {
+                    amount = 1;
+                } else {
+                    try {
+                        amount = Integer.parseInt(args[1]);
+                    } catch (NumberFormatException e) {
+                        sender.sendMessage(ChatColor.RED + "Expected a Number from 1-64");
+                        return true;
+                    }
+                }
+
+                if(amount > 64){
+                    sender.sendMessage(ChatColor.RED + "Expected a Number from 1-64");
+                    return true;
+                }
+
+                for (int i = 0; i < amount; i++) {
+                    p.getInventory().addItem(bouncyslime);
+                }
+
+                p.sendMessage(ChatColor.AQUA + "You have been given " + amount + "x Bouncy Slime!");
             } else {
                 if (p == sender) {
                     p.sendMessage(ChatColor.RED + "Your Inventory seems to be full");
@@ -269,6 +290,64 @@ public class ItemCommands implements CommandExecutor {
             return true;
         }
 
+        if (args[0].equalsIgnoreCase("heatedMagmaCream")) {
+            if (!config.getBoolean("Items.HeatedMagmaCream.enableSpawnCommand")) {
+                sender.sendMessage(ChatColor.RED + "Command is disabled in the config.");
+                return true;
+            }
+
+            if (!sender.hasPermission("VB.SummonItems")) {
+                sender.sendMessage(ChatColor.RED + "You do not have permission to use this command");
+                return true;
+            }
+
+            if (p.getInventory().firstEmpty() != -1) {
+                int amount;
+                ItemStack cream;
+
+                if(args.length < 3){
+                    amount = 1;
+                } else {
+                    try {
+                        amount = Integer.parseInt(args[2]);
+                    } catch (NumberFormatException e) {
+                        sender.sendMessage(ChatColor.RED + "Expected a Number from 1-64");
+                        return true;
+                    }
+                }
+
+                if(args.length < 2) {
+                    sender.sendMessage("Not enough arguments, level from 1-3 required");
+                    return true;
+                }
+
+                if(amount > 64){
+                    sender.sendMessage(ChatColor.RED + "Expected a Number from 1-64");
+                    return true;
+                }
+
+                try {
+
+                    cream = HeatedMagmaCream.makeHeatedMagmaCream(Integer.parseInt(args[1]));
+
+                } catch (IllegalArgumentException e) {
+                    sender.sendMessage(ChatColor.RED + "Expected a Number from 1-3");
+                    return true;
+                }
+
+                for (int i = 0; i < amount; i++) p.getInventory().addItem(cream);
+
+                p.sendMessage(ChatColor.AQUA + "You have been given " + amount + "x Heated Magma cream of the level " + Integer.parseInt(args[1]) + "!");
+            } else {
+                if (p == sender) {
+                    p.sendMessage(ChatColor.RED + "Your Inventory seems to be full");
+                } else {
+                    sender.sendMessage(ChatColor.RED + "The receiving Inventory seems to be full");
+                }
+            }
+            return true;
+        }
+
 
         if (args[0].equalsIgnoreCase("list")) {
 
@@ -280,8 +359,10 @@ public class ItemCommands implements CommandExecutor {
             sender.sendMessage(ChatColor.GOLD + " -Baseballbat");
             sender.sendMessage(ChatColor.GOLD + " -Witheregg");
             sender.sendMessage(ChatColor.GOLD + " -Slimeboots");
-            sender.sendMessage(ChatColor.GOLD + " -bouncyslime");
+            sender.sendMessage(ChatColor.GOLD + " -bouncyslime <amount>");
             sender.sendMessage(ChatColor.GOLD + " -Blazer");
+            sender.sendMessage(ChatColor.GOLD + " -HeatedMagmaCream <level> <amount>");
+
             return true;
         }
 

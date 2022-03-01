@@ -252,7 +252,7 @@ public class EntitySpawnEvent implements Listener {
 
             if (config.getBoolean("Bosses.MagmacubeBoss.spawnNaturally")) {
 
-                if (Methods.randomNumber(0, 1000) < Bosses.MAGMACUBE.spawnChance) {
+                if (Methods.randomNumber(0, 1000) < Bosses.MAGMA_CUBE.spawnChance) {
 
                     BossMagmacube.editToBossMagmacube((MagmaCube) event.getEntity());
 

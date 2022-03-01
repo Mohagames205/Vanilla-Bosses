@@ -1,9 +1,6 @@
 package shreb.me.vanillabosses.bossclasses;
 
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.Particle;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.entity.*;
@@ -22,9 +19,9 @@ public class BossMagmacube implements Listener {
     public static MagmaCube makeBossMagmacube(Location location, World w){
 
         MagmaCube magma = (MagmaCube) w.spawnEntity(location, EntityType.MAGMA_CUBE);
-        magma.getScoreboardTags().add("BossMagmacube");
-        magma.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.MAGMACUBE.health);
-        magma.setHealth(Bosses.MAGMACUBE.health);
+        magma.getScoreboardTags().add(Bosses.MAGMA_CUBE.scoreboardBossTag);
+        magma.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.MAGMA_CUBE.health);
+        magma.setHealth(Bosses.MAGMA_CUBE.health);
         magma.setCustomName(config.getString("Bosses.MagmacubeBoss.displayName"));
         magma.setCustomNameVisible(config.getBoolean("Bosses.MagmacubeBoss.showDisplayNameAlways"));
 
@@ -33,9 +30,9 @@ public class BossMagmacube implements Listener {
 
     public static void editToBossMagmacube(MagmaCube magma) {
 
-        magma.getScoreboardTags().add("BossMagmacube");
-        magma.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.MAGMACUBE.health);
-        magma.setHealth(Bosses.MAGMACUBE.health);
+        magma.getScoreboardTags().add(Bosses.MAGMA_CUBE.scoreboardBossTag);
+        magma.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.MAGMA_CUBE.health);
+        magma.setHealth(Bosses.MAGMA_CUBE.health);
         magma.setCustomName(config.getString("Bosses.MagmacubeBoss.displayName"));
         magma.setCustomNameVisible(config.getBoolean("Bosses.MagmacubeBoss.showDisplayNameAlways"));
 
@@ -49,14 +46,15 @@ public class BossMagmacube implements Listener {
     @EventHandler
     public void onPlayerHitByBossMagma(EntityDamageByEntityEvent event){
 
-        if(!(event.getEntity() instanceof Player))                                                  return;
-        if(!event.getDamager().getScoreboardTags().contains(Bosses.MAGMACUBE.scoreboardBossTag))    return;
-        if(event.getDamager().getType() != EntityType.MAGMA_CUBE)                                   return;
+        if(!(event.getDamager() instanceof Player))                                                 return;
+        if(!event.getEntity().getScoreboardTags().contains(Bosses.MAGMA_CUBE.scoreboardBossTag))    return;
+        if(event.getEntity().getType() != EntityType.MAGMA_CUBE)                                    return;
 
-        Player player   = (Player) event.getEntity();
-        MagmaCube magma = (MagmaCube) event.getDamager();
+        Player player   = (Player) event.getDamager();
+        MagmaCube magma = (MagmaCube) event.getEntity();
         Location magmaLoc = magma.getLocation();
-        int radius = 5;
+        int radius = config.getInt("Bosses.MagmacubeBoss.onHitEvents.BurningAir.range");
+        int time = config.getInt("Bosses.MagmacubeBoss.onHitEvents.BurningAir.time");
 
         if(magma.getHealth() <= 0)                                                                  return;
 
@@ -64,13 +62,14 @@ public class BossMagmacube implements Listener {
                 && Methods.randomNumber(0,100) < config.getInt("Bosses.MagmacubeBoss.onHitEvents.BurningAir.chance")){
 
             Methods.spawnParticles(Particle.FIREWORKS_SPARK, magma.getWorld(), magmaLoc, radius, radius, radius,150,3);
+            player.getWorld().playSound(magmaLoc, Sound.ENTITY_SLIME_SQUISH, 1.0f, 1.0f);
 
             Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () ->{
-
+                
                 magma.getWorld().spawnParticle(Particle.FLAME, magmaLoc, 100, radius, radius, radius);
 
                 for(Entity e : magmaLoc.getWorld().getNearbyEntities(magmaLoc, radius, radius, radius, n -> n instanceof LivingEntity)){
-                    e.setFireTicks(60);
+                    e.setFireTicks(20 * time);
                 }
 
                 //TODO Test

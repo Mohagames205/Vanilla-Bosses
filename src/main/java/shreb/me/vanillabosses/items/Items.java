@@ -15,19 +15,19 @@ public enum Items {
             new NamespacedKey(Main.getInstance(), "BindII")),
 
     HEATEDMAGMACREAM1("HeatedMagmaCream",
-            new NamespacedKey(Main.getInstance(), "MagmaCreamLevel"),
+            new NamespacedKey(Main.getInstance(), "MagmaCreamLevel1"),
             Main.getInstance().getConfig().getInt("Items.HeatedMagmaCream.Level1.radius"),
             Main.getInstance().getConfig().getInt("Items.HeatedMagmaCream.Level1.burnTime"),
             1),
 
     HEATEDMAGMACREAM2("HeatedMagmaCream",
-            new NamespacedKey(Main.getInstance(), "MagmaCreamLevel"),
+            new NamespacedKey(Main.getInstance(), "MagmaCreamLevel2"),
             Main.getInstance().getConfig().getInt("Items.HeatedMagmaCream.Level2.radius"),
             Main.getInstance().getConfig().getInt("Items.HeatedMagmaCream.Level2.burnTime"),
             2),
 
     HEATEDMAGMACREAM3("HeatedMagmaCream",
-            new NamespacedKey(Main.getInstance(), "MagmaCreamLevel"),
+            new NamespacedKey(Main.getInstance(), "MagmaCreamLevel3"),
             Main.getInstance().getConfig().getInt("Items.HeatedMagmaCream.Level3.radius"),
             Main.getInstance().getConfig().getInt("Items.HeatedMagmaCream.Level3.burnTime"),
             3),
@@ -66,5 +66,4 @@ public enum Items {
         this.time = time;
         this.level = level;
     }
-
 }

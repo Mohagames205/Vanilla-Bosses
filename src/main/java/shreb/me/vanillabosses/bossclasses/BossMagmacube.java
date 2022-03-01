@@ -65,7 +65,7 @@ public class BossMagmacube implements Listener {
             player.getWorld().playSound(magmaLoc, Sound.ENTITY_SLIME_SQUISH, 1.0f, 1.0f);
 
             Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () ->{
-                
+
                 magma.getWorld().spawnParticle(Particle.FLAME, magmaLoc, 100, radius, radius, radius);
 
                 for(Entity e : magmaLoc.getWorld().getNearbyEntities(magmaLoc, radius, radius, radius, n -> n instanceof LivingEntity)){

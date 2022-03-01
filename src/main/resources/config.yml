@@ -435,8 +435,8 @@ Bosses:
     onHitEvents:
       BurningAir: # makes an area around the boss burn entities
         enabled: true
-        chance: 5 # in %
-        range: 10 #range of this ability in blocks
+        chance: 15 # in %
+        range: 8 #range of this ability in blocks
         time: 10  #how long the entities within the range stay on fire for in seconds
 
     spawnNaturally: true

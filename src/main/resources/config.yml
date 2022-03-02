@@ -1,6 +1,6 @@
 Bosses:
 
-  configVersion: 1.5.2  # This is important to check for an outdated config file. do not change or remove it. to update your config, please consider saving your current config file and using the "resetConfig" Option below.
+  configVersion: 1.6.0  # This is important to check for an outdated config file. do not change or remove it. to update your config, please consider saving your current config file and using the "resetConfig" Option below.
                         # after this you can paste your original values at the appropriate positions if you wish to. (Alternatively to reset the config you can delete the entire config file instead of using the reset option)
   enablePlugin: true
   resetConfig: false  #If set true this will set your configuration to a state that definitely works, aka the state you found it in when you first opened this file.
@@ -420,8 +420,8 @@ Bosses:
     displayName: "Chesters' younger brother"
     showDisplayNameAlways: true
     DamageModifier: 1.0
-    health: 45
-    spawnChance: 50
+    health: 90
+    spawnChance: 75
 
     droppedItems:
       - MAGMA_CREAM:2:12:66

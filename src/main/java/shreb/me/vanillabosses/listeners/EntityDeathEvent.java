@@ -427,15 +427,17 @@ public class EntityDeathEvent implements Listener {
 
                 RespawningBosses.respawningBosses.get(event.getEntityType()).add(livingEntity.getUniqueId());
 
-                BossBar bossBar = Bukkit.createBossBar(
-                        Objects.requireNonNull(livingEntity).getCustomName(),
-                        finalColor,
-                        BarStyle.SOLID);
+                if(event.getEntityType() != EntityType.WITHER) {
 
-                bossBar.setProgress(1);
+                    BossBar bossBar = Bukkit.createBossBar(
+                            Objects.requireNonNull(livingEntity).getCustomName(),
+                            finalColor,
+                            BarStyle.SOLID);
 
-                RespawningBosses.bossBarHashMap.put(livingEntity.getUniqueId(), bossBar);
+                    bossBar.setProgress(1);
 
+                    RespawningBosses.bossBarHashMap.put(livingEntity.getUniqueId(), bossBar);
+                }
             }, 20L * time + 1);
         }
 

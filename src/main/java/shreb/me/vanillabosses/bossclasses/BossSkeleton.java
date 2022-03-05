@@ -12,6 +12,8 @@ import org.bukkit.entity.Skeleton;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.EntityEquipment;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import shreb.me.vanillabosses.items.Skeletor;
 import shreb.me.vanillabosses.main.Main;
 import shreb.me.vanillabosses.main.Methods;
@@ -104,6 +106,11 @@ public class BossSkeleton implements Listener {
         f = (float) config.getDouble("Bosses.SkeletonBoss.dropOffHandChance");
 
         skeleton.getEquipment().setItemInOffHandDropChance(f);
+
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            skeleton.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
+
         return skeleton;
     }
 
@@ -190,6 +197,11 @@ public class BossSkeleton implements Listener {
         f = (float) config.getDouble("Bosses.SkeletonBoss.dropOffHandChance");
 
         skeleton.getEquipment().setItemInOffHandDropChance(f);
+
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            skeleton.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
+
     }
 }
 

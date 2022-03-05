@@ -30,14 +30,15 @@ public class BossSlime implements Listener {
         Slime slime = (Slime) w.spawnEntity(location, EntityType.SLIME);
         slime.addScoreboardTag("BossSlime");
         slime.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.SLIME.health);
-
-        Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () -> slime.setHealth(Bosses.SLIME.health), 5);
-
+        slime.setHealth(Bosses.SLIME.health);
         slime.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 3));
         slime.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 2));
         slime.setCustomName(displayName);
         slime.setCustomNameVisible(nameVisible);
         slime.setSize(5);
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            slime.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
         return slime;
     }
 
@@ -50,14 +51,16 @@ public class BossSlime implements Listener {
 
         slime.addScoreboardTag("BossSlime");
         slime.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.SLIME.health);
-
-        Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () -> slime.setHealth(Bosses.SLIME.health), 5);
-
+        slime.setHealth(Bosses.SLIME.health);
         slime.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 3));
         slime.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 2));
         slime.setCustomName(displayName);
         slime.setCustomNameVisible(nameVisible);
         slime.setSize(5);
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            slime.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
+
     }
 
     @EventHandler

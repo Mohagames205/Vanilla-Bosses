@@ -10,6 +10,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityTargetLivingEntityEvent;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 import shreb.me.vanillabosses.main.Main;
 import shreb.me.vanillabosses.main.Methods;
@@ -150,6 +152,10 @@ public class BossBlaze implements Listener {
         blaze.setCustomName(config.getString("Bosses.BlazeBoss.displayName"));
         blaze.setCustomNameVisible(config.getBoolean("Bosses.BlazeBoss.showDisplayNameAlways"));
 
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            blaze.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
+
         return blaze;
     }
 
@@ -167,5 +173,8 @@ public class BossBlaze implements Listener {
         blaze.setCustomName(config.getString("Bosses.BlazeBoss.displayName"));
         blaze.setCustomNameVisible(config.getBoolean("Bosses.BlazeBoss.showDisplayNameAlways"));
 
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            blaze.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
     }
 }

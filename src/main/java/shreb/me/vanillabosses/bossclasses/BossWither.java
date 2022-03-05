@@ -13,6 +13,8 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import shreb.me.vanillabosses.main.Main;
 
 import java.util.ArrayList;
@@ -128,6 +130,10 @@ public class BossWither implements Listener {
                 if (Main.getInstance().getConfig().getBoolean("Bosses.WitherBoss.removeNetheriteBlockOnSpawn")) {
                     wither.getWorld().getBlockAt(x, y - 1, z).setType(Material.AIR);
                 }
+                if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+                    wither.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+                }
+
             }
         }
 
@@ -143,6 +149,10 @@ public class BossWither implements Listener {
 
         wither.setCustomName(config.getString("Bosses.WitherBoss.displayName"));
         wither.setCustomNameVisible(config.getBoolean("Bosses.WitherBoss.showDisplayNameAlways"));
+
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            wither.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
 
         return wither;
     }

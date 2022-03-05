@@ -9,6 +9,7 @@ Bosses:
   enableBossKilledMessage: true
   disableBlazeBossesSpawningFromSpawners: false #no bosses except for the blaze boss can spawn from spawners. setting this to true will disable Blaze bosses from spawning from spawners aswell.
 
+  bossesGetGlowingPotionEffect: false
 # The following 4 lines are for people who want to discourage autoclicking to farm mobs/bosses.
   # enable the setting a
 

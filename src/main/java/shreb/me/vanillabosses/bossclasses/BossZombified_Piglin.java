@@ -10,6 +10,8 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.PigZombie;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import shreb.me.vanillabosses.items.ButchersAxe;
 import shreb.me.vanillabosses.main.Main;
 
@@ -54,6 +56,10 @@ public class BossZombified_Piglin  implements Listener {
 
 
         pigzombie.getEquipment().setArmorContents(armor);
+
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            pigzombie.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
         return pigzombie;
     }
 
@@ -72,8 +78,7 @@ public class BossZombified_Piglin  implements Listener {
         pigzombie.setCustomNameVisible(config.getBoolean("Bosses.Zombified_PiglinBoss.showDisplayNameAlways"));
 
         pigzombie.getEquipment().setItemInMainHand(ButchersAxe.makeButchersAxe());
-
-
+        
         pigzombie.setAngry(true);
         pigzombie.setAnger(Integer.MAX_VALUE);
 
@@ -89,6 +94,10 @@ public class BossZombified_Piglin  implements Listener {
         for (ItemStack itemStack : armor) {
             itemStack.addUnsafeEnchantment(Enchantment.DURABILITY, 5);
             itemStack.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
+        }
+
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            pigzombie.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
         }
 
         pigzombie.getEquipment().setArmorContents(armor);

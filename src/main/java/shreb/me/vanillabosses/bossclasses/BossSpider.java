@@ -31,6 +31,9 @@ public class BossSpider implements Listener {
         spider.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 2));
         spider.setCustomName(config.getString("Bosses.SpiderBoss.displayName"));
         spider.setCustomNameVisible(config.getBoolean("Bosses.SpiderBoss.showDisplayNameAlways"));
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            spider.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
         return spider;
     }
 
@@ -49,5 +52,8 @@ public class BossSpider implements Listener {
         spider.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 2));
         spider.setCustomName(config.getString("Bosses.SpiderBoss.displayName"));
         spider.setCustomNameVisible(config.getBoolean("Bosses.SpiderBoss.showDisplayNameAlways"));
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            spider.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
     }
 }

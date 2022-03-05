@@ -10,6 +10,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityTargetEvent;
 import org.bukkit.event.entity.EntityTeleportEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import shreb.me.vanillabosses.main.Main;
 
 import java.util.HashMap;
@@ -64,6 +66,10 @@ public class BossEnderman implements Listener {
         enderman.setHealth(Bosses.ENDERMAN.health);
         enderman.setCustomName(config.getString("Bosses.EndermanBoss.displayName"));
         enderman.setCustomNameVisible(config.getBoolean("Bosses.EndermanBoss.showDisplayNameAlways"));
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            enderman.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
+
         return enderman;
     }
 
@@ -79,6 +85,9 @@ public class BossEnderman implements Listener {
         enderman.setHealth(Bosses.ENDERMAN.health);
         enderman.setCustomName(config.getString("Bosses.EndermanBoss.displayName"));
         enderman.setCustomNameVisible(config.getBoolean("Bosses.EndermanBoss.showDisplayNameAlways"));
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            enderman.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
     }
 
 }

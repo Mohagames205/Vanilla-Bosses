@@ -13,6 +13,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityCombustEvent;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import shreb.me.vanillabosses.main.Main;
 
 
@@ -69,6 +71,10 @@ public class BossCreeper implements Listener {
         creeper.getAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE).setBaseValue(0.6);
         creeper.setCustomName(config.getString("Bosses.CreeperBoss.displayName"));
         creeper.setCustomNameVisible(config.getBoolean("Bosses.CreeperBoss.showDisplayNameAlways"));
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            creeper.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
+
         return creeper;
     }
 
@@ -89,6 +95,10 @@ public class BossCreeper implements Listener {
         creeper.getAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE).setBaseValue(0.6);
         creeper.setCustomName(config.getString("Bosses.CreeperBoss.displayName"));
         creeper.setCustomNameVisible(config.getBoolean("Bosses.CreeperBoss.showDisplayNameAlways"));
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            creeper.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
+
     }
 
 }

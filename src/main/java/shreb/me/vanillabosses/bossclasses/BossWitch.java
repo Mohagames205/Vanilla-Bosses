@@ -173,7 +173,9 @@ public class BossWitch implements Listener {
         witch.setHealth(Bosses.WITCH.health);
         witch.setCustomName(config.getString("Bosses.WitchBoss.displayName"));
         witch.setCustomNameVisible(config.getBoolean("Bosses.WitchBoss.showDisplayNameAlways"));
-
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            witch.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
         return witch;
     }
 
@@ -189,5 +191,8 @@ public class BossWitch implements Listener {
         witch.setHealth(Bosses.WITCH.health);
         witch.setCustomName(config.getString("Bosses.WitchBoss.displayName"));
         witch.setCustomNameVisible(config.getBoolean("Bosses.WitchBoss.showDisplayNameAlways"));
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            witch.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
     }
 }

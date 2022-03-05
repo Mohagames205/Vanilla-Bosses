@@ -10,6 +10,8 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Zombie;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 import shreb.me.vanillabosses.items.BaseballBat;
 import shreb.me.vanillabosses.listeners.EntitySpawnEvent;
@@ -61,6 +63,10 @@ public class BossZombie implements Listener {
         zombie.getEquipment().setChestplateDropChance(0);
         zombie.getEquipment().setLeggingsDropChance(0);
         zombie.getEquipment().setBootsDropChance(0);
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            zombie.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
+
         return zombie;
     }
 
@@ -101,6 +107,10 @@ public class BossZombie implements Listener {
         zombie.getEquipment().setChestplateDropChance(0);
         zombie.getEquipment().setLeggingsDropChance(0);
         zombie.getEquipment().setBootsDropChance(0);
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            zombie.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
+
     }
 
 

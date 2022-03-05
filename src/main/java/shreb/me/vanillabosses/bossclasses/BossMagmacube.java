@@ -7,6 +7,8 @@ import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import shreb.me.vanillabosses.main.Main;
 import shreb.me.vanillabosses.main.Methods;
 
@@ -24,6 +26,9 @@ public class BossMagmacube implements Listener {
         magma.setHealth(Bosses.MAGMA_CUBE.health);
         magma.setCustomName(config.getString("Bosses.MagmacubeBoss.displayName"));
         magma.setCustomNameVisible(config.getBoolean("Bosses.MagmacubeBoss.showDisplayNameAlways"));
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            magma.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
 
         return magma;
     }
@@ -35,6 +40,9 @@ public class BossMagmacube implements Listener {
         magma.setHealth(Bosses.MAGMA_CUBE.health);
         magma.setCustomName(config.getString("Bosses.MagmacubeBoss.displayName"));
         magma.setCustomNameVisible(config.getBoolean("Bosses.MagmacubeBoss.showDisplayNameAlways"));
+        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+            magma.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
+        }
 
     }
 

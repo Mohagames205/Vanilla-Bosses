@@ -248,16 +248,16 @@ public class EntitySpawnEvent implements Listener {
                 return;
             }
 
-            if (!config.getBoolean("Bosses.MagmacubeBoss.enabled")) return;
+            if (!config.getBoolean("Bosses.Magma_cubeBoss.enabled")) return;
 
-            if (config.getBoolean("Bosses.MagmacubeBoss.spawnNaturally")) {
+            if (config.getBoolean("Bosses.Magma_cubeBoss.spawnNaturally")) {
 
                 if (Methods.randomNumber(0, 1000) < Bosses.MAGMA_CUBE.spawnChance) {
 
                     BossMagmacube.editToBossMagmacube((MagmaCube) event.getEntity());
 
                     PersistentDataContainer container = event.getEntity().getPersistentDataContainer();
-                    String command = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.MagmacubeBoss.CommandToBeExecutedOnDeath"));
+                    String command = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.Magma_cubeBoss.CommandToBeExecutedOnDeath"));
                     if(!command.equals("")){
                         container.set(new NamespacedKey(Main.getInstance(), "VanillaBossesCommandOnDeath"), PersistentDataType.STRING, command);
                     }

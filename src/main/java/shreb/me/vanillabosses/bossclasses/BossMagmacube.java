@@ -24,8 +24,8 @@ public class BossMagmacube implements Listener {
         magma.getScoreboardTags().add(Bosses.MAGMA_CUBE.scoreboardBossTag);
         magma.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.MAGMA_CUBE.health);
         magma.setHealth(Bosses.MAGMA_CUBE.health);
-        magma.setCustomName(config.getString("Bosses.MagmacubeBoss.displayName"));
-        magma.setCustomNameVisible(config.getBoolean("Bosses.MagmacubeBoss.showDisplayNameAlways"));
+        magma.setCustomName(config.getString("Bosses.Magma_cubeBoss.displayName"));
+        magma.setCustomNameVisible(config.getBoolean("Bosses.Magma_cubeBoss.showDisplayNameAlways"));
         if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
             magma.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
         }
@@ -38,8 +38,8 @@ public class BossMagmacube implements Listener {
         magma.getScoreboardTags().add(Bosses.MAGMA_CUBE.scoreboardBossTag);
         magma.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.MAGMA_CUBE.health);
         magma.setHealth(Bosses.MAGMA_CUBE.health);
-        magma.setCustomName(config.getString("Bosses.MagmacubeBoss.displayName"));
-        magma.setCustomNameVisible(config.getBoolean("Bosses.MagmacubeBoss.showDisplayNameAlways"));
+        magma.setCustomName(config.getString("Bosses.Magma_cubeBoss.displayName"));
+        magma.setCustomNameVisible(config.getBoolean("Bosses.Magma_cubeBoss.showDisplayNameAlways"));
         if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
             magma.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
         }
@@ -61,13 +61,13 @@ public class BossMagmacube implements Listener {
         Player player   = (Player) event.getDamager();
         MagmaCube magma = (MagmaCube) event.getEntity();
         Location magmaLoc = magma.getLocation();
-        int radius = config.getInt("Bosses.MagmacubeBoss.onHitEvents.BurningAir.range");
-        int time = config.getInt("Bosses.MagmacubeBoss.onHitEvents.BurningAir.time");
+        int radius = config.getInt("Bosses.Magma_cubeBoss.onHitEvents.BurningAir.range");
+        int time = config.getInt("Bosses.Magma_cubeBoss.onHitEvents.BurningAir.time");
 
         if(magma.getHealth() <= 0)                                                                  return;
 
-        if(config.getBoolean("Bosses.MagmacubeBoss.onHitEvents.BurningAir.enabled")
-                && Methods.randomNumber(0,100) < config.getInt("Bosses.MagmacubeBoss.onHitEvents.BurningAir.chance")){
+        if(config.getBoolean("Bosses.Magma_cubeBoss.onHitEvents.BurningAir.enabled")
+                && Methods.randomNumber(0,100) < config.getInt("Bosses.Magma_cubeBoss.onHitEvents.BurningAir.chance")){
 
             Methods.spawnParticles(Particle.FIREWORKS_SPARK, magma.getWorld(), magmaLoc, radius, radius, radius,150,3);
             player.getWorld().playSound(magmaLoc, Sound.ENTITY_SLIME_SQUISH, 1.0f, 1.0f);

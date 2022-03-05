@@ -415,7 +415,7 @@ Bosses:
 
   ######################################################################################################################
 
-  MagmacubeBoss:
+  Magma_cubeBoss:
     enabled: true
     enableSummonCommand: true
     displayName: "Chesters' younger brother"

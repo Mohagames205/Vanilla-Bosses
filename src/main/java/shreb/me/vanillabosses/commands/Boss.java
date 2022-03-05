@@ -480,12 +480,12 @@ public class Boss implements CommandExecutor {
 
         if (args[0].equalsIgnoreCase("magmacube")) {
 
-            if (!(config.getBoolean("Bosses.MagmacubeBoss.enableSummonCommand"))) {
+            if (!(config.getBoolean("Bosses.Magma_cubeBoss.enableSummonCommand"))) {
                 sender.sendMessage("This command is disabled in the config");
                 return true;
             }
 
-            if (!(config.getBoolean("Bosses.MagmacubeBoss.enabled"))) {
+            if (!(config.getBoolean("Bosses.Magma_cubeBoss.enabled"))) {
                 sender.sendMessage("This Boss is disabled in the config file. To run this command the boss must be enabled");
                 return true;
             }
@@ -506,7 +506,7 @@ public class Boss implements CommandExecutor {
             Entity entity = BossMagmacube.makeBossMagmacube(loc, world);
             sender.sendMessage(ChatColor.AQUA + "The Boss Magmacube has been summoned successfully");
             PersistentDataContainer container = entity.getPersistentDataContainer();
-            String cmd = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.MagmacubeBoss.CommandToBeExecutedOnDeath"));
+            String cmd = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.Magma_cubeBoss.CommandToBeExecutedOnDeath"));
             if (!cmd.equals("")) {
                 container.set(new NamespacedKey(Main.getInstance(), "VanillaBossesCommandOnDeath"), PersistentDataType.STRING, cmd);
             }

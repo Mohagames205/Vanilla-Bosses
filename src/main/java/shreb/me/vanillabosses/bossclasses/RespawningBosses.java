@@ -35,7 +35,7 @@ public class RespawningBosses {
             "Zombie",
             "Wither",
             "Zombified_Piglin",
-            "Magmacube"
+            "Magma_cube"
     };
 
     public static LivingEntity bossSpawnMethod(EntityType type, Location loc, World w) {

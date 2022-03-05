@@ -67,9 +67,9 @@ public enum Bosses {
             "Zombified_PiglinBoss",
             "BossZombified_Piglin"),
 
-    MAGMA_CUBE(Main.getInstance().getConfig().getInt("Bosses.MagmacubeBoss.spawnChance"),
-            Main.getInstance().getConfig().getDouble("Bosses.MagmacubeBoss.health"),
-            Main.getInstance().getConfig().getDouble("Bosses.MagmacubeBoss.DamageModifier"),
+    MAGMA_CUBE(Main.getInstance().getConfig().getInt("Bosses.Magma_cubeBoss.spawnChance"),
+            Main.getInstance().getConfig().getDouble("Bosses.Magma_cubeBoss.health"),
+            Main.getInstance().getConfig().getDouble("Bosses.Magma_cubeBoss.DamageModifier"),
             "MagmacubeBoss",
             "BossMagmacube");
 

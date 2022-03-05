@@ -78,7 +78,7 @@ public class BossZombified_Piglin  implements Listener {
         pigzombie.setCustomNameVisible(config.getBoolean("Bosses.Zombified_PiglinBoss.showDisplayNameAlways"));
 
         pigzombie.getEquipment().setItemInMainHand(ButchersAxe.makeButchersAxe());
-        
+
         pigzombie.setAngry(true);
         pigzombie.setAnger(Integer.MAX_VALUE);
 

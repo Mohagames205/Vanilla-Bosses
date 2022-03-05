@@ -332,9 +332,9 @@ public class EntityDeathEvent implements Listener {
                 }
             }
 
-            event.setDroppedExp(Math.max(config.getInt("Bosses.MagmacubeBoss.droppedXP"), 0));
+            event.setDroppedExp(Math.max(config.getInt("Bosses.Magma_cubeBoss.droppedXP"), 0));
 
-            event.getDrops().addAll(Methods.addItemsFromConfig(config.getStringList("Bosses.MagmacubeBoss.droppedItems")));
+            event.getDrops().addAll(Methods.addItemsFromConfig(config.getStringList("Bosses.Magma_cubeBoss.droppedItems")));
 
             if (event.getEntity().getKiller() != null && config.getBoolean("Bosses.enableBossKilledMessage") && event.getEntity().getCustomName() != null) {
                 event.getEntity().getServer().broadcastMessage(ChatColor.DARK_RED + event.getEntity().getCustomName() + ChatColor.WHITE + " has been slain by " + ChatColor.AQUA + event.getEntity().getKiller().getName());

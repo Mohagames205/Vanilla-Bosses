@@ -67,16 +67,20 @@ public class BossMagmacube implements Listener {
         if(magma.getHealth() <= 0)                                                                  return;
 
         if(config.getBoolean("Bosses.Magma_cubeBoss.onHitEvents.BurningAir.enabled")
-                && Methods.randomNumber(0,100) < config.getInt("Bosses.Magma_cubeBoss.onHitEvents.BurningAir.chance")){
+                && Methods.randomNumber(0,100) < config.getInt("Bosses.Magma_cubeBoss.onHitEvents.BurningAir.chance")
+        && magma.getHealth() > 0){
+
 
             Methods.spawnParticles(Particle.FIREWORKS_SPARK, magma.getWorld(), magmaLoc, radius, radius, radius,150,3);
             player.getWorld().playSound(magmaLoc, Sound.ENTITY_SLIME_SQUISH, 1.0f, 1.0f);
 
             Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () ->{
 
-                magma.getWorld().spawnParticle(Particle.FLAME, magmaLoc, 100, radius, radius, radius);
+                if(magma.getHealth() < 0) return;
 
-                for(Entity e : magmaLoc.getWorld().getNearbyEntities(magmaLoc, radius, radius, radius, n -> n instanceof LivingEntity)){
+                magma.getWorld().spawnParticle(Particle.FLAME, magma.getLocation(), 100, radius, radius, radius);
+
+                for(Entity e : magma.getLocation().getWorld().getNearbyEntities(magma.getLocation(), radius, radius, radius, n -> n instanceof LivingEntity)){
                     e.setFireTicks(20 * time);
                 }
 

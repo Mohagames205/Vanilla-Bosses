@@ -17,6 +17,7 @@ public class VBHelp implements CommandExecutor {
 
         if (args.length == 0) {
             sender.sendMessage(ChatColor.AQUA + "Possible commands:");
+            sender.sendMessage(ChatColor.GOLD + " - /vbh discord (this will send a link to the plugin discord)");
             sender.sendMessage(ChatColor.GOLD + " - /vbh  (shows this help message)");
             sender.sendMessage(ChatColor.GOLD + " - /vbh <EntityType>  (gives you information about the boss of the specified type. type '/boss list' to see all the available bosses!)");
             sender.sendMessage(ChatColor.GOLD + " - /vbh info  (gives you information about the plugin)");
@@ -109,14 +110,26 @@ public class VBHelp implements CommandExecutor {
             return true;
         }
 
+        if (args[0].equalsIgnoreCase("magmacube")) {
+            sender.sendMessage(ChatColor.GREEN + "Always wants to cuddle people!");
+            sender.sendMessage(ChatColor.GREEN + "Can get really angry when hit and set everything around it on fire.");
+            sender.sendMessage(ChatColor.GREEN + "Doesn't want to be the bad guy but cuddling people when youre as hot as lava hurts slightly");
+            sender.sendMessage(ChatColor.GREEN + "Has a Chance of dropping each of the 3 levels of Heated Magma Cream.");
+            return true;
+        }
+
 
         if (args[0].equalsIgnoreCase("info")) {
             sender.sendMessage(ChatColor.AQUA + "The Vanilla Bosses plugin was made by Shreb (On Spigot)");
-            sender.sendMessage(ChatColor.AQUA + "Please report any attempts of copying my content to me via Spigot");
+            sender.sendMessage(ChatColor.AQUA + "Please report any attempts of copying my content to me via Spigot or discord");
             sender.sendMessage(ChatColor.AQUA + "If you're enjoying my plugin, please do leave a rating and tell your friends :D");
             sender.sendMessage(ChatColor.AQUA + "In Case you have any ideas about new bosses or items and would like to see them in the plugin, please shoot me a message.");
             sender.sendMessage(ChatColor.AQUA + "Have fun playing and stay healthy :)");
             return true;
+        }
+
+        if(args[0].equalsIgnoreCase("discord")){
+            sender.sendMessage("https://discord.gg/stAd5ccDZT");
         }
 
         //reload config file

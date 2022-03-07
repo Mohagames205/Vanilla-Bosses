@@ -118,6 +118,19 @@ public final class Main extends JavaPlugin {
                     .filter(n -> n.getScoreboardTags().contains("PassiveWither"))
                     .forEach(n -> BossWither.passiveWitherList.add(n.getUniqueId()));
         }
+
+        Bukkit.getScheduler().runTaskAsynchronously(this, () ->{
+
+            new UpdateChecker(this, 95205).getVersion(version1 -> {
+                if (this.getDescription().getVersion().equals(version1)) {
+                    getLogger().info("There is not a new update available.");
+                } else {
+                    getLogger().info("There is a new update available.");
+                }
+            });
+
+        });
+
     }
 
     @Override

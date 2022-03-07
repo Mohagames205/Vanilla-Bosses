@@ -18,7 +18,7 @@ public class BossMagmacube implements Listener {
 
     private static final Configuration config = Main.getInstance().getConfig();
 
-    public static MagmaCube makeBossMagmacube(Location location, World w){
+    public static MagmaCube makeBossMagmacube(Location location, World w) {
 
         MagmaCube magma = (MagmaCube) w.spawnEntity(location, EntityType.MAGMA_CUBE);
         magma.getScoreboardTags().add(Bosses.MAGMA_CUBE.scoreboardBossTag);
@@ -26,7 +26,7 @@ public class BossMagmacube implements Listener {
         magma.setHealth(Bosses.MAGMA_CUBE.health);
         magma.setCustomName(config.getString("Bosses.Magma_cubeBoss.displayName"));
         magma.setCustomNameVisible(config.getBoolean("Bosses.Magma_cubeBoss.showDisplayNameAlways"));
-        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+        if (config.getBoolean("Bosses.bossesGetGlowingPotionEffect")) {
             magma.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
         }
 
@@ -40,7 +40,7 @@ public class BossMagmacube implements Listener {
         magma.setHealth(Bosses.MAGMA_CUBE.health);
         magma.setCustomName(config.getString("Bosses.Magma_cubeBoss.displayName"));
         magma.setCustomNameVisible(config.getBoolean("Bosses.Magma_cubeBoss.showDisplayNameAlways"));
-        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+        if (config.getBoolean("Bosses.bossesGetGlowingPotionEffect")) {
             magma.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
         }
 
@@ -52,35 +52,35 @@ public class BossMagmacube implements Listener {
     //              and a sound will play informing the players of the ability being triggered.
 
     @EventHandler
-    public void onPlayerHitByBossMagma(EntityDamageByEntityEvent event){
+    public void onPlayerHitByBossMagma(EntityDamageByEntityEvent event) {
 
-        if(!(event.getDamager() instanceof Player))                                                 return;
-        if(!event.getEntity().getScoreboardTags().contains(Bosses.MAGMA_CUBE.scoreboardBossTag))    return;
-        if(event.getEntity().getType() != EntityType.MAGMA_CUBE)                                    return;
+        if (!(event.getDamager() instanceof Player)) return;
+        if (!event.getEntity().getScoreboardTags().contains(Bosses.MAGMA_CUBE.scoreboardBossTag)) return;
+        if (event.getEntity().getType() != EntityType.MAGMA_CUBE) return;
 
-        Player player   = (Player) event.getDamager();
+        Player player = (Player) event.getDamager();
         MagmaCube magma = (MagmaCube) event.getEntity();
         Location magmaLoc = magma.getLocation();
         int radius = config.getInt("Bosses.Magma_cubeBoss.onHitEvents.BurningAir.range");
         int time = config.getInt("Bosses.Magma_cubeBoss.onHitEvents.BurningAir.time");
 
-        if(magma.getHealth() <= 0)                                                                  return;
+        if (magma.getHealth() <= 0) return;
 
-        if(config.getBoolean("Bosses.Magma_cubeBoss.onHitEvents.BurningAir.enabled")
-                && Methods.randomNumber(0,100) < config.getInt("Bosses.Magma_cubeBoss.onHitEvents.BurningAir.chance")
-        && magma.getHealth() > 0){
+        if (config.getBoolean("Bosses.Magma_cubeBoss.onHitEvents.BurningAir.enabled")
+                && Methods.randomNumber(0, 100) < config.getInt("Bosses.Magma_cubeBoss.onHitEvents.BurningAir.chance")
+                && magma.getHealth() > 0) {
 
 
-            Methods.spawnParticles(Particle.FIREWORKS_SPARK, magma.getWorld(), magmaLoc, radius, radius, radius,150,3);
+            Methods.spawnParticles(Particle.FIREWORKS_SPARK, magma.getWorld(), magmaLoc, radius, radius, radius, 150, 3);
             player.getWorld().playSound(magmaLoc, Sound.ENTITY_SLIME_SQUISH, 1.0f, 1.0f);
 
-            Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () ->{
+            Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () -> {
 
-                if(magma.getHealth() < 0) return;
+                if (magma.getHealth() < 0) return;
 
                 magma.getWorld().spawnParticle(Particle.FLAME, magma.getLocation(), 100, radius, radius, radius);
 
-                for(Entity e : magma.getLocation().getWorld().getNearbyEntities(magma.getLocation(), radius, radius, radius, n -> n instanceof LivingEntity)){
+                for (Entity e : magma.getLocation().getWorld().getNearbyEntities(magma.getLocation(), radius, radius, radius, n -> n instanceof LivingEntity)) {
                     e.setFireTicks(20 * time);
                 }
 

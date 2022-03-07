@@ -86,7 +86,7 @@ public class Slingshot implements Listener {
 
         //This is for the Slimeboots, didnt wanna make a new event.
         if(((Player)event.getEntity()).getEquipment().getBoots() != null){
-            if(((Player)event.getEntity()).getEquipment().getBoots().getItemMeta().getPersistentDataContainer().has(Items.SLINGSHOT.identifyingPDCKey, PersistentDataType.STRING)){
+            if(((Player)event.getEntity()).getEquipment().getBoots().getItemMeta().getPersistentDataContainer().has(Items.SLIMEBOOTS.identifyingPDCKey, PersistentDataType.STRING)){
 
                 event.setDamage(event.getDamage() / 5);
 

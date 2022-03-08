@@ -81,7 +81,6 @@ public enum Bosses {
     public String scoreboardBossTag;
 
 
-
     Bosses(int spawnChance, double health, double damageModifier, String configSectionName, String scoreboardBossTag){
         this.spawnChance = spawnChance;
         this.health = health;

@@ -385,7 +385,7 @@ public class EntityDeathEvent implements Listener {
             BarColor finalColor = color;
             Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () -> {
 
-                if(!event.getEntity().isDead()) return;
+                if(!event.getEntity().isDead() || event.getEntity().getHealth() <= 0) return;
 
                 LivingEntity livingEntity = RespawningBosses.bossSpawnMethod(event.getEntityType(), loc, w);
 

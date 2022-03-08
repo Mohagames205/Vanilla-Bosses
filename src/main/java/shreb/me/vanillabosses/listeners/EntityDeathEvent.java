@@ -21,7 +21,9 @@ import shreb.me.vanillabosses.main.Main;
 import shreb.me.vanillabosses.main.Methods;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
+import java.util.UUID;
 
 public class EntityDeathEvent implements Listener {
 

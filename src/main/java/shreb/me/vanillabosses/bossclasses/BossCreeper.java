@@ -1,9 +1,6 @@
 package shreb.me.vanillabosses.bossclasses;
 
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.NamespacedKey;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.entity.Creeper;
@@ -69,7 +66,7 @@ public class BossCreeper implements Listener {
         PersistentDataContainer container = creeper.getPersistentDataContainer();
         container.set(new NamespacedKey(Main.getInstance(), "VanillaBossesRespawnTime"), PersistentDataType.INTEGER, -1);
         creeper.getAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE).setBaseValue(0.6);
-        creeper.setCustomName(config.getString("Bosses.CreeperBoss.displayName"));
+        creeper.setCustomName(ChatColor.valueOf(Bosses.CREEPER.nameColor) + Bosses.CREEPER.displayName);
         creeper.setCustomNameVisible(config.getBoolean("Bosses.CreeperBoss.showDisplayNameAlways"));
         if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
             creeper.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
@@ -93,7 +90,7 @@ public class BossCreeper implements Listener {
         PersistentDataContainer container = creeper.getPersistentDataContainer();
         container.set(new NamespacedKey(Main.getInstance(), "VanillaBossesRespawnTime"), PersistentDataType.INTEGER, -1);
         creeper.getAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE).setBaseValue(0.6);
-        creeper.setCustomName(config.getString("Bosses.CreeperBoss.displayName"));
+        creeper.setCustomName(ChatColor.valueOf(Bosses.CREEPER.nameColor) + Bosses.CREEPER.displayName);
         creeper.setCustomNameVisible(config.getBoolean("Bosses.CreeperBoss.showDisplayNameAlways"));
         if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
             creeper.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));

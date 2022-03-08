@@ -24,7 +24,7 @@ public class BossMagmacube implements Listener {
         magma.getScoreboardTags().add(Bosses.MAGMA_CUBE.scoreboardBossTag);
         magma.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.MAGMA_CUBE.health);
         magma.setHealth(Bosses.MAGMA_CUBE.health);
-        magma.setCustomName(config.getString("Bosses.Magma_cubeBoss.displayName"));
+        magma.setCustomName(ChatColor.valueOf(Bosses.MAGMA_CUBE.nameColor) + Bosses.MAGMA_CUBE.displayName);
         magma.setCustomNameVisible(config.getBoolean("Bosses.Magma_cubeBoss.showDisplayNameAlways"));
         if (config.getBoolean("Bosses.bossesGetGlowingPotionEffect")) {
             magma.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
@@ -38,7 +38,7 @@ public class BossMagmacube implements Listener {
         magma.getScoreboardTags().add(Bosses.MAGMA_CUBE.scoreboardBossTag);
         magma.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.MAGMA_CUBE.health);
         magma.setHealth(Bosses.MAGMA_CUBE.health);
-        magma.setCustomName(config.getString("Bosses.Magma_cubeBoss.displayName"));
+        magma.setCustomName(Bosses.MAGMA_CUBE.nameColor + Bosses.MAGMA_CUBE.displayName);
         magma.setCustomNameVisible(config.getBoolean("Bosses.Magma_cubeBoss.showDisplayNameAlways"));
         if (config.getBoolean("Bosses.bossesGetGlowingPotionEffect")) {
             magma.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));

@@ -1,5 +1,6 @@
 package shreb.me.vanillabosses.bossclasses;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -35,7 +36,7 @@ public class BossSkeleton implements Listener {
         skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.SKELETON.health);
         skeleton.setHealth(Bosses.SKELETON.health);
         skeleton.addScoreboardTag("removeInvulnerableOnDisable");
-        skeleton.setCustomName(config.getString("Bosses.SkeletonBoss.displayName"));
+        skeleton.setCustomName(ChatColor.valueOf(Bosses.SKELETON.nameColor) + Bosses.SKELETON.displayName);
         skeleton.setCustomNameVisible(config.getBoolean("Bosses.SkeletonBoss.showDisplayNameAlways"));
         EntityEquipment equipment = skeleton.getEquipment();
         ItemStack helmet = new ItemStack(Material.DIAMOND_HELMET);
@@ -128,7 +129,7 @@ public class BossSkeleton implements Listener {
         skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.SKELETON.health);
         skeleton.setHealth(Bosses.SKELETON.health);
         skeleton.addScoreboardTag("removeInvulnerableOnDisable");
-        skeleton.setCustomName(config.getString("Bosses.SkeletonBoss.displayName"));
+        skeleton.setCustomName(ChatColor.valueOf(Bosses.SKELETON.nameColor) + Bosses.SKELETON.displayName);
         skeleton.setCustomNameVisible(config.getBoolean("Bosses.SkeletonBoss.showDisplayNameAlways"));
 
         EntityEquipment equipment = skeleton.getEquipment();

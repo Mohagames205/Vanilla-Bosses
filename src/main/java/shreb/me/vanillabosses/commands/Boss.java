@@ -229,12 +229,12 @@ public class Boss implements CommandExecutor {
             sender.sendMessage(ChatColor.AQUA + "The Boss Wither has been summoned successfully");
             wither.addScoreboardTag("BossWither");
 
-            Objects.requireNonNull(wither.getAttribute(Attribute.GENERIC_MAX_HEALTH)).setBaseValue(Main.getInstance().getConfig().getDouble("Bosses.WitherBoss.Health"));
-            wither.setHealth(Objects.requireNonNull(wither.getAttribute(Attribute.GENERIC_MAX_HEALTH)).getBaseValue());
+            wither.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.WITHER.health);
+            wither.setHealth(Bosses.WITHER.health);
 
 
-            wither.setCustomName(config.getString("Bosses.WitherBoss.displayName"));
-            wither.setCustomNameVisible(true);
+            wither.setCustomName(ChatColor.valueOf(Bosses.WITHER.nameColor) + Bosses.WITHER.displayName);
+            wither.setCustomNameVisible(config.getBoolean("Bosses.WitherBoss.showDisplayNameAlways"));
 
             PersistentDataContainer container = wither.getPersistentDataContainer();
             String cmd = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.WitherBoss.CommandToBeExecutedOnDeath"));

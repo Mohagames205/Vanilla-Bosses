@@ -10,6 +10,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
+import shreb.me.vanillabosses.bossclasses.Bosses;
 import shreb.me.vanillabosses.main.Main;
 import shreb.me.vanillabosses.main.Methods;
 
@@ -324,7 +325,7 @@ public class EntityDamagedByEntityEvent implements Listener {
 
 //BossWitch
 
-        if (event.getEntity().getScoreboardTags().contains("BossWitch") && event.getEntityType().equals(EntityType.WITCH) && event.getDamager() instanceof Player) {
+        if (event.getEntity().getScoreboardTags().contains(Bosses.WITCH.scoreboardBossTag) && event.getEntityType() == EntityType.WITCH && event.getDamager() instanceof Player) {
 
             if (witchAbilityCooldown > 0) {
                 witchAbilityCooldown--;

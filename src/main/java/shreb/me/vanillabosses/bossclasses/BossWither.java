@@ -142,12 +142,12 @@ public class BossWither implements Listener {
     public static Wither makeBossWither(Location loc, World w){
 
         Wither wither = (Wither) w.spawnEntity(loc, EntityType.WITHER);
-        wither.addScoreboardTag("BossWither");
+        wither.addScoreboardTag(Bosses.WITHER.scoreboardBossTag);
 
         wither.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.WITHER.health);
         wither.setHealth(Bosses.WITHER.health);
 
-        wither.setCustomName(config.getString("Bosses.WitherBoss.displayName"));
+        wither.setCustomName(ChatColor.valueOf(Bosses.WITHER.nameColor) + Bosses.WITHER.displayName);
         wither.setCustomNameVisible(config.getBoolean("Bosses.WitherBoss.showDisplayNameAlways"));
 
         if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){

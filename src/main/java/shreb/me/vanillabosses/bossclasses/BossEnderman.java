@@ -15,8 +15,6 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import shreb.me.vanillabosses.main.Main;
 
-import java.util.HashMap;
-
 public class BossEnderman implements Listener {
 
     static Configuration config = Main.getInstance().getConfig();

@@ -1,7 +1,5 @@
 package shreb.me.vanillabosses.bossclasses;
 
-import org.bukkit.ChatColor;
-import org.bukkit.configuration.Configuration;
 import shreb.me.vanillabosses.main.Main;
 
 //This class is not yet used, but a preparation for future changes to the code

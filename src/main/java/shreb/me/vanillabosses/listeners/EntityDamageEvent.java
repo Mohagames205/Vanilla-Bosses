@@ -1,7 +1,6 @@
 package shreb.me.vanillabosses.listeners;
 
 import org.bukkit.attribute.Attribute;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Wither;
@@ -9,7 +8,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import shreb.me.vanillabosses.bossclasses.BossWither;
 import shreb.me.vanillabosses.bossclasses.RespawningBosses;
-import shreb.me.vanillabosses.main.Main;
 
 import java.util.Objects;
 

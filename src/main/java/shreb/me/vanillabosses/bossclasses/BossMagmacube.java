@@ -12,8 +12,6 @@ import org.bukkit.potion.PotionEffectType;
 import shreb.me.vanillabosses.main.Main;
 import shreb.me.vanillabosses.main.Methods;
 
-import java.util.ArrayList;
-
 public class BossMagmacube implements Listener {
 
     private static final Configuration config = Main.getInstance().getConfig();

@@ -15,8 +15,6 @@ import org.bukkit.persistence.PersistentDataType;
 import shreb.me.vanillabosses.bossclasses.*;
 import shreb.me.vanillabosses.main.Main;
 
-import java.util.Objects;
-
 public class Boss implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {

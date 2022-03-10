@@ -158,5 +158,15 @@ public class Methods {
         }
     }
 
+
+    /**
+     * @return the same string with only the first letter upper case
+     */
+    public static String makeFirstLetterCap(String input){
+
+        return input.substring(0,1).toUpperCase() + input.substring(1).toLowerCase();
+
+    }
+
 }
 

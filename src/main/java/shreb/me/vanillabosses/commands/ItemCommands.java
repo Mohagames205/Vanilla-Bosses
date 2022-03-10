@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.Configuration;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import shreb.me.vanillabosses.bossclasses.BossWither;
@@ -346,6 +347,52 @@ public class ItemCommands implements CommandExecutor {
                 }
             }
             return true;
+        }
+
+        if(args[0].equalsIgnoreCase("egg")){
+
+            if (!sender.hasPermission("VB.SummonItems")) {
+                sender.sendMessage(ChatColor.RED + "You do not have permission to use this command");
+                return true;
+            }
+
+            if(args.length < 2){
+                sender.sendMessage("Not enough arguments!");
+                return true;
+            }
+
+
+            int amount;
+            EntityType type;
+
+            try {
+                if(args.length > 2){
+                    amount = Integer.parseInt(args[2]);
+                } else {
+                    amount = 1;
+                }
+                type = EntityType.valueOf(args[1].toUpperCase());
+            } catch(NumberFormatException e){
+                sender.sendMessage("Expected a Number between 1 and 64 as the third argument");
+                return true;
+            } catch(IllegalArgumentException e){
+                sender.sendMessage("Expected a boss type for the second argument");
+                return true;
+            }
+
+            if (p.getInventory().firstEmpty() != -1) {
+                p.getInventory().addItem(BossEggs.makeBossEgg(type, amount));
+                p.sendMessage(ChatColor.AQUA + "You have been given " + amount + "x the " + type + " Boss Egg");
+            } else {
+                if (p == sender) {
+                    p.sendMessage(ChatColor.RED + "Your Inventory seems to be full");
+                } else {
+                    sender.sendMessage(ChatColor.RED + "The receiving Inventory seems to be full");
+                }
+            }
+            return true;
+
+
         }
 
 

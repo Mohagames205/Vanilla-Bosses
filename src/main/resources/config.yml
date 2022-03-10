@@ -327,7 +327,7 @@ Bosses:
     onHitEvents:
       PlayersSwitchPlaces:
         enabled: true
-        chance: 5
+        chance: 10
         applyNausea: true
         cooldown: 10  # This is the minimum number of hits a boss Witch will take between activating this ability
         canSwitchWithOtherEntities: true  # leave this enabled if youre alone, or this ability will not work at all.

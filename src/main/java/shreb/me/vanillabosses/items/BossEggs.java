@@ -15,6 +15,7 @@ import org.bukkit.persistence.PersistentDataType;
 import shreb.me.vanillabosses.bossclasses.Bosses;
 import shreb.me.vanillabosses.bossclasses.RespawningBosses;
 import shreb.me.vanillabosses.main.Main;
+import shreb.me.vanillabosses.main.Methods;
 
 public class BossEggs implements Listener {
 
@@ -96,9 +97,6 @@ public class BossEggs implements Listener {
             case WITHER:
                 egg = new ItemStack(Material.BAT_SPAWN_EGG, amount);
                 color = ChatColor.valueOf(Bosses.WITHER.nameColor);
-                ItemMeta meta = egg.getItemMeta();
-                meta.setDisplayName("Wither Spawn Egg");
-                egg.setItemMeta(meta);
                 break;
 
             default:
@@ -106,7 +104,7 @@ public class BossEggs implements Listener {
         }
 
         ItemMeta meta = egg.getItemMeta();
-        meta.setDisplayName(meta.getDisplayName() + color + "{Boss}");
+        meta.setDisplayName(Methods.makeFirstLetterCap(type.toString()) + " " + color + "{Boss}");
         PersistentDataContainer container = meta.getPersistentDataContainer();
         container.set(bossEggIdentifier, PersistentDataType.STRING, type.toString());
         egg.setItemMeta(meta);

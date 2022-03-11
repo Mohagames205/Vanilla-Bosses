@@ -58,12 +58,15 @@ public class Slingshot implements Listener {
             if (Main.getInstance().getConfig().getBoolean("Items.slingshot.enableDamagingOnUse")) {
                 ItemStack item = event.getItem();
                 ItemMeta meta = item.getItemMeta();
+
+                if (((Damageable) meta).getDamage() + Main.getInstance().getConfig().getInt("Items.slingshot.damageOnUseAmount") > item.getType().getMaxDurability()) {      //Item breaking upon reaching 0 Durability
+                    event.getPlayer().getEquipment().getItem(event.getHand()).setAmount(0);
+                    event.getPlayer().getWorld().playSound(event.getPlayer().getLocation(), Sound.ENTITY_ITEM_BREAK, 1F, 1F);
+                    return;
+                }
                 ((Damageable) meta).setDamage(((Damageable) meta).getDamage() + Main.getInstance().getConfig().getInt("Items.slingshot.damageOnUseAmount"));
                 item.setItemMeta(meta);
-                if (((Damageable) item.getItemMeta()).getDamage() > item.getType().getMaxDurability()) {      //Item breaking upon reaching 0 Durability
-                    event.getPlayer().getEquipment().setItem(event.getHand(), new ItemStack(Material.AIR));
-                    event.getPlayer().getWorld().playSound(event.getPlayer().getLocation(), Sound.ENTITY_ITEM_BREAK, 1F, 1F);
-                }
+
             }
         }
     }

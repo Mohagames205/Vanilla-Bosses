@@ -17,6 +17,8 @@ public enum Languages {
 
             "The targeted Inventory seems to be full.",
 
+            "The specified amount is not accepted",
+
             "Possible commands:\n" +
                     " - /vbh discord (this will send a link to the plugin discord)\n" +
                     " - /vbh  (shows this help message)\n" +
@@ -100,6 +102,8 @@ public enum Languages {
 
             "Das Zielinventar scheint voll zu sein.",
 
+            "Unpassende Menge angegeben!",
+
             "Mögliche Kommandos:\n" +
                     " - /vbh  (Zeigt diese Nachricht an)\n" +
                     " - /vbh discord (Schickt dem Sender den discord link)\n" +
@@ -178,6 +182,7 @@ public enum Languages {
     public String errorMessage;
     public String commandDisabled;
     public String inventoryFull;
+    public String badAmount;
     public String vbh0;
     public String vbhBlaze;
     public String vbhCreeper;
@@ -192,8 +197,7 @@ public enum Languages {
     public String vbhPiglin;
     public String vbhInfo;
 
-
-    Languages(String killedByMessage, String notEnoughArguments, String badArgument, String badPermissions, String errorMessage, String commandDisabled, String inventoryFull, String vbh0, String vbhBlaze, String vbhCreeper, String vbhEnderman, String vbhMagmaCube, String vbhSkeleton, String vbhSlime, String vbhSpider, String vbhWitch, String vbhWither, String vbhZombie, String vbhPiglin, String vbhInfo) {
+    Languages(String killedByMessage, String notEnoughArguments, String badArgument, String badPermissions, String errorMessage, String commandDisabled, String inventoryFull, String badAmount, String vbh0, String vbhBlaze, String vbhCreeper, String vbhEnderman, String vbhMagmaCube, String vbhSkeleton, String vbhSlime, String vbhSpider, String vbhWitch, String vbhWither, String vbhZombie, String vbhPiglin, String vbhInfo) {
         this.killedByMessage = killedByMessage;
         this.notEnoughArguments = notEnoughArguments;
         this.badArgument = badArgument;
@@ -201,6 +205,7 @@ public enum Languages {
         this.errorMessage = errorMessage;
         this.commandDisabled = commandDisabled;
         this.inventoryFull = inventoryFull;
+        this.badAmount = badAmount;
         this.vbh0 = vbh0;
         this.vbhBlaze = vbhBlaze;
         this.vbhCreeper = vbhCreeper;

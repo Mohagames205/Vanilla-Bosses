@@ -45,7 +45,7 @@ public class ItemCommands implements CommandExecutor {
             try {
                 p = (Player) sender;
             } catch (ClassCastException e) {
-                sender.sendMessage("Vanilla Bosses: Something went wrong! Please message the author with the command you sent and tell them the Error code was 'Error 11'");
+                sender.sendMessage(Main.getCurrentLanguage().errorMessage);
                 return true;
             }
         }
@@ -55,12 +55,12 @@ public class ItemCommands implements CommandExecutor {
 
         if (args[0].equalsIgnoreCase("skeletor")) {
             if (!config.getBoolean("Items.Skeletor.enableSpawnCommand")) {
-                sender.sendMessage(ChatColor.RED + "Command is disabled in the config.");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().commandDisabled);
                 return true;
             }
 
             if (!sender.hasPermission("VB.SummonItems")) {
-                sender.sendMessage(ChatColor.RED + "You do not have permission to use this command");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().badPermissions);
                 return true;
             }
 
@@ -68,11 +68,9 @@ public class ItemCommands implements CommandExecutor {
                 p.getInventory().addItem(skeletor);
                 p.sendMessage(ChatColor.AQUA + "You have been given the Skeletor!");
             } else {
-                if (p == sender) {
-                    p.sendMessage(ChatColor.RED + "Your Inventory seems to be full");
-                } else {
-                    sender.sendMessage(ChatColor.RED + "The receiving Inventory seems to be full");
-                }
+
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
+
             }
 
             return true;
@@ -80,12 +78,12 @@ public class ItemCommands implements CommandExecutor {
 
         if (args[0].equalsIgnoreCase("slingshot")) {
             if (!config.getBoolean("Items.slingshot.enableSpawnCommand")) {
-                sender.sendMessage(ChatColor.RED + "Command is disabled in the config.");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().commandDisabled);
                 return true;
             }
 
             if (!sender.hasPermission("VB.SummonItems")) {
-                sender.sendMessage(ChatColor.RED + "You do not have permission to use this command");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().badPermissions);
                 return true;
             }
 
@@ -93,23 +91,21 @@ public class ItemCommands implements CommandExecutor {
                 p.getInventory().addItem(slingshot);
                 p.sendMessage(ChatColor.AQUA + "You have been given the Slingshot!");
             } else {
-                if (p == sender) {
-                    p.sendMessage(ChatColor.RED + "Your Inventory seems to be full");
-                } else {
-                    sender.sendMessage(ChatColor.RED + "The receiving Inventory seems to be full");
-                }
+
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
+
             }
             return true;
         }
 
         if (args[0].equalsIgnoreCase("cloak")) {
             if (!config.getBoolean("Items.cloakOfInvisibility.enableSpawnCommand")) {
-                sender.sendMessage(ChatColor.RED + "Command is disabled in the config.");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().commandDisabled);
                 return true;
             }
 
             if (!sender.hasPermission("VB.SummonItems")) {
-                sender.sendMessage(ChatColor.RED + "You do not have permission to use this command");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().badPermissions);
                 return true;
             }
 
@@ -117,23 +113,21 @@ public class ItemCommands implements CommandExecutor {
                 p.getInventory().addItem(cloak);
                 p.sendMessage(ChatColor.AQUA + "You have been given the Invisibility Cloak!");
             } else {
-                if (p == sender) {
-                    p.sendMessage(ChatColor.RED + "Your Inventory seems to be full");
-                } else {
-                    sender.sendMessage(ChatColor.RED + "The receiving Inventory seems to be full");
-                }
+
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
+
             }
             return true;
         }
 
         if (args[0].equalsIgnoreCase("butchersaxe")) {
             if (!config.getBoolean("Items.ButchersAxe.enableSpawnCommand")) {
-                sender.sendMessage(ChatColor.RED + "Command is disabled in the config.");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().commandDisabled);
                 return true;
             }
 
             if (!sender.hasPermission("VB.SummonItems")) {
-                sender.sendMessage(ChatColor.RED + "You do not have permission to use this command");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().badPermissions);
                 return true;
             }
 
@@ -141,23 +135,21 @@ public class ItemCommands implements CommandExecutor {
                 p.getInventory().addItem(butchersAxe);
                 p.sendMessage(ChatColor.AQUA + "You have been given the Butchers Axe!");
             } else {
-                if (p == sender) {
-                    p.sendMessage(ChatColor.RED + "Your Inventory seems to be full");
-                } else {
-                    sender.sendMessage(ChatColor.RED + "The receiving Inventory seems to be full");
-                }
+
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
+
             }
             return true;
         }
 
         if (args[0].equalsIgnoreCase("baseballbat")) {
             if (!config.getBoolean("Items.BaseballBat.enableSpawnCommand")) {
-                sender.sendMessage(ChatColor.RED + "Command is disabled in the config.");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().commandDisabled);
                 return true;
             }
 
             if (!sender.hasPermission("VB.SummonItems")) {
-                sender.sendMessage(ChatColor.RED + "You do not have permission to use this command");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().badPermissions);
                 return true;
             }
 
@@ -165,23 +157,21 @@ public class ItemCommands implements CommandExecutor {
                 p.getInventory().addItem(baseballBat);
                 p.sendMessage(ChatColor.AQUA + "You have been given the Baseball Bat!");
             } else {
-                if (p == sender) {
-                    p.sendMessage(ChatColor.RED + "Your Inventory seems to be full");
-                } else {
-                    sender.sendMessage(ChatColor.RED + "The receiving Inventory seems to be full");
-                }
+
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
+
             }
             return true;
         }
 
         if (args[0].equalsIgnoreCase("witheregg")) {
             if (!config.getBoolean("Items.WitherEgg.enableSpawnCommand")) {
-                sender.sendMessage(ChatColor.RED + "Command is disabled in the config.");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().commandDisabled);
                 return true;
             }
 
             if (!sender.hasPermission("VB.SummonItems")) {
-                sender.sendMessage(ChatColor.RED + "You do not have permission to use this command");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().badPermissions);
                 return true;
             }
 
@@ -189,23 +179,21 @@ public class ItemCommands implements CommandExecutor {
                 p.getInventory().addItem(witherEgg);
                 p.sendMessage(ChatColor.AQUA + "You have been given the Witheregg!");
             } else {
-                if (p == sender) {
-                    p.sendMessage(ChatColor.RED + "Your Inventory seems to be full");
-                } else {
-                    sender.sendMessage(ChatColor.RED + "The receiving Inventory seems to be full");
-                }
+
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
+
             }
             return true;
         }
 
         if (args[0].equalsIgnoreCase("slimeboots")) {
             if (!config.getBoolean("Items.SlimeBoots.enableSpawnCommand")) {
-                sender.sendMessage(ChatColor.RED + "Command is disabled in the config.");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().commandDisabled);
                 return true;
             }
 
             if (!sender.hasPermission("VB.SummonItems")) {
-                sender.sendMessage(ChatColor.RED + "You do not have permission to use this command");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().badPermissions);
                 return true;
             }
 
@@ -213,23 +201,21 @@ public class ItemCommands implements CommandExecutor {
                 p.getInventory().addItem(slimeboots);
                 p.sendMessage(ChatColor.AQUA + "You have been given Slime boots!");
             } else {
-                if (p == sender) {
-                    p.sendMessage(ChatColor.RED + "Your Inventory seems to be full");
-                } else {
-                    sender.sendMessage(ChatColor.RED + "The receiving Inventory seems to be full");
-                }
+
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
+
             }
             return true;
         }
 
         if (args[0].equalsIgnoreCase("bouncyslime")) {
             if (!config.getBoolean("Items.SlimeBoots.BouncySlime.enableSpawnCommand")) {
-                sender.sendMessage(ChatColor.RED + "Command is disabled in the config.");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().commandDisabled);
                 return true;
             }
 
             if (!sender.hasPermission("VB.SummonItems")) {
-                sender.sendMessage(ChatColor.RED + "You do not have permission to use this command");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().badPermissions);
                 return true;
             }
 
@@ -242,13 +228,13 @@ public class ItemCommands implements CommandExecutor {
                     try {
                         amount = Integer.parseInt(args[1]);
                     } catch (NumberFormatException e) {
-                        sender.sendMessage(ChatColor.RED + "Expected a Number from 1-64");
+                        sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().badAmount + " Expected: 1-64");
                         return true;
                     }
                 }
 
-                if(amount > 64){
-                    sender.sendMessage(ChatColor.RED + "Expected a Number from 1-64");
+                if (amount > 64) {
+                    sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().badAmount + " Expected: 1-64");
                     return true;
                 }
 
@@ -258,23 +244,21 @@ public class ItemCommands implements CommandExecutor {
 
                 p.sendMessage(ChatColor.AQUA + "You have been given " + amount + "x Bouncy Slime!");
             } else {
-                if (p == sender) {
-                    p.sendMessage(ChatColor.RED + "Your Inventory seems to be full");
-                } else {
-                    sender.sendMessage(ChatColor.RED + "The receiving Inventory seems to be full");
-                }
+
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
+
             }
             return true;
         }
 
         if (args[0].equalsIgnoreCase("blazer")) {
             if (!config.getBoolean("Items.Blazer.enableSpawnCommand")) {
-                sender.sendMessage(ChatColor.RED + "Command is disabled in the config.");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().commandDisabled);
                 return true;
             }
 
             if (!sender.hasPermission("VB.SummonItems")) {
-                sender.sendMessage(ChatColor.RED + "You do not have permission to use this command");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().badPermissions);
                 return true;
             }
 
@@ -282,23 +266,20 @@ public class ItemCommands implements CommandExecutor {
                 p.getInventory().addItem(blazer);
                 p.sendMessage(ChatColor.AQUA + "You have been given the Blazer!");
             } else {
-                if (p == sender) {
-                    p.sendMessage(ChatColor.RED + "Your Inventory seems to be full");
-                } else {
-                    sender.sendMessage(ChatColor.RED + "The receiving Inventory seems to be full");
-                }
+
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
             }
             return true;
         }
 
         if (args[0].equalsIgnoreCase("heatedMagmaCream")) {
             if (!config.getBoolean("Items.HeatedMagmaCream.enableSpawnCommand")) {
-                sender.sendMessage(ChatColor.RED + "Command is disabled in the config.");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().commandDisabled);
                 return true;
             }
 
             if (!sender.hasPermission("VB.SummonItems")) {
-                sender.sendMessage(ChatColor.RED + "You do not have permission to use this command");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().badPermissions);
                 return true;
             }
 
@@ -306,24 +287,24 @@ public class ItemCommands implements CommandExecutor {
                 int amount;
                 ItemStack cream;
 
-                if(args.length < 3){
+                if (args.length < 3) {
                     amount = 1;
                 } else {
                     try {
                         amount = Integer.parseInt(args[2]);
                     } catch (NumberFormatException e) {
-                        sender.sendMessage(ChatColor.RED + "Expected a Number from 1-64");
+                        sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().badAmount + " Expected: 1-64");
                         return true;
                     }
                 }
 
-                if(args.length < 2) {
-                    sender.sendMessage("Not enough arguments, level from 1-3 required");
+                if (args.length < 2) {
+                    sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().notEnoughArguments);
                     return true;
                 }
 
-                if(amount > 64){
-                    sender.sendMessage(ChatColor.RED + "Expected a Number from 1-64");
+                if (amount > 64) {
+                    sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().badAmount + " Expected: 1-64");
                     return true;
                 }
 
@@ -332,7 +313,7 @@ public class ItemCommands implements CommandExecutor {
                     cream = HeatedMagmaCream.makeHeatedMagmaCream(Integer.parseInt(args[1]));
 
                 } catch (IllegalArgumentException e) {
-                    sender.sendMessage(ChatColor.RED + "Expected a Number from 1-3");
+                    sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().badAmount + " Expected: 1-3");
                     return true;
                 }
 
@@ -340,24 +321,22 @@ public class ItemCommands implements CommandExecutor {
 
                 p.sendMessage(ChatColor.AQUA + "You have been given " + amount + "x Heated Magma cream of the level " + Integer.parseInt(args[1]) + "!");
             } else {
-                if (p == sender) {
-                    p.sendMessage(ChatColor.RED + "Your Inventory seems to be full");
-                } else {
-                    sender.sendMessage(ChatColor.RED + "The receiving Inventory seems to be full");
-                }
+
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
+
             }
             return true;
         }
 
-        if(args[0].equalsIgnoreCase("egg")){
+        if (args[0].equalsIgnoreCase("egg")) {
 
             if (!sender.hasPermission("VB.SummonItems")) {
-                sender.sendMessage(ChatColor.RED + "You do not have permission to use this command");
+                sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().badPermissions);
                 return true;
             }
 
-            if(args.length < 2){
-                sender.sendMessage("Not enough arguments!");
+            if (args.length < 2) {
+                sender.sendMessage(Main.getCurrentLanguage().notEnoughArguments);
                 return true;
             }
 
@@ -366,16 +345,16 @@ public class ItemCommands implements CommandExecutor {
             EntityType type;
 
             try {
-                if(args.length > 2){
+                if (args.length > 2) {
                     amount = Integer.parseInt(args[2]);
                 } else {
                     amount = 1;
                 }
                 type = EntityType.valueOf(args[1].toUpperCase());
-            } catch(NumberFormatException e){
-                sender.sendMessage("Expected a Number between 1 and 64 as the third argument");
+            } catch (NumberFormatException e) {
+                sender.sendMessage(Main.getCurrentLanguage().badAmount + " Expected: 1-64");
                 return true;
-            } catch(IllegalArgumentException e){
+            } catch (IllegalArgumentException e) {
                 sender.sendMessage("Expected a boss type for the second argument");
                 return true;
             }
@@ -384,14 +363,10 @@ public class ItemCommands implements CommandExecutor {
                 p.getInventory().addItem(BossEggs.makeBossEgg(type, amount));
                 p.sendMessage(ChatColor.AQUA + "You have been given " + amount + "x the " + type + " Boss Egg");
             } else {
-                if (p == sender) {
-                    p.sendMessage(ChatColor.RED + "Your Inventory seems to be full");
-                } else {
-                    sender.sendMessage(ChatColor.RED + "The receiving Inventory seems to be full");
-                }
+
+                p.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
             }
             return true;
-
 
         }
 

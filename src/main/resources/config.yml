@@ -6,6 +6,8 @@ Bosses:
   resetConfig: false  #If set true this will set your configuration to a state that definitely works, aka the state you found it in when you first opened this file.
   #For the resetConfig setting to work, you must restart your server or type '/rl confirm'. The command for reloading the config file will not work here.
 
+  PluginLanguage: EN  # Currently implemented Languages: EN, GER
+
   enableBossKilledMessage: true
   disableBlazeBossesSpawningFromSpawners: false #no bosses except for the blaze boss can spawn from spawners. setting this to true will disable Blaze bosses from spawning from spawners aswell.
 
@@ -29,8 +31,6 @@ Bosses:
   CommandsExecutedOnBossDeath:  # first command is an example of how to set an empty command. selecting '0' as a command for a boss with the command being empty will result in no command being executed.
     - ""
     - "give <10> minecraft:diamond 5"   # in case you have essentials installed you may have to remove the 'minecraft:', aka just use the item name.
-
-
 
 #Most things about the config will be explained inside the SkeletonBoss section! make sure to read carefully if you want to edit this file!
 

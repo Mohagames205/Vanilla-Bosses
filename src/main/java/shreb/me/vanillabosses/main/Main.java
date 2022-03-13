@@ -25,6 +25,7 @@ import java.util.Objects;
 public final class Main extends JavaPlugin {
 
     private static Main instance;
+    private static Languages currentLanguage;
 
 
     @Override
@@ -40,6 +41,12 @@ public final class Main extends JavaPlugin {
         if(!config.getBoolean("Bosses.enablePlugin")) {
             getServer().getConsoleSender().sendMessage(ChatColor.BLUE + "The VanillaBosses Plugin is installed, but disabled in the config.");
            return;
+        }
+
+        try {
+            currentLanguage = Languages.valueOf(config.getString("Bosses.PluginLanguage"));
+        } catch(IllegalArgumentException e){
+            currentLanguage = Languages.EN;
         }
 
         PluginManager pm = Bukkit.getPluginManager();
@@ -193,4 +200,9 @@ public final class Main extends JavaPlugin {
             e.printStackTrace();
         }
     }
+
+    public static Languages getCurrentLanguage(){
+        return currentLanguage;
+    }
+
 }

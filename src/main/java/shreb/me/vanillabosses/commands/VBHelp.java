@@ -97,7 +97,6 @@ public class VBHelp implements CommandExecutor {
         if (args[0].equalsIgnoreCase("Zombified_Piglin")) {
             sender.sendMessage(ChatColor.GREEN + "One of the few Pigmen who were able to mine gold and enchant their armor!");
             sender.sendMessage(ChatColor.GREEN + "The Butchers axe this Pigman is holding has a chance to cripple anyone unfortunate enough to be hit by it.");
-            sender.sendMessage(ChatColor.GREEN + "");
             sender.sendMessage(ChatColor.GREEN + "Drops the Butchers Axe");
             return true;
         }
@@ -136,7 +135,7 @@ public class VBHelp implements CommandExecutor {
         if (args[0].equalsIgnoreCase("rlvb")) {
 
             if (!sender.isOp()) {
-                sender.sendMessage("You do not have the necessary permissions to run this command (need OP)");
+                sender.sendMessage("You do not have the necessary permissions to run this command");
                 return true;
             }
 

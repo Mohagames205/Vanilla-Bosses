@@ -2,16 +2,16 @@ package shreb.me.vanillabosses.main;
 
 public enum Languages {
 
-    EN (
-        " was slain by ",
+    EN(
+            " was slain by ",
 
-        "Not enough Arguments!",
+            "Not enough Arguments!",
 
-        "Bad Argument, please try again.",
+            "Bad Argument, please try again.",
 
-        "You do not have the necessary Permissions!",
+            "You do not have the necessary Permissions!",
 
-        "An Error has ocurred, please ",
+            "An Error has ocurred, please notify the Author of this error and what you were doing before it happened.",
 
             "This command is disabled.",
 
@@ -28,9 +28,8 @@ public enum Languages {
                     "Upon being hit with a spectral arrow the blaze may drop an item (if not disabled in the config)",
 
             "Bomby is a Creeper with great anger management\n" +
-                    "He still gets really angry when he is lit on fire by anything tho.\n" +
                     "He lets out his anger in the form of 8 primed blocks of TNT which fly in all directions when he is about to explode\n" +
-                    "Bomby does a lot of damage when he gets angry but can also be defeated by making him angry in quick succession",
+                    "Bomby does a lot of damage when he gets angry but can be defeated by arrows quite easily",
 
             "An enderman with a slight drinking problem. \n" +
                     "If you hit this enderman it may just become even more angry than a normal enderman would be.\n" +
@@ -85,7 +84,92 @@ public enum Languages {
                     "If you're enjoying my plugin, please do leave a rating and tell your friends :D\n" +
                     "In Case you have any ideas about new bosses or items and would like to see them in the plugin, please shoot me a message.\n" +
                     "Have fun playing and stay healthy :)"
-    );
+    ),
+
+    GER(" wurde getötet von ",
+
+            "Zu wenige Argumente!",
+
+            "Unpassendes Argument, bitte nochmal versuchen!",
+
+            "Unzureichende Berechtigungen!",
+
+            "Ein Fehler ist aufgetreten. Informiere bitte den Author dieses Plugins darüber, was geschehen ist als dieser Fehler aufgetreten ist.",
+
+            "Dieses Kommando ist nicht aktiviert.",
+
+            "Das Zielinventar scheint voll zu sein.",
+
+            "Mögliche Kommandos:\n" +
+                    " - /vbh  (Zeigt diese Nachricht an)\n" +
+                    " - /vbh discord (Schickt dem Sender den discord link)\n" +
+                    " - /vbh <Bosstyp>  (Zeigt Informationen über den angegebenen Bosstyp an. Um alle möglichen Bosstypen anzuzeigen, schreib /boss list)\n" +
+                    " - /vbh info  (Zeigt Informationen über dieses Plugin an)\n",
+
+            "Eine normale Lohe, die es nicht interessiert, mit was sie feuert.\n" +
+                    "Diese Lohe hat mehr Leben als eine normale, nimmt aber durch Spektralpfeile mehr Schaden.\n" +
+                    "Wenn sie mit einem Spektralpfeil getroffen wird, lässt sie ein Item fallen, es sei denn das ist in der Konfigurationsdatei ausgeschaltet.",
+
+            "Bomby ist ein Creeper, der nicht sofort in die Luft fliegt, sobald er sauer wird.\n" +
+                    "Seine Wut lässt er kontrolliert in Form von 8 gezündeten TNT-Blöcken raus, die in alle richtungen fliegen.\n" +
+                    "Bomby kann viel Schaden anrichten, wenn er sauer wird, kann aber recht leicht durch Pfeile ausgeschaltet werden.",
+
+            "Ein Enderman, der ein Alkoholproblem hat. \n" +
+                    "Wenn man ihn schlägt, wird er noch wütender als ein normaler Enderman.\n" +
+                    "Das kann dazu führen, dass er schnell trinkt, was er gerade zur Hand hat, und einen zufälligen Effekt bekommt.\n" +
+                    "Wenn dieser Enderman sich teleportiert, lässt er Endermites zurück, welche den Spieler angreifen.\n" +
+                    "Lässt den Umhang der Unsichtbarkeit fallen.",
+
+            "Will immer mit Leuten kuscheln!\n" +
+                    "Kann sehr wütend werden, wenn er Schaden nimmt und setzt ab und zu alles um sich in Brand.\n" +
+                    "Will immer nett sein, aber kuscheln tut etwas weh, wenn das andere Lebewesen so heiß wie Lava ist.\n" +
+                    "Lässt die 3 Stufen des Items \"Heated Magma Cream\" fallen.",
+
+            "Der Skelettkönig war einmal der Regent eines großen Königreichs. \n" +
+                    "Er ist zusammen mit seiner Armee und seinem Land im letzten Kampf vor seinen Burgmauern gefallen.\n" +
+                    "Mit seinem Bogen, dem Skeletor, welcher aus Rehknochen gemacht ist, beschwört er die Macht des Sprengstoffs herauf, um seine Gegner zu töten.\n" +
+                    "Seine Knochen sind so stark, dass mancher Schaden keine Wirkung zeigt.\n" +
+                    "Wenn er jedoch Schaden nimmt, kann es sein dass er seine Knochen für eine gewisse Zeit sehr stärkt oder einen Teil seiner ehemaligen Armee wieder heraufbeschört.\n" +
+                    "Er hat normalerweise einen Teil seiner Schatzkammer dabei, welcher fallen gelassen wird, sobald der König stirbt.\n" +
+                    "Da sein Bogen in schlechten Zustand ist, kann man ihn nur selten nach dem Tod des Königs noch verwenden.\n" +
+                    "Lässt den \"Skeletor\" fallen.",
+
+            "Das Schleimigste und elastischste, was es gibt.\n" +
+                    "Wenn es getroffen wird, kann es die Kraft des Schlags nach unten umleiten und sich selbst in die Luft schleudern, um dann schnell auf den Boden aufzuschlagen.\n" +
+                    "Jeder Spieler, der den Boden berührt, wenn es auf den Boden trifft, wird weggeschleudert.\n" +
+                    "Lässt die \"Schleimschuhe\" und \"elastische Schleimbälle\" fallen.",
+
+            "Dolores ist eine spezielle Spinne.\n" +
+                    "Wenn man sie schlägt, kann sie unsichtbar werden und sich mit Buffs hinter den Spieler teleportieren.\n" +
+                    "Außerdem hat sie einen kräftigen Sprung, mit dem sie sich schnell annähern kann.\n" +
+                    "Lässt das Item \"Slingshot\" fallen.",
+
+            "Diese Hexe war schon immer gut in allem was sie tat.\n" +
+                    "Sie hat herausgefunden wie man Tränke herstellt, welche viel besser sind als die, die an der Akademie gelehrt werden.\n" +
+                    "Außerdem hat sie einige Zutaten gefunden, aus welchen Tränke hergestellt werden können, die schon lange vergessen sind.\n" +
+                    "Leider sagt sie nicht, wie diese Zutaten gemacht werden oder wo man sie findet.",
+
+            "Der Witherboss ist ein missglücktes Experiment.\n" +
+                    "Der Versuch, den Antichristen zu machen ist noch nie gut gegangen.\n" +
+                    "Trotzdem versuchst du es, indem du die zwei Dinge zusammenführst, die dich am meisten an den Nether erinnern.\n" +
+                    "Um den Witherboss heraufzubeschwören, baut man einen normalen Wither direkt auf einem Netherite Block. Dieser Block verschwindet, sobald der Witherboss spawnt.\n" +
+                    "Wenn der Witherboss stirbt, lässt er (oder sie?) ein Wither Ei fallen. \n" +
+                    "Damit es schlüpft, musst du den Anweisungen folgen, die auf dem Ei geschrieben stehen.",
+
+            "Ein Zombie, welcher einst als \"Bob\" bekannt war. Er hat immer seine gang in der Nähe.\n" +
+                    "Seine Gang hat meistens jedoch nich viel zu tun, da Bob mit seiner verzauberten Rüstung das meiste alleine macht.\n" +
+                    "Lässt den \"Baseballschläger\" fallen",
+
+            "Einer der wenigen Zombifizierten Piglins, die fähig waren, Gold abzubauen und ihre Rüstung zu verzaubern.\n" +
+                    "Die Axt des Schlächters, welche dieser Piglin in der Hand hält besitzt die Fähigkeit, das Ziel zu ver.\n" +
+                    "Lässt die \"Axt des Schlächters\" fallen.",
+
+            "Das Vanilla Bosses plugin wurde von Shreb gemacht. (Auf Spigot)\n" +
+                    "Sollte euch auffallen, dass andere meine Ideen stehlen, informiere mich bitte über Spigot oder discord.\n" +
+                    "Falls euch mein plugin gefällt, lasst eine Bewertung auf Spigot da und empfehlt es weiter!\n" +
+                    "Habt ihr weitere Ideen für neue Bosse oder sonstiges? Schreibt mir auf Spigot oder discord.\n" +
+                    "Habt Spaß und bleibt gesund :)")
+    ;
 
     public String killedByMessage;
     public String notEnoughArguments;

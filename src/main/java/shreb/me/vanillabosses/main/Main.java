@@ -134,6 +134,7 @@ public final class Main extends JavaPlugin {
                     getLogger().info("There is not a new update available.");
                 } else {
                     getLogger().info("There is a new update available.");
+                    getServer().getConsoleSender().sendMessage(ChatColor.RED + "New Update available for the Vanilla Bosses Plugin!");
                 }
             });
 

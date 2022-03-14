@@ -39,7 +39,7 @@ public class Blazer implements Listener {
         PersistentDataContainer container = armorMeta.getPersistentDataContainer();
         container.set(Items.BLAZER.identifyingPDCKey, PersistentDataType.INTEGER, 1);
 
-        armorMeta.setDisplayName(ChatColor.DARK_BLUE + "Blazer");
+        armorMeta.setDisplayName(ChatColor.DARK_BLUE + Main.getCurrentLanguage().itemBlazerName);
         ArrayList<String> lore = new ArrayList<>();
         for(String s: Main.getInstance().getConfig().getStringList("Items.Blazer.Lore")){
             if(Main.getInstance().getConfig().getStringList("Items.Blazer.Lore").indexOf(s) == 0){

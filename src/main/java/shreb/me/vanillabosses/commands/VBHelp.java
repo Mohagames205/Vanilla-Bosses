@@ -1,12 +1,23 @@
 package shreb.me.vanillabosses.commands;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.persistence.PersistentDataType;
+import shreb.me.vanillabosses.items.HeatedMagmaCream;
+import shreb.me.vanillabosses.items.Items;
+import shreb.me.vanillabosses.items.SlimeBoots;
 import shreb.me.vanillabosses.main.Main;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 
 public class VBHelp implements CommandExecutor {
@@ -76,6 +87,47 @@ public class VBHelp implements CommandExecutor {
             return true;
         }
 
+        if(args[0].equalsIgnoreCase("replaceItems")){
+
+                ArrayList<ItemStack> replaceableItems = (ArrayList<ItemStack>) Arrays.stream(((Player) sender).getInventory().getContents())
+                        .filter(Objects::nonNull)
+                        .filter(n -> n.getType() != Material.AIR)
+                        //filtering out Air because of itemMeta nullpointers
+                        .filter(n -> n.getItemMeta().getPersistentDataContainer().has(Items.HEATEDMAGMACREAM1.identifyingPDCKey, PersistentDataType.INTEGER)
+                                || n.getItemMeta().getPersistentDataContainer().has(Items.HEATEDMAGMACREAM2.identifyingPDCKey, PersistentDataType.INTEGER)
+                                || n.getItemMeta().getPersistentDataContainer().has(Items.HEATEDMAGMACREAM3.identifyingPDCKey, PersistentDataType.INTEGER)
+                                || n.getItemMeta().getPersistentDataContainer().has(Items.BOUNCYSLIME.identifyingPDCKey, PersistentDataType.STRING))
+                        //filtering for all replacable items!)
+                        .collect(Collectors.toList());
+
+                if(replaceableItems.isEmpty()) {
+                    sender.sendMessage("You do not have any items to replace!");
+                    return true;
+                }
+
+                for(ItemStack stack : replaceableItems){
+                    switch(stack.getType()){
+
+                        case SLIME_BALL:
+                            ((Player) sender).getInventory().remove(stack);
+                            ((Player) sender).getInventory().addItem(SlimeBoots.replaceBouncySlime(stack));
+                            break;
+
+                        case MAGMA_CREAM:
+                            ((Player) sender).getInventory().remove(stack);
+                            ((Player) sender).getInventory().addItem(HeatedMagmaCream.replaceHMC(stack));
+                            break;
+
+                        default:
+                            sender.sendMessage("Weird Error 102");
+
+                    }
+                }
+                return true;
+
+            }
+
+
 
         if (args[0].equalsIgnoreCase("info")) {
             sender.sendMessage(ChatColor.AQUA + Main.getCurrentLanguage().vbhInfo);
@@ -86,6 +138,8 @@ public class VBHelp implements CommandExecutor {
         if(args[0].equalsIgnoreCase("discord")){
             sender.sendMessage("https://discord.gg/stAd5ccDZT");
         }
+
+
 
         //reload config file
         if (args[0].equalsIgnoreCase("rlvb")) {

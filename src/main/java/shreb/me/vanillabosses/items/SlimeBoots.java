@@ -22,10 +22,21 @@ public class SlimeBoots {
         ArrayList<String> lore = new ArrayList<>(Main.getInstance().getConfig().getStringList("Items.SlimeBoots.BouncySlime.Lore"));
         meta.setLore(lore);
         container.set(Items.BOUNCYSLIME.identifyingPDCKey, PersistentDataType.STRING, "bouncySlime");
-        meta.setDisplayName(ChatColor.DARK_GREEN + "Bouncy Slime");
+        meta.setDisplayName(ChatColor.DARK_GREEN + Main.getCurrentLanguage().itemBouncySlimeName);
         bouncySlime.setItemMeta(meta);
 
         return bouncySlime;
+    }
+
+    public static ItemStack replaceBouncySlime(ItemStack stack){
+
+        if(!stack.hasItemMeta() && !stack.getItemMeta().getPersistentDataContainer().has(Items.BOUNCYSLIME.identifyingPDCKey, PersistentDataType.STRING)) return stack;
+
+        int amount = stack.getAmount();
+        stack = makeBouncySlime();
+        stack.setAmount(amount);
+        return stack;
+
     }
 
     public static ItemStack makeSlimeBoots(){
@@ -33,7 +44,7 @@ public class SlimeBoots {
         ItemStack slimeBoots = new ItemStack(Material.LEATHER_BOOTS);
         LeatherArmorMeta meta = (LeatherArmorMeta) slimeBoots.getItemMeta();
         meta.setColor(Color.GREEN);
-        meta.setDisplayName(ChatColor.DARK_GREEN + "Slime Boots");
+        meta.setDisplayName(ChatColor.DARK_GREEN + Main.getCurrentLanguage().itemSlimeBootsName);
         ArrayList<String> lore = new ArrayList<>();
         lore.addAll(Main.getInstance().getConfig().getStringList("Items.SlimeBoots.Lore"));
 

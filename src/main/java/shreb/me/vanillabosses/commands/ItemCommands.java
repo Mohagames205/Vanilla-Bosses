@@ -66,7 +66,7 @@ public class ItemCommands implements CommandExecutor {
 
             if (p.getInventory().firstEmpty() != -1) {
                 p.getInventory().addItem(skeletor);
-                p.sendMessage(ChatColor.AQUA + "You have been given the Skeletor!");
+                p.sendMessage(ChatColor.AQUA + Main.getCurrentLanguage().itemSkeletorGivenMessage);
             } else {
 
                 sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
@@ -89,7 +89,7 @@ public class ItemCommands implements CommandExecutor {
 
             if (p.getInventory().firstEmpty() != -1) {
                 p.getInventory().addItem(slingshot);
-                p.sendMessage(ChatColor.AQUA + "You have been given the Slingshot!");
+                p.sendMessage(ChatColor.AQUA + Main.getCurrentLanguage().itemSlingshotGivenMessage);
             } else {
 
                 sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
@@ -111,7 +111,7 @@ public class ItemCommands implements CommandExecutor {
 
             if (p.getInventory().firstEmpty() != -1) {
                 p.getInventory().addItem(cloak);
-                p.sendMessage(ChatColor.AQUA + "You have been given the Invisibility Cloak!");
+                p.sendMessage(ChatColor.AQUA + Main.getCurrentLanguage().itemInvisibilityCloakNameGivenMessage);
             } else {
 
                 sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
@@ -133,7 +133,7 @@ public class ItemCommands implements CommandExecutor {
 
             if (p.getInventory().firstEmpty() != -1) {
                 p.getInventory().addItem(butchersAxe);
-                p.sendMessage(ChatColor.AQUA + "You have been given the Butchers Axe!");
+                p.sendMessage(ChatColor.AQUA + Main.getCurrentLanguage().itemButchersAxeNameGivenMessage);
             } else {
 
                 sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
@@ -155,7 +155,7 @@ public class ItemCommands implements CommandExecutor {
 
             if (p.getInventory().firstEmpty() != -1) {
                 p.getInventory().addItem(baseballBat);
-                p.sendMessage(ChatColor.AQUA + "You have been given the Baseball Bat!");
+                p.sendMessage(ChatColor.AQUA + Main.getCurrentLanguage().itemBaseballBatGivenMessage);
             } else {
 
                 sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
@@ -177,7 +177,7 @@ public class ItemCommands implements CommandExecutor {
 
             if (p.getInventory().firstEmpty() != -1) {
                 p.getInventory().addItem(witherEgg);
-                p.sendMessage(ChatColor.AQUA + "You have been given the Witheregg!");
+                p.sendMessage(ChatColor.AQUA + Main.getCurrentLanguage().itemWitherEggGivenMessage);
             } else {
 
                 sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
@@ -199,7 +199,7 @@ public class ItemCommands implements CommandExecutor {
 
             if (p.getInventory().firstEmpty() != -1) {
                 p.getInventory().addItem(slimeboots);
-                p.sendMessage(ChatColor.AQUA + "You have been given Slime boots!");
+                p.sendMessage(ChatColor.AQUA + Main.getCurrentLanguage().itemSlimeBootsGivenMessage);
             } else {
 
                 sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
@@ -242,7 +242,7 @@ public class ItemCommands implements CommandExecutor {
                     p.getInventory().addItem(bouncyslime);
                 }
 
-                p.sendMessage(ChatColor.AQUA + "You have been given " + amount + "x Bouncy Slime!");
+                p.sendMessage(ChatColor.AQUA + Main.getCurrentLanguage().itemBouncySlimeGivenMessage);
             } else {
 
                 sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
@@ -264,7 +264,7 @@ public class ItemCommands implements CommandExecutor {
 
             if (p.getInventory().firstEmpty() != -1) {
                 p.getInventory().addItem(blazer);
-                p.sendMessage(ChatColor.AQUA + "You have been given the Blazer!");
+                p.sendMessage(ChatColor.AQUA + Main.getCurrentLanguage().itemBlazerNameGivenMessage);
             } else {
 
                 sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
@@ -319,7 +319,7 @@ public class ItemCommands implements CommandExecutor {
 
                 for (int i = 0; i < amount; i++) p.getInventory().addItem(cream);
 
-                p.sendMessage(ChatColor.AQUA + "You have been given " + amount + "x Heated Magma cream of the level " + Integer.parseInt(args[1]) + "!");
+                p.sendMessage(ChatColor.AQUA + Main.getCurrentLanguage().itemHMCNameGivenMessage);
             } else {
 
                 sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);
@@ -361,7 +361,7 @@ public class ItemCommands implements CommandExecutor {
 
             if (p.getInventory().firstEmpty() != -1) {
                 p.getInventory().addItem(BossEggs.makeBossEgg(type, amount));
-                p.sendMessage(ChatColor.AQUA + "You have been given " + amount + "x the " + type + " Boss Egg");
+                p.sendMessage(ChatColor.AQUA + Main.getCurrentLanguage().itemBossEggGivenMessage);
             } else {
 
                 p.sendMessage(ChatColor.RED + Main.getCurrentLanguage().inventoryFull);

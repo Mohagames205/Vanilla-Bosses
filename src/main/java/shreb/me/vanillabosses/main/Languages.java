@@ -19,11 +19,14 @@ public enum Languages {
 
             "The specified amount is not accepted",
 
+            " was successfully spawned!",
+
             "Possible commands:\n" +
                     " - /vbh discord (this will send a link to the plugin discord)\n" +
                     " - /vbh  (shows this help message)\n" +
                     " - /vbh <EntityType>  (gives you information about the boss of the specified type. type '/boss list' to see all the available bosses!)\n" +
-                    " - /vbh info  (gives you information about the plugin)\n",
+                    " - /vbh info  (gives you information about the plugin)\n" +
+                    " - /vbh replaceItems (replaces all crafting material items which are currently in the inventory with ones matching the current language settings.)",
 
             "A normal blaze which has been studying the art of not caring what it has for projectiles.\n" +
                     "This blaze has more health than a normal one, but can be cleansed by spectral arrows, doing more damage than usual.\n" +
@@ -85,7 +88,39 @@ public enum Languages {
                     "Please report any attempts of copying my content to me via Spigot or discord\n" +
                     "If you're enjoying my plugin, please do leave a rating and tell your friends :D\n" +
                     "In Case you have any ideas about new bosses or items and would like to see them in the plugin, please shoot me a message.\n" +
-                    "Have fun playing and stay healthy :)"
+                    "Have fun playing and stay healthy :)",
+
+            "Baseball Bat",
+            "You have been given the Baseball Bat!",
+
+            "Blazer",
+            "You have been given the Blazer!",
+
+            "Butchers Axe",
+            "You have been given the Butchers Axe!",
+
+            "Heated Magma Cream",
+            "You have been given Heated Magma Cream!",
+
+            "Invisibility Cloak",
+            "You have been given the Invisibility Cloak",
+
+            "Skeletor",
+            "You have been given the Skeletor!",
+
+            "Slime Boots",
+            "You have been given the Slime Boots!",
+
+            "Bouncy Slime",
+            "You have been given Bouncy Slime",
+
+            "Slingshot",
+            "You have been given the Slingshot!",
+
+            "Wither Egg",
+            "You have been given the Wither Egg",
+
+            "You have been given the Boss Egg(s)"
     ),
 
     GER(" wurde getötet von ",
@@ -104,11 +139,14 @@ public enum Languages {
 
             "Unpassende Menge angegeben!",
 
+            " wurde erfolgreich gespawnt!",
+
             "Mögliche Kommandos:\n" +
                     " - /vbh  (Zeigt diese Nachricht an)\n" +
                     " - /vbh discord (Schickt dem Sender den discord link)\n" +
                     " - /vbh <Bosstyp>  (Zeigt Informationen über den angegebenen Bosstyp an. Um alle möglichen Bosstypen anzuzeigen, schreib /boss list)\n" +
-                    " - /vbh info  (Zeigt Informationen über dieses Plugin an)\n",
+                    " - /vbh info  (Zeigt Informationen über dieses Plugin an)\n" +
+                    " - /vbh replaceItems (ersetzt alle items, welche häufig für crafting hergenommen werden mit items, die der momentanen Spracheinstellung entsprechen)",
 
             "Eine normale Lohe, die es nicht interessiert, mit was sie feuert.\n" +
                     "Diese Lohe hat mehr Leben als eine normale, nimmt aber durch Spektralpfeile mehr Schaden.\n" +
@@ -172,8 +210,40 @@ public enum Languages {
                     "Sollte euch auffallen, dass andere meine Ideen stehlen, informiere mich bitte über Spigot oder discord.\n" +
                     "Falls euch mein plugin gefällt, lasst eine Bewertung auf Spigot da und empfehlt es weiter!\n" +
                     "Habt ihr weitere Ideen für neue Bosse oder sonstiges? Schreibt mir auf Spigot oder discord.\n" +
-                    "Habt Spaß und bleibt gesund :)")
-    ;
+                    "Habt Spaß und bleibt gesund :)",
+
+            "Baseball Schläger",
+            "Du hast den Baseball Schläger erhalten!",
+
+            "Blazer",
+            "Du hast den Blazer erhalten!",
+
+            "Die Axt des Schlächters",
+            "Du hast die Axt des Schlächters erhalten!",
+
+            "Erhitzte Magmacreme",
+            "Du hast Erhitzte Magmacreme erhalten!",
+
+            "Mantel der Unsichtbarkeit",
+            "Du hast den Mantel der Unsichtbarkeit erhalten!",
+
+            "Skeletor",
+            "Du hast den Skeletor erhalten!",
+
+            "Schleimschuhe",
+            "Du hast die Schleimschuhe erhalten!",
+
+            "Elastischer Schleim",
+            "Du hast Elastischen Schleim erhalten!",
+
+            "Schleuder",
+            "Du hast die Schleuder erhalten!",
+
+            "Wither Ei",
+            "Du hast das Wither Ei erhalten!",
+
+            "Du hast das Boss Ei/die Boss Eier erhalten!"
+            );
 
     public String killedByMessage;
     public String notEnoughArguments;
@@ -183,6 +253,8 @@ public enum Languages {
     public String commandDisabled;
     public String inventoryFull;
     public String badAmount;
+    public String spawnedMessage;
+
     public String vbh0;
     public String vbhBlaze;
     public String vbhCreeper;
@@ -197,7 +269,39 @@ public enum Languages {
     public String vbhPiglin;
     public String vbhInfo;
 
-    Languages(String killedByMessage, String notEnoughArguments, String badArgument, String badPermissions, String errorMessage, String commandDisabled, String inventoryFull, String badAmount, String vbh0, String vbhBlaze, String vbhCreeper, String vbhEnderman, String vbhMagmaCube, String vbhSkeleton, String vbhSlime, String vbhSpider, String vbhWitch, String vbhWither, String vbhZombie, String vbhPiglin, String vbhInfo) {
+    public String itemBaseballBatName;
+    public String itemBaseballBatGivenMessage;
+
+    public String itemBlazerName;
+    public String itemBlazerNameGivenMessage;
+
+    public String itemButchersAxeName;
+    public String itemButchersAxeNameGivenMessage;
+
+    public String itemHMCName;
+    public String itemHMCNameGivenMessage;
+
+    public String itemInvisibilityCloakName;
+    public String itemInvisibilityCloakNameGivenMessage;
+
+    public String itemSkeletorName;
+    public String itemSkeletorGivenMessage;
+
+    public String itemSlimeBootsName;
+    public String itemSlimeBootsGivenMessage;
+
+    public String itemBouncySlimeName;
+    public String itemBouncySlimeGivenMessage;
+
+    public String itemSlingshotName;
+    public String itemSlingshotGivenMessage;
+
+    public String witherEggName;
+    public String itemWitherEggGivenMessage;
+
+    public String itemBossEggGivenMessage;
+
+    Languages(String killedByMessage, String notEnoughArguments, String badArgument, String badPermissions, String errorMessage, String commandDisabled, String inventoryFull, String badAmount, String spawnedMessage, String vbh0, String vbhBlaze, String vbhCreeper, String vbhEnderman, String vbhMagmaCube, String vbhSkeleton, String vbhSlime, String vbhSpider, String vbhWitch, String vbhWither, String vbhZombie, String vbhPiglin, String vbhInfo, String itemBaseballBatName, String itemBaseballBatGivenMessage, String itemBlazerName, String itemBlazerNameGivenMessage, String itemButchersAxeName, String itemButchersAxeNameGivenMessage, String itemHMCName, String itemHMCNameGivenMessage, String itemInvisibilityCloakName, String itemInvisibilityCloakNameGivenMessage, String itemSkeletorName, String itemSkeletorGivenMessage, String itemSlimeBootsName, String itemSlimeBootsGivenMessage, String itemBouncySlimeName, String itemBouncySlimeGivenMessage, String itemSlingshotName, String itemSlingshotGivenMessage, String witherEggName, String itemWitherEggGivenMessage, String itemBossEggGivenMessage) {
         this.killedByMessage = killedByMessage;
         this.notEnoughArguments = notEnoughArguments;
         this.badArgument = badArgument;
@@ -206,6 +310,7 @@ public enum Languages {
         this.commandDisabled = commandDisabled;
         this.inventoryFull = inventoryFull;
         this.badAmount = badAmount;
+        this.spawnedMessage = spawnedMessage;
         this.vbh0 = vbh0;
         this.vbhBlaze = vbhBlaze;
         this.vbhCreeper = vbhCreeper;
@@ -219,5 +324,26 @@ public enum Languages {
         this.vbhZombie = vbhZombie;
         this.vbhPiglin = vbhPiglin;
         this.vbhInfo = vbhInfo;
+        this.itemBaseballBatName = itemBaseballBatName;
+        this.itemBaseballBatGivenMessage = itemBaseballBatGivenMessage;
+        this.itemBlazerName = itemBlazerName;
+        this.itemBlazerNameGivenMessage = itemBlazerNameGivenMessage;
+        this.itemButchersAxeName = itemButchersAxeName;
+        this.itemButchersAxeNameGivenMessage = itemButchersAxeNameGivenMessage;
+        this.itemHMCName = itemHMCName;
+        this.itemHMCNameGivenMessage = itemHMCNameGivenMessage;
+        this.itemInvisibilityCloakName = itemInvisibilityCloakName;
+        this.itemInvisibilityCloakNameGivenMessage = itemInvisibilityCloakNameGivenMessage;
+        this.itemSkeletorName = itemSkeletorName;
+        this.itemSkeletorGivenMessage = itemSkeletorGivenMessage;
+        this.itemSlimeBootsName = itemSlimeBootsName;
+        this.itemSlimeBootsGivenMessage = itemSlimeBootsGivenMessage;
+        this.itemBouncySlimeName = itemBouncySlimeName;
+        this.itemBouncySlimeGivenMessage = itemBouncySlimeGivenMessage;
+        this.itemSlingshotName = itemSlingshotName;
+        this.itemSlingshotGivenMessage = itemSlingshotGivenMessage;
+        this.witherEggName = witherEggName;
+        this.itemWitherEggGivenMessage = itemWitherEggGivenMessage;
+        this.itemBossEggGivenMessage = itemBossEggGivenMessage;
     }
 }

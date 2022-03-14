@@ -1,12 +1,13 @@
 Bosses:
 
-  configVersion: 1.6.0  # This is important to check for an outdated config file. do not change or remove it. to update your config, please consider saving your current config file and using the "resetConfig" Option below.
+  configVersion: 1.6.1  # This is important to check for an outdated config file. do not change or remove it. to update your config, please consider saving your current config file and using the "resetConfig" Option below.
                         # after this you can paste your original values at the appropriate positions if you wish to. (Alternatively to reset the config you can delete the entire config file instead of using the reset option)
   enablePlugin: true
   resetConfig: false  #If set true this will set your configuration to a state that definitely works, aka the state you found it in when you first opened this file.
   #For the resetConfig setting to work, you must restart your server or type '/rl confirm'. The command for reloading the config file will not work here.
 
-  PluginLanguage: EN  # Currently implemented Languages: EN, GER
+  PluginLanguage: EN  # Currently implemented Languages: EN (English), GER (German)
+  #In case the entered language is not implemented. it will default to English
 
   enableBossKilledMessage: true
   disableBlazeBossesSpawningFromSpawners: false #no bosses except for the blaze boss can spawn from spawners. setting this to true will disable Blaze bosses from spawning from spawners aswell.

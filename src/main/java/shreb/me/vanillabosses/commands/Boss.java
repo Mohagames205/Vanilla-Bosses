@@ -53,7 +53,7 @@ public class Boss implements CommandExecutor {
         }
 
         if(!sender.hasPermission("VB.SummonBosses")){
-            sender.sendMessage(ChatColor.RED + "You do not have permission to use this command");
+            sender.sendMessage(ChatColor.RED + Main.getCurrentLanguage().badPermissions);
             return true;
         }
 
@@ -84,12 +84,12 @@ public class Boss implements CommandExecutor {
         if (args[0].equalsIgnoreCase("skeleton")) {
 
             if (!(config.getBoolean("Bosses.SkeletonBoss.enableSummonCommand"))) {
-                sender.sendMessage("This command is disabled in the config");
+                sender.sendMessage(Main.getCurrentLanguage().commandDisabled);
                 return true;
             }
 
             if (!(config.getBoolean("Bosses.SkeletonBoss.enabled"))) {
-                sender.sendMessage("This Boss is disabled in the config file. To run this command the boss must be enabled");
+                sender.sendMessage(Main.getCurrentLanguage().commandDisabled);
                 return true;
             }
 
@@ -109,7 +109,7 @@ public class Boss implements CommandExecutor {
 
             Entity entity = BossSkeleton.makeBossSkeleton(loc, world);
 
-            sender.sendMessage(ChatColor.AQUA + "The Boss Skeleton has been summoned successfully");
+            sender.sendMessage(ChatColor.AQUA + Bosses.SKELETON.displayName + Main.getCurrentLanguage().spawnedMessage);
 
             PersistentDataContainer container = entity.getPersistentDataContainer();
             String cmd = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.SkeletonBoss.CommandToBeExecutedOnDeath"));
@@ -148,7 +148,7 @@ public class Boss implements CommandExecutor {
             }
 
             Entity entity = BossSpider.makeBossSpider(loc, world);
-            sender.sendMessage(ChatColor.AQUA + "The Boss Spider has been summoned successfully");
+            sender.sendMessage(ChatColor.AQUA + Bosses.SPIDER.displayName + Main.getCurrentLanguage().spawnedMessage);
             PersistentDataContainer container = entity.getPersistentDataContainer();
             String cmd = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.SpiderBoss.CommandToBeExecutedOnDeath"));
             if (!cmd.equals("")) {
@@ -185,7 +185,7 @@ public class Boss implements CommandExecutor {
             }
 
             Entity entity = BossCreeper.makeBossCreeper(loc, world);
-            sender.sendMessage(ChatColor.AQUA + "The Boss Creeper has been summoned successfully");
+            sender.sendMessage(ChatColor.AQUA + Bosses.CREEPER.displayName + Main.getCurrentLanguage().spawnedMessage);
 
             PersistentDataContainer container = entity.getPersistentDataContainer();
             String cmd = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.CreeperBoss.CommandToBeExecutedOnDeath"));
@@ -224,7 +224,7 @@ public class Boss implements CommandExecutor {
             }
 
             Wither wither = (Wither) world.spawnEntity(loc, EntityType.WITHER);
-            sender.sendMessage(ChatColor.AQUA + "The Boss Wither has been summoned successfully");
+            sender.sendMessage(ChatColor.AQUA + Bosses.WITHER.displayName + Main.getCurrentLanguage().spawnedMessage);
             wither.addScoreboardTag("BossWither");
 
             wither.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.WITHER.health);
@@ -271,7 +271,7 @@ public class Boss implements CommandExecutor {
             }
 
             Entity entity = BossBlaze.makeBossBlaze(loc, world);
-            sender.sendMessage(ChatColor.AQUA + "The Boss Blaze has been summoned successfully");
+            sender.sendMessage(ChatColor.AQUA + Bosses.BLAZE.displayName + Main.getCurrentLanguage().spawnedMessage);
             PersistentDataContainer container = entity.getPersistentDataContainer();
             String cmd = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.BlazeBoss.CommandToBeExecutedOnDeath"));
             if (!cmd.equals("")) {
@@ -309,7 +309,7 @@ public class Boss implements CommandExecutor {
             }
 
             Entity entity = BossEnderman.makeBossEnderman(loc, world);
-            sender.sendMessage(ChatColor.AQUA + "The Boss Enderman has been summoned successfully");
+            sender.sendMessage(ChatColor.AQUA + Bosses.ENDERMAN.displayName + Main.getCurrentLanguage().spawnedMessage);
             PersistentDataContainer container = entity.getPersistentDataContainer();
             String cmd = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.EndermanBoss.CommandToBeExecutedOnDeath"));
             if (!cmd.equals("")) {
@@ -348,7 +348,7 @@ public class Boss implements CommandExecutor {
             }
 
             Entity entity = BossZombie.makeBossZombie(loc, world);
-            sender.sendMessage(ChatColor.AQUA + "The Boss Zombie has been summoned successfully");
+            sender.sendMessage(ChatColor.AQUA + Bosses.ZOMBIE.displayName + Main.getCurrentLanguage().spawnedMessage);
             PersistentDataContainer container = entity.getPersistentDataContainer();
             String cmd = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.ZombieBoss.CommandToBeExecutedOnDeath"));
             if (!cmd.equals("")) {
@@ -387,7 +387,7 @@ public class Boss implements CommandExecutor {
             }
 
             Entity entity = BossZombified_Piglin.makeBossZombified_Piglin(loc, world);
-            sender.sendMessage(ChatColor.AQUA + "The Boss Zombiepigman has been summoned successfully");
+            sender.sendMessage(ChatColor.AQUA + Bosses.ZOMBIFIED_PIGLIN.displayName + Main.getCurrentLanguage().spawnedMessage);
             PersistentDataContainer container = entity.getPersistentDataContainer();
             String cmd = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.Zopmbified_PiglinBoss.CommandToBeExecutedOnDeath"));
             if (!cmd.equals("")) {
@@ -425,7 +425,7 @@ public class Boss implements CommandExecutor {
             }
 
             Entity entity = BossWitch.makeBossWitch(loc, world);
-            sender.sendMessage(ChatColor.AQUA + "The Boss Witch has been summoned successfully");
+            sender.sendMessage(ChatColor.AQUA + Bosses.WITCH.displayName + Main.getCurrentLanguage().spawnedMessage);
             PersistentDataContainer container = entity.getPersistentDataContainer();
             String cmd = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.WitchBoss.CommandToBeExecutedOnDeath"));
             if (!cmd.equals("")) {
@@ -464,7 +464,7 @@ public class Boss implements CommandExecutor {
             }
 
             Entity entity = BossSlime.makeBossSlime(loc, world);
-            sender.sendMessage(ChatColor.AQUA + "The Boss Slime has been summoned successfully");
+            sender.sendMessage(ChatColor.AQUA + Bosses.SLIME.displayName + Main.getCurrentLanguage().spawnedMessage);
             PersistentDataContainer container = entity.getPersistentDataContainer();
             String cmd = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.SlimeBoss.CommandToBeExecutedOnDeath"));
             if (!cmd.equals("")) {
@@ -502,7 +502,7 @@ public class Boss implements CommandExecutor {
             }
 
             Entity entity = BossMagmacube.makeBossMagmacube(loc, world);
-            sender.sendMessage(ChatColor.AQUA + "The Boss Magmacube has been summoned successfully");
+            sender.sendMessage(ChatColor.AQUA + Bosses.MAGMA_CUBE.displayName + Main.getCurrentLanguage().spawnedMessage);
             PersistentDataContainer container = entity.getPersistentDataContainer();
             String cmd = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.Magma_cubeBoss.CommandToBeExecutedOnDeath"));
             if (!cmd.equals("")) {

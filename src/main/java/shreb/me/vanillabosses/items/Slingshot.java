@@ -129,7 +129,7 @@ public class Slingshot implements Listener {
         ItemStack slingshot = new ItemStack(Objects.requireNonNull(Material.getMaterial(Main.getInstance().getConfig().getString("Items.slingshot.itemMaterial").toUpperCase())));
         ItemMeta meta = slingshot.getItemMeta();
         ArrayList<String> lore = new ArrayList<>();
-        meta.setDisplayName(ChatColor.DARK_RED + "Slingshot");
+        meta.setDisplayName(ChatColor.DARK_RED + Main.getCurrentLanguage().itemSlingshotName);
         lore.addAll(Main.getInstance().getConfig().getStringList("Items.slingshot.Lore"));
         meta.setLore(lore);
         PersistentDataContainer container = meta.getPersistentDataContainer();

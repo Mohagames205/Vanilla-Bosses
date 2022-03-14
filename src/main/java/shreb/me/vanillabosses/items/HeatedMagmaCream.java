@@ -49,13 +49,33 @@ public class HeatedMagmaCream implements Listener {
                 throw new IllegalArgumentException(ChatColor.RED + "VanillaBosses: Error with HeatedMagmaCream. Please notify the Author of the plugin about this Error.");
         }
         ItemMeta meta = cream.getItemMeta();
-        meta.setDisplayName("Heated Magma Cream Lv." + level);
+        meta.setDisplayName(Main.getCurrentLanguage().itemHMCName + " Lv." + level);
         PersistentDataContainer container = meta.getPersistentDataContainer();
         container.set(Items.HEATEDMAGMACREAM1.identifyingPDCKey, PersistentDataType.INTEGER, level);
         cream.setItemMeta(meta);
 
         return cream;
     }
+
+    public static ItemStack replaceHMC(ItemStack stack){
+
+        if(!stack.hasItemMeta()
+                && !stack.getItemMeta().getPersistentDataContainer().has(Items.HEATEDMAGMACREAM1.identifyingPDCKey, PersistentDataType.INTEGER)
+                && !stack.getItemMeta().getPersistentDataContainer().has(Items.HEATEDMAGMACREAM2.identifyingPDCKey, PersistentDataType.INTEGER)
+                && !stack.getItemMeta().getPersistentDataContainer().has(Items.HEATEDMAGMACREAM1.identifyingPDCKey, PersistentDataType.INTEGER)
+        ) return stack;
+
+        int level = stack.getEnchantmentLevel(Enchantment.ARROW_FIRE);
+
+        if(level == 0) return stack;
+
+        int amount = stack.getAmount();
+        stack = makeHeatedMagmaCream(level);
+        stack.setAmount(amount);
+        return stack;
+
+    }
+
 
     @EventHandler
     public void onMagmaCreamUse(PlayerInteractEvent event){

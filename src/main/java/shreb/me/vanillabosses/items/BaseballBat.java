@@ -19,7 +19,7 @@ public class BaseballBat {
         ItemStack baseballBat = new ItemStack(Material.WOODEN_SWORD);
         ItemMeta meta = baseballBat.getItemMeta();
         ArrayList<String> lore = new ArrayList<>();
-        meta.setDisplayName(ChatColor.LIGHT_PURPLE + "Baseball Bat");
+        meta.setDisplayName(ChatColor.LIGHT_PURPLE + Main.getCurrentLanguage().itemBaseballBatName);
 
         PersistentDataContainer container = meta.getPersistentDataContainer();
 

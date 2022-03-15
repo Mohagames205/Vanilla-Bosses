@@ -17,31 +17,36 @@ public class RGBColors implements Serializable {
         this.b = b;
     }
 
-    public String serializeColor(RGBColors color) {
+    public String serializeColor() {
 
-        return color.r + color.g + color.b;
+        return "#" + r + g + b;
 
     }
 
     /**
+     * This method makes a RGBColors object out of a fitting String.
+     * if you serialize an RGBColors object and use this method to deserialize it again you will get the original Object back.
      *
      * @param color String from config with 6 characters representing a hex value
      * @return an RGBColors Object with the values from the String
-     * @throws IOException if the provided String is too short (less than 6 characters)
+     * @throws IllegalArgumentException if the provided String is too short (less than 6 characters)
      */
-    public RGBColors deserializeColor(String color) throws IOException {
+    public static RGBColors deserializeColor(String color) throws IllegalArgumentException {
 
-        if(color.length() < 6) throw new IOException("Provided String too short!");
+        if(color.length() < 7 || !color.startsWith("#")) throw new IllegalArgumentException("Provided String too short!");
 
        return new RGBColors(
-                String.valueOf(color.charAt(0) + color.charAt(1)),
-                String.valueOf(color.charAt(2) + color.charAt(3)),
-                String.valueOf(color.charAt(4) + color.charAt(5)));
+                String.valueOf(color.charAt(1)) + color.charAt(2),
+                String.valueOf(color.charAt(3)) + color.charAt(4),
+                String.valueOf(color.charAt(5)) + color.charAt(6));
     }
 
-    public ChatColor chatColorFromRGB(RGBColors color) {
+    /**
+     * @return a ChatColor Object from an RGBColors Object
+     */
+    public ChatColor chatColorFromRGB() {
 
-        return net.md_5.bungee.api.ChatColor.of(color.r + color.g + color.b);
+        return net.md_5.bungee.api.ChatColor.of( "#" + r + g + b);
 
     }
 

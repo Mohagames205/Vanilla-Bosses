@@ -17,10 +17,11 @@ public class RGBColors implements Serializable {
         this.b = b;
     }
 
+    /**
+     * @return the Hex String of the RGBColors object
+     */
     public String serializeColor() {
-
         return "#" + r + g + b;
-
     }
 
     /**

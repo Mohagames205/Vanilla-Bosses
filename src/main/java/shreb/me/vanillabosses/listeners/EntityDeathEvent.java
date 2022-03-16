@@ -19,6 +19,7 @@ import shreb.me.vanillabosses.bossclasses.*;
 import shreb.me.vanillabosses.items.*;
 import shreb.me.vanillabosses.main.Main;
 import shreb.me.vanillabosses.main.Methods;
+import shreb.me.vanillabosses.main.configHelpers.PlaceholderReplacer;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -27,6 +28,8 @@ public class EntityDeathEvent implements Listener {
 
     @EventHandler
     public void onBossDeath(org.bukkit.event.entity.EntityDeathEvent event) {
+
+        boolean bossWasKilled = false;
 
 
 //BossWither death
@@ -50,11 +53,7 @@ public class EntityDeathEvent implements Listener {
 
             event.getDrops().add(witherEgg);
 
-            if (event.getEntity().getKiller() != null && config.getBoolean("Bosses.enableBossKilledMessage") && event.getEntity().getCustomName() != null)  {
-                event.getEntity().getServer().broadcastMessage(ChatColor.MAGIC + "##" + ChatColor.DARK_PURPLE + event.getEntity().getCustomName() + ChatColor.MAGIC + "" + ChatColor.WHITE + "##" + ChatColor.WHITE + Main.getCurrentLanguage().killedByMessage + ChatColor.AQUA + event.getEntity().getKiller().getName());
-            }
-
-
+            bossWasKilled = true;
 
         }
 
@@ -68,11 +67,7 @@ public class EntityDeathEvent implements Listener {
 
             event.getDrops().remove(new ItemStack(Material.NETHER_STAR));
 
-            if(event.getEntity().getKiller() == null && event.getEntity().getCustomName() != null){
-                event.getEntity().getServer().broadcastMessage(event.getEntity().getCustomName() + Main.getCurrentLanguage().killedByMessage + event.getEntity().getKiller().getName());
-            } else {
-                event.getEntity().getServer().broadcastMessage(event.getEntity().getCustomName() + " has died");
-            }
+            bossWasKilled = true;
 
         }
 
@@ -96,9 +91,7 @@ public class EntityDeathEvent implements Listener {
 
             event.getDrops().addAll(Methods.addItemsFromConfig(config.getStringList("Bosses.CreeperBoss.droppedItems")));
 
-            if (event.getEntity().getKiller() != null && config.getBoolean("Bosses.enableBossKilledMessage") && event.getEntity().getCustomName() != null) {
-                event.getEntity().getServer().broadcastMessage(ChatColor.GREEN + event.getEntity().getCustomName() + ChatColor.WHITE + Main.getCurrentLanguage().killedByMessage + ChatColor.AQUA + event.getEntity().getKiller().getName());
-            }
+            bossWasKilled = true;
 
         }
 
@@ -124,9 +117,7 @@ public class EntityDeathEvent implements Listener {
                 event.getDrops().add(Slingshot.makeSlingshot());
             }
 
-            if (event.getEntity().getKiller() != null && config.getBoolean("Bosses.enableBossKilledMessage") && event.getEntity().getCustomName() != null) {
-                event.getEntity().getServer().broadcastMessage(ChatColor.RED + event.getEntity().getCustomName() + ChatColor.WHITE + Main.getCurrentLanguage().killedByMessage + ChatColor.AQUA + event.getEntity().getKiller().getName());
-            }
+            bossWasKilled = true;
 
         }
 
@@ -142,9 +133,7 @@ public class EntityDeathEvent implements Listener {
 
             event.getDrops().addAll(Methods.addItemsFromConfig(config.getStringList("Bosses.SkeletonBoss.droppedItems")));
 
-            if (event.getEntity().getKiller() != null && config.getBoolean("Bosses.enableBossKilledMessage") && event.getEntity().getCustomName() != null) {
-                event.getEntity().getServer().broadcastMessage(ChatColor.WHITE + event.getEntity().getCustomName() + ChatColor.WHITE + Main.getCurrentLanguage().killedByMessage + ChatColor.AQUA + event.getEntity().getKiller().getName());
-            }
+            bossWasKilled = true;
 
         }
 
@@ -167,9 +156,7 @@ public class EntityDeathEvent implements Listener {
                 event.getDrops().add(Blazer.makeBlazer());
             }
 
-            if (event.getEntity().getKiller() != null && config.getBoolean("Bosses.enableBossKilledMessage") && event.getEntity().getCustomName() != null) {
-                event.getEntity().getServer().broadcastMessage(ChatColor.YELLOW + event.getEntity().getCustomName() + ChatColor.WHITE + Main.getCurrentLanguage().killedByMessage + ChatColor.AQUA + event.getEntity().getKiller().getName());
-            }
+            bossWasKilled = true;
 
             BossBlaze.bossBlazeTargetMap.remove(event.getEntity().getEntityId());
         }
@@ -192,9 +179,7 @@ public class EntityDeathEvent implements Listener {
                 event.getDrops().add(InvisibilityCloak.makeCloak());
             }
 
-            if (event.getEntity().getKiller() != null && config.getBoolean("Bosses.enableBossKilledMessage") && event.getEntity().getCustomName() != null) {
-                event.getEntity().getServer().broadcastMessage(ChatColor.BLACK + event.getEntity().getCustomName() + ChatColor.WHITE + Main.getCurrentLanguage().killedByMessage + ChatColor.AQUA + event.getEntity().getKiller().getName());
-            }
+            bossWasKilled = true;
 
         }
 
@@ -210,9 +195,7 @@ public class EntityDeathEvent implements Listener {
 
             event.getDrops().addAll(Methods.addItemsFromConfig(config.getStringList("Bosses.ZombieBoss.droppedItems")));
 
-            if (event.getEntity().getKiller() != null && config.getBoolean("Bosses.enableBossKilledMessage") && event.getEntity().getCustomName() != null) {
-                event.getEntity().getServer().broadcastMessage(ChatColor.DARK_GREEN + event.getEntity().getCustomName() + ChatColor.WHITE + Main.getCurrentLanguage().killedByMessage + ChatColor.AQUA + event.getEntity().getKiller().getName());
-            }
+            bossWasKilled = true;
         }
 
 
@@ -227,9 +210,7 @@ public class EntityDeathEvent implements Listener {
 
             event.getDrops().addAll(Methods.addItemsFromConfig(config.getStringList("Bosses.Zombified_PiglinBoss.droppedItems")));
 
-            if (event.getEntity().getKiller() != null && config.getBoolean("Bosses.enableBossKilledMessage") && event.getEntity().getCustomName() != null) {
-                event.getEntity().getServer().broadcastMessage(ChatColor.LIGHT_PURPLE + event.getEntity().getCustomName() + ChatColor.WHITE + Main.getCurrentLanguage().killedByMessage + ChatColor.AQUA + event.getEntity().getKiller().getName());
-            }
+            bossWasKilled = true;
         }
 
 
@@ -260,9 +241,7 @@ public class EntityDeathEvent implements Listener {
             if (rn < config.getIntegerList("Bosses.WitchBoss.dropCustomPotionsChances").get(4))
                 event.getDrops().add(BossWitch.makeHungerPot());
 
-            if (event.getEntity().getKiller() != null && config.getBoolean("Bosses.enableBossKilledMessage") && event.getEntity().getCustomName() != null) {
-                event.getEntity().getServer().broadcastMessage(ChatColor.DARK_PURPLE + event.getEntity().getCustomName() + ChatColor.WHITE + Main.getCurrentLanguage().killedByMessage + ChatColor.AQUA + event.getEntity().getKiller().getName());
-            }
+            bossWasKilled = true;
 
         }
 
@@ -291,12 +270,10 @@ public class EntityDeathEvent implements Listener {
 
             event.getDrops().addAll(Methods.addItemsFromConfig(config.getStringList("Bosses.SlimeBoss.droppedItems")));
 
-            if (event.getEntity().getKiller() != null && config.getBoolean("Bosses.enableBossKilledMessage") && event.getEntity().getCustomName() != null) {
-                event.getEntity().getServer().broadcastMessage(ChatColor.DARK_GREEN + event.getEntity().getCustomName() + ChatColor.WHITE + Main.getCurrentLanguage().killedByMessage + ChatColor.AQUA + event.getEntity().getKiller().getName());
-            }
+            bossWasKilled = true;
         }
 
-        //BossMagmacube
+//BossMagmacube
 
 
         if (event.getEntity().getScoreboardTags().contains(Bosses.MAGMA_CUBE.scoreboardBossTag)) {
@@ -336,13 +313,19 @@ public class EntityDeathEvent implements Listener {
 
             event.getDrops().addAll(Methods.addItemsFromConfig(config.getStringList("Bosses.Magma_cubeBoss.droppedItems")));
 
-            if (event.getEntity().getKiller() != null && config.getBoolean("Bosses.enableBossKilledMessage") && event.getEntity().getCustomName() != null) {
-                event.getEntity().getServer().broadcastMessage(ChatColor.DARK_RED + event.getEntity().getCustomName() + ChatColor.WHITE + Main.getCurrentLanguage().killedByMessage + ChatColor.AQUA + event.getEntity().getKiller().getName());
-            }
+            bossWasKilled = true;
         }
 
         event.getEntity().setCustomName("");
 
+
+        if(bossWasKilled){
+            Main.getInstance().getServer().getConsoleSender().sendMessage("CP1");
+            if (event.getEntity().getKiller() != null && Main.getInstance().getConfig().getBoolean("Bosses.enableBossKilledMessage")) {
+                Main.getInstance().getServer().getConsoleSender().sendMessage("CP2");
+                event.getEntity().getServer().broadcastMessage(PlaceholderReplacer.replaceInDeathEvent(event, Main.getInstance().getConfig().getString("Bosses." + Bosses.valueOf(event.getEntityType().toString().toUpperCase()).configSectionName + ".killedMessage")));
+            }
+        }
 
 
 //Respawning of bosses if set to in the config

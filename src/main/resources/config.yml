@@ -6,7 +6,7 @@ Bosses:
   resetConfig: false  #If set true this will set your configuration to a state that definitely works, aka the state you found it in when you first opened this file.
   #For the resetConfig setting to work, you must restart your server or type '/rl confirm'. The command for reloading the config file will not work here.
 
-  PluginLanguage: EN  # Currently implemented Languages: EN (English), GER (German)
+  PluginLanguage: EN  # Currently implemented Languages: EN (English), GER (German), CN (Chinese)
   #In case the entered language is not implemented. it will default to English
 
   enableBossKilledMessage: true
@@ -51,6 +51,8 @@ Bosses:
     ProtectionMin: 5      # Armor Protection Enchantment level
     ProtectionMax: 12     # ^^
 
+    killedMessage: "<killedName> was slain by <killer>" #<killedName> is replaced by the name of the killed Entity
+                                                        #<killer> is replaced by the name of the killer
 
   # MaterialToDrop: the item you wish the entity to drop upon death
   # minAmount: this is the minimum amount of items the boss will drop upon death.
@@ -115,6 +117,9 @@ Bosses:
       TNTSpreadMultiplier: 1.0
       TNTDoesNoBlockDamage: true
 
+    killedMessage: "<killedName> was slain by <killer>"
+
+
     droppedItems:
       - TNT:2:4:75
       - DIAMOND:0:1:25
@@ -142,6 +147,8 @@ Bosses:
     DamageModifier: 1.0
     health: 30
     spawnChance: 20
+    killedMessage: "<killedName> was slain by <killer>"
+
     droppedItems:
       - OBSIDIAN:2:4:50
       - FERMENTED_SPIDER_EYE:2:8:25
@@ -181,6 +188,8 @@ Bosses:
     DamageModifier: 1.0
     health: 75
     spawnChance: 50
+    killedMessage: "<killedName> was slain by <killer>"
+
     droppedItems:
       - BLAZE_ROD:2:4:50
 
@@ -217,6 +226,8 @@ Bosses:
     DamageModifier: 1.0
     health: 50
     spawnChance: 15
+    killedMessage: "<killedName> was slain by <killer>"
+
     droppedItems:
       - ENDER_PEARL:3:8:66
 
@@ -261,6 +272,8 @@ Bosses:
     DamageModifier: 1.0
     health: 50
     spawnChance: 5
+    killedMessage: "<killedName> was slain by <killer>"
+
     droppedItems:
       - IRON_INGOT:3:8:66
 
@@ -288,6 +301,8 @@ Bosses:
     DamageModifier: 1.0
     health: 50
     spawnChance: 10
+    killedMessage: "<killedName> was slain by <killer>"
+
     droppedItems:
       - GOLD_INGOT:5:10:66
 
@@ -314,6 +329,8 @@ Bosses:
     showDisplayNameAlways: true
     health: 45
     spawnChance: 50
+    killedMessage: "<killedName> was slain by <killer>"
+
     droppedItems:
       - NETHER_WART:0:1:20
       - GLOWSTONE_DUST:2:5:66
@@ -380,6 +397,7 @@ Bosses:
     DamageModifier: 1.0
     health: 45
     spawnChance: 50
+    killedMessage: "<killedName> was slain by <killer>"
 
     droppedItems:
       - Slime_Ball:2:6:66
@@ -412,6 +430,7 @@ Bosses:
     showDisplayNameAlways: true
     DamageModifier: 1.0
     Health: 750  #standard health of the boss is 750 (pretty hard without spectral arrows)
+    killedMessage: "<killedName> was slain by <killer>"
 
     droppedItems:
 
@@ -436,6 +455,7 @@ Bosses:
     DamageModifier: 1.0
     health: 90
     spawnChance: 75
+    killedMessage: "<killedName> was slain by <killer>"
 
     droppedItems:
       - MAGMA_CREAM:2:12:66

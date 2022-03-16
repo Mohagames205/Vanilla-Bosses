@@ -3,7 +3,6 @@ package shreb.me.vanillabosses.main;
 public enum Languages {
 
     EN(
-            " was slain by ",
 
             "Not enough Arguments!",
 
@@ -123,9 +122,7 @@ public enum Languages {
             "You have been given the Boss Egg(s)"
     ),
 
-    GER(" wurde getötet von ",
-
-            "Zu wenige Argumente!",
+    GER("Zu wenige Argumente!",
 
             "Unpassendes Argument, bitte nochmal versuchen!",
 
@@ -243,9 +240,128 @@ public enum Languages {
             "Du hast das Wither Ei erhalten!",
 
             "Du hast das Boss Ei/die Boss Eier erhalten!"
-            );
+    ),
 
-    public String killedByMessage;
+    CN(
+
+            "命令参数不足！",
+
+            "命令参数错误，请重新输入。",
+
+            "你缺少必要的权限！",
+
+            "发生了一个错误，请告知作者这个错误，并向作者报告错误发生前在做什么。",
+
+            "该指令已被关闭。",
+
+            "目标物品栏似乎已满",
+
+            "无法接受指定数量的请求",
+
+            " 已成功生成",
+
+            "可用指令：\n" +
+                    " - /vbh discord (此项会弹出该插件的discord邀请链接)\n" +
+                    " - /vbh  (展示插件帮助信息)\n" +
+                    " - /vbh <EntityType>  (给予你特定种类的boss的信息。 输入'/boss list'来展示所有可用boss的信息)\n" +
+                    " - /vbh info  (给予你该插件的信息)\n",
+
+            "一位一直在研究弹射物艺术的烈焰人\n" +
+                    "这位烈焰人拥有比普通的烈焰人更高的血量，但光灵箭可以对他造成比往常更高的伤害来清空他的血条。\n" +
+                    "被光灵箭攻击后，这位烈焰人可能会掉落一件物品 (如果不想开启这个机制，可以在config文件中关闭它)",
+
+            "小炸是一只很会控制愤怒的苦力怕。\n" +
+                    "当他即将爆炸时，他会让8个引爆的tnt飞向四周来释放怒火。\n" +
+                    "小炸生气时会造成大量伤害，但是弓箭可以轻易抵御它。",
+
+            "一位有轻微酗酒问题的末影人 \n" +
+                    "如果你攻击了这位末影人，他会变得比普通的末影人更加愤怒。\n" +
+                    "每次攻击，都有可能使他获得可配置的药水效果。\n" +
+                    "当这位末影人传送时，会召唤一些末影螨。(如果不想开启这个机制，可以在config文件中关闭它)\n" +
+                    "掉落隐身斗篷",
+
+            "总想拥抱别人！\n" +
+                    "被攻击后会非常生气并点燃周围所有物品。\n" +
+                    "不想做坏人，但当你和岩浆一样热时，拥抱别人总会造成伤害。\n" +
+                    "3个阶段中的每一阶段都有概率掉落加热岩浆膏。",
+
+            "骷髅王曾是一个繁荣国家的摄政王。\n" +
+                    "他和他的军队、国家在城墙前共同迎战至死。\n" +
+                    "他鹿骨制的骷髅弓具有召唤tnt的力量，能对敌人造成巨大伤害。\n" +
+                    "它可以反射受到的伤害，并进入一段时间的无坚不摧状态或召唤他军队的部分士兵为他而战。\n" +
+                    "他重返人间时携带了少量财宝，它们在他被击杀后会掉落。\n" +
+                    "由于他的弓的状况十分糟糕，可能难以修复。\n" +
+                    "掉落骷髅弓",
+
+            "史上最苗条！最丰满！\n" +
+                    "当它被攻击时，他会更改击退方向将自己升空，然后高速撞向地面。\n" +
+                    "在史莱姆撞击地面的瞬间，任何地面上的玩家都会被撞飞！\n" +
+                    "掉落史莱姆靴子和跳跳史莱姆",
+
+            "德洛丽丝是一只蜘蛛。\n" +
+                    "如果你攻击她，她会进入隐身状态，除了获得增益效果，她还会传送到你身后。\n" +
+                    "此外，她还有很强的跳跃能力来接近你。\n" +
+                    "掉落弹弓",
+
+            "这位女巫是个超凡脱俗的人\n" +
+                    "她想出了如何做出比学院教的要好得多得药水\n" +
+                    "在实验中她还做出了一些被遗忘的药水。但遗憾的是，她不告诉我们他用什么进行的试验……",
+
+            "凋零boss是个相当不幸的实验品。\n" +
+                    "试图制造反圣者对任何人都没好处。\n" +
+                    "但你就这样做了，将两种最能让人联想到下界的东西结合在一起。\n" +
+                    "在下界合金块上面直接建造一个标准的凋零生成结构可以召唤他。如果你不更改config文件的默认配置，下界合金块是不会消失的。\n" +
+                    "在他（或是她？）死后会掉落凋零刷怪蛋\n" +
+                    "如果要孵化它，你必须遵循刷怪蛋名字下面的黑色说明。",
+
+            "它曾在一些地方被叫做“鲍勃”，这只僵尸总有同伙在他身边帮忙。\n" +
+                    "鲍勃身着附魔铁质套装并拥有超高的生命值，它的同伙也没太多事情可做。\n" +
+                    "掉落棒球棒",
+
+            "为数不多的开采黄金，附魔防具的猪灵之一\n" +
+                    "猪灵手持的屠夫斧有概率令它不幸的受害者致残\n" +
+                    "掉落屠夫斧",
+
+            "原版boss由Shreb制作 (在Spigot站点)\n" +
+                    "请在Spigot或discord上向我报告任何试图复制我的内容的行为\n" +
+                    "如果你很享受我的插件， 请给我评分并分享给你的朋友们 :D\n" +
+                    "如果你有任何有关新boss或新物品的想法，并想在插件中看到它们，请给我留言。\n" +
+                    "祝你玩得开心，身心健康 :)",
+
+            "棒球棒",
+            "你获得了棒球棒！",
+
+            "夹克",
+            "你获得了夹克！",
+
+            "屠夫斧",
+            "你获得了屠夫斧！",
+
+            "加热岩浆膏",
+            "你获得了加热岩浆膏！",
+
+            "隐形斗篷",
+            "你获得了隐形斗篷！",
+
+            "骷髅弓",
+            "你获得了骷髅弓！",
+
+            "史莱姆靴子",
+            "你获得了史莱姆靴子！",
+
+            "跳跳史莱姆",
+            "你获得了跳跳史莱姆！",
+
+            "弹弓",
+            "你获得了弹弓！",
+
+            "凋零刷怪蛋",
+            "你获得了凋零刷怪蛋！",
+
+            "你获得了boss刷怪蛋！"
+
+    );
+
     public String notEnoughArguments;
     public String badArgument;
     public String badPermissions;
@@ -301,8 +417,9 @@ public enum Languages {
 
     public String itemBossEggGivenMessage;
 
-    Languages(String killedByMessage, String notEnoughArguments, String badArgument, String badPermissions, String errorMessage, String commandDisabled, String inventoryFull, String badAmount, String spawnedMessage, String vbh0, String vbhBlaze, String vbhCreeper, String vbhEnderman, String vbhMagmaCube, String vbhSkeleton, String vbhSlime, String vbhSpider, String vbhWitch, String vbhWither, String vbhZombie, String vbhPiglin, String vbhInfo, String itemBaseballBatName, String itemBaseballBatGivenMessage, String itemBlazerName, String itemBlazerNameGivenMessage, String itemButchersAxeName, String itemButchersAxeNameGivenMessage, String itemHMCName, String itemHMCNameGivenMessage, String itemInvisibilityCloakName, String itemInvisibilityCloakNameGivenMessage, String itemSkeletorName, String itemSkeletorGivenMessage, String itemSlimeBootsName, String itemSlimeBootsGivenMessage, String itemBouncySlimeName, String itemBouncySlimeGivenMessage, String itemSlingshotName, String itemSlingshotGivenMessage, String witherEggName, String itemWitherEggGivenMessage, String itemBossEggGivenMessage) {
-        this.killedByMessage = killedByMessage;
+
+    Languages(String notEnoughArguments, String badArgument, String badPermissions, String errorMessage, String commandDisabled, String inventoryFull, String badAmount, String spawnedMessage, String vbh0, String vbhBlaze, String vbhCreeper, String vbhEnderman, String vbhMagmaCube, String vbhSkeleton, String vbhSlime, String vbhSpider, String vbhWitch, String vbhWither, String vbhZombie, String vbhPiglin, String vbhInfo, String itemBaseballBatName, String itemBaseballBatGivenMessage, String itemBlazerName, String itemBlazerNameGivenMessage, String itemButchersAxeName, String itemButchersAxeNameGivenMessage, String itemHMCName, String itemHMCNameGivenMessage, String itemInvisibilityCloakName, String itemInvisibilityCloakNameGivenMessage, String itemSkeletorName, String itemSkeletorGivenMessage, String itemSlimeBootsName, String itemSlimeBootsGivenMessage, String itemBouncySlimeName, String itemBouncySlimeGivenMessage, String itemSlingshotName, String itemSlingshotGivenMessage, String witherEggName, String itemWitherEggGivenMessage, String itemBossEggGivenMessage) {
+
         this.notEnoughArguments = notEnoughArguments;
         this.badArgument = badArgument;
         this.badPermissions = badPermissions;

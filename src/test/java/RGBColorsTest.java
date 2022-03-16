@@ -1,6 +1,7 @@
 import net.md_5.bungee.api.ChatColor;
+
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import shreb.me.vanillabosses.main.configHelpers.RGBColors;
 
 

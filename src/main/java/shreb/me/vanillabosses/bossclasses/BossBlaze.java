@@ -1,7 +1,7 @@
 package shreb.me.vanillabosses.bossclasses;
 
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.attribute.Attribute;
@@ -151,7 +151,7 @@ public class BossBlaze implements Listener {
         blaze.getScoreboardTags().add("BossBlaze");
         blaze.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.BLAZE.health);
         blaze.setHealth(Bosses.BLAZE.health);
-        blaze.setCustomName(RGBColors.deserializeColor(Bosses.BLAZE.nameColor) + Bosses.BLAZE.displayName);
+        blaze.setCustomName(ChatColor.of(Bosses.BLAZE.nameColor) + Bosses.BLAZE.displayName);
         blaze.setCustomNameVisible(config.getBoolean("Bosses.BlazeBoss.showDisplayNameAlways"));
 
         if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
@@ -172,7 +172,7 @@ public class BossBlaze implements Listener {
         blaze.getScoreboardTags().add("BossBlaze");
         blaze.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.BLAZE.health);
         blaze.setHealth(Bosses.BLAZE.health);
-        blaze.setCustomName(RGBColors.deserializeColor(Bosses.BLAZE.nameColor) + Bosses.BLAZE.displayName);
+        blaze.setCustomName(ChatColor.of(Bosses.BLAZE.nameColor) + Bosses.BLAZE.displayName);
         blaze.setCustomNameVisible(config.getBoolean("Bosses.BlazeBoss.showDisplayNameAlways"));
 
         if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){

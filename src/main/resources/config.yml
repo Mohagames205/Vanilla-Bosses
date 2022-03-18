@@ -40,8 +40,7 @@ Bosses:
     enabled: true
     enableSummonCommand: true
     displayName: "The Skeleton King"  # To remove the name, replace with "" and set 'showDisplayNameAlways' to 'false'
-    displayNameColor: BOLD #Possible Values: BLACK, GOLD, GRAY, BLUE, GREEN, AQUA, RED, YELLOW, WHITE, MAGIC, BOLD, STRIKETHROUGH, UNDERLINE, ITALIC, RESET
-                            #DARK_BLUE, DARK_GREEN, DARK_AQUA, DARK_RED, DARK_PURPLE, DARK_GRAY, LIGHT_PURPLE,
+    displayNameColor: "#7B7B7B" #Hex color codes, use a website with a Hex Color code picker or similar programs to get this code from the wanted color.
     showDisplayNameAlways: true
     health: 25
     DamageModifier: 1.0
@@ -105,7 +104,7 @@ Bosses:
     enabled: true
     enableSummonCommand: true
     displayName: "Bomby the Bomber"
-    displayNameColor: GREEN
+    displayNameColor: "#1DE00C"
     showDisplayNameAlways: true
     DamageModifier: 1.0
     health: 50
@@ -142,7 +141,7 @@ Bosses:
     enabled: true
     enableSummonCommand: true
     displayName: "Dolores"
-    displayNameColor: LIGHT_PURPLE
+    displayNameColor: "#A70FE1"
     showDisplayNameAlways: true
     DamageModifier: 1.0
     health: 30
@@ -183,7 +182,7 @@ Bosses:
     enabled: true
     enableSummonCommand: true
     displayName: "Blaze Warden"
-    displayNameColor: "#121212"
+    displayNameColor: "#FF7501"
     showDisplayNameAlways: true
     DamageModifier: 1.0
     health: 75
@@ -221,7 +220,7 @@ Bosses:
     enabled: true
     enableSummonCommand: true
     displayName: "Edna"
-    displayNameColor: LIGHT_PURPLE
+    displayNameColor: "#682294"
     showDisplayNameAlways: true
     DamageModifier: 1.0
     health: 50
@@ -267,7 +266,7 @@ Bosses:
     enabled: true
     enableSummonCommand: true
     displayName: "Bob"
-    displayNameColor: DARK_GREEN
+    displayNameColor: "#249400"
     showDisplayNameAlways: true
     DamageModifier: 1.0
     health: 50
@@ -296,7 +295,7 @@ Bosses:
     enabled: true
     enableSummonCommand: true
     displayName: "The Butcher"
-    displayNameColor: DARK_RED
+    displayNameColor: "#850000"
     showDisplayNameAlways: true
     DamageModifier: 1.0
     health: 50
@@ -325,7 +324,7 @@ Bosses:
     enabled: true
     enableSummonCommand: true
     displayName: "Margeret"
-    displayNameColor: DARK_PURPLE
+    displayNameColor: "#440D8A"
     showDisplayNameAlways: true
     health: 45
     spawnChance: 50
@@ -392,7 +391,7 @@ Bosses:
     enabled: true
     enableSummonCommand: true
     displayName: "Chester"
-    displayNameColor: GREEN
+    displayNameColor: "#4AD502"
     showDisplayNameAlways: true
     DamageModifier: 1.0
     health: 45
@@ -426,7 +425,7 @@ Bosses:
     enableSummonCommand: true
     removeNetheriteBlockOnSpawn: true
     displayName: "X AE A-12"
-    displayNameColor: BLACK
+    displayNameColor: "#1B1D19"
     showDisplayNameAlways: true
     DamageModifier: 1.0
     Health: 750  #standard health of the boss is 750 (pretty hard without spectral arrows)
@@ -450,7 +449,7 @@ Bosses:
     enabled: true
     enableSummonCommand: true
     displayName: "Chesters' younger brother"
-    displayNameColor: RED
+    displayNameColor: "#FF0000"
     showDisplayNameAlways: true
     DamageModifier: 1.0
     health: 90

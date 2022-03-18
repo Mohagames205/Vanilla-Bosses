@@ -151,7 +151,6 @@ public class EntitySpawnEvent implements Listener {
 
                     BossZombie.editToBossZombie((Zombie) event.getEntity());
 
-                    BossZombie.zombieHorde(4, 12, event.getEntity().getLocation());
                     Methods.mobHorde(4, 12, "zombie", event.getLocation());
 
                     PersistentDataContainer container = event.getEntity().getPersistentDataContainer();

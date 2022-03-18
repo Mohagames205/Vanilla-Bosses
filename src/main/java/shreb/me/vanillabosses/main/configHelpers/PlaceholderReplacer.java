@@ -11,12 +11,10 @@ public class PlaceholderReplacer {
 
         String returnString = toReplaceIn;
 
-        String entityType;
-
         if (event.getEntity().getKiller() != null) {
             returnString = toReplaceIn.replace("<killer>", event.getEntity().getKiller().getDisplayName());
         }
-        returnString = returnString.replace("<killedName>", ChatColor.valueOf(Bosses.valueOf(event.getEntityType().toString().toUpperCase()).nameColor) + Bosses.valueOf(event.getEntityType().toString().toUpperCase()).displayName + ChatColor.WHITE);
+        returnString = returnString.replace("<killedName>", net.md_5.bungee.api.ChatColor.of(Bosses.valueOf(event.getEntityType().toString().toUpperCase()).nameColor) + Bosses.valueOf(event.getEntityType().toString().toUpperCase()).displayName + ChatColor.WHITE);
 
 
         return returnString;

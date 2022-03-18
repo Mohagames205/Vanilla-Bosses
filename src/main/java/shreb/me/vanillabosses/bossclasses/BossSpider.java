@@ -1,6 +1,6 @@
 package shreb.me.vanillabosses.bossclasses;
 
-import org.bukkit.ChatColor;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.attribute.Attribute;
@@ -30,7 +30,7 @@ public class BossSpider implements Listener {
         spider.addScoreboardTag("removeInvisibilityOnDisable");
         spider.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 3));
         spider.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 2));
-        spider.setCustomName(ChatColor.valueOf(Bosses.SPIDER.nameColor) + Bosses.SPIDER.displayName);
+        spider.setCustomName(net.md_5.bungee.api.ChatColor.of(Bosses.SPIDER.nameColor) + Bosses.SPIDER.displayName);
         spider.setCustomNameVisible(config.getBoolean("Bosses.SpiderBoss.showDisplayNameAlways"));
         if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
             spider.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
@@ -51,7 +51,7 @@ public class BossSpider implements Listener {
         spider.addScoreboardTag("removeInvisibilityOnDisable");
         spider.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 3));
         spider.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 2));
-        spider.setCustomName(ChatColor.valueOf(Bosses.SPIDER.nameColor) + Bosses.SPIDER.displayName);
+        spider.setCustomName(ChatColor.of(Bosses.SPIDER.nameColor) + Bosses.SPIDER.displayName);
         spider.setCustomNameVisible(config.getBoolean("Bosses.SpiderBoss.showDisplayNameAlways"));
         if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
             spider.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));

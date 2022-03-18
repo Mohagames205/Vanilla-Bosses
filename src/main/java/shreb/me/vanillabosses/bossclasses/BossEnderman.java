@@ -1,6 +1,6 @@
 package shreb.me.vanillabosses.bossclasses;
 
-import org.bukkit.ChatColor;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.attribute.Attribute;
@@ -63,7 +63,7 @@ public class BossEnderman implements Listener {
         enderman.addScoreboardTag("BossEnderman");
         enderman.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.ENDERMAN.health);
         enderman.setHealth(Bosses.ENDERMAN.health);
-        enderman.setCustomName(ChatColor.valueOf(Bosses.ENDERMAN.nameColor) + Bosses.ENDERMAN.displayName);
+        enderman.setCustomName(net.md_5.bungee.api.ChatColor.of(Bosses.ENDERMAN.nameColor) + Bosses.ENDERMAN.displayName);
         enderman.setCustomNameVisible(config.getBoolean("Bosses.EndermanBoss.showDisplayNameAlways"));
         if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
             enderman.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
@@ -82,7 +82,7 @@ public class BossEnderman implements Listener {
         enderman.addScoreboardTag("BossEnderman");
         enderman.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.ENDERMAN.health);
         enderman.setHealth(Bosses.ENDERMAN.health);
-        enderman.setCustomName(ChatColor.valueOf(Bosses.ENDERMAN.nameColor) + Bosses.ENDERMAN.displayName);
+        enderman.setCustomName(ChatColor.of(Bosses.ENDERMAN.nameColor) + Bosses.ENDERMAN.displayName);
         enderman.setCustomNameVisible(config.getBoolean("Bosses.EndermanBoss.showDisplayNameAlways"));
         if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
             enderman.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));

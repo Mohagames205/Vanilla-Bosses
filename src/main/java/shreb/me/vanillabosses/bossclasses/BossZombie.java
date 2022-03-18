@@ -1,6 +1,6 @@
 package shreb.me.vanillabosses.bossclasses;
 
-import org.bukkit.ChatColor;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -40,7 +40,7 @@ public class BossZombie implements Listener {
         zombie.addScoreboardTag("BossZombie");
         zombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.ZOMBIE.health);
         zombie.setHealth(Bosses.ZOMBIE.health);
-        zombie.setCustomName(ChatColor.valueOf(Bosses.ZOMBIE.nameColor) + Bosses.ZOMBIE.displayName);
+        zombie.setCustomName(net.md_5.bungee.api.ChatColor.of(Bosses.ZOMBIE.nameColor) + Bosses.ZOMBIE.displayName);
         zombie.setCustomNameVisible(config.getBoolean("Bosses.ZombieBoss.showDisplayNameAlways"));
 
         zombie.getEquipment().setItemInMainHand(weapon);
@@ -84,7 +84,7 @@ public class BossZombie implements Listener {
         zombie.addScoreboardTag("BossZombie");
         zombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.ZOMBIE.health);
         zombie.setHealth(Bosses.ZOMBIE.health);
-        zombie.setCustomName(ChatColor.valueOf(Bosses.ZOMBIE.nameColor) + Bosses.ZOMBIE.displayName);
+        zombie.setCustomName(ChatColor.of(Bosses.ZOMBIE.nameColor) + Bosses.ZOMBIE.displayName);
         zombie.setCustomNameVisible(config.getBoolean("Bosses.ZombieBoss.showDisplayNameAlways"));
 
         zombie.getEquipment().setItemInMainHand(weapon);

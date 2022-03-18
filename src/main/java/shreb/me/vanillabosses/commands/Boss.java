@@ -231,7 +231,7 @@ public class Boss implements CommandExecutor {
             wither.setHealth(Bosses.WITHER.health);
 
 
-            wither.setCustomName(ChatColor.valueOf(Bosses.WITHER.nameColor) + Bosses.WITHER.displayName);
+            wither.setCustomName(net.md_5.bungee.api.ChatColor.of(Bosses.WITHER.nameColor) + Bosses.WITHER.displayName);
             wither.setCustomNameVisible(config.getBoolean("Bosses.WitherBoss.showDisplayNameAlways"));
 
             PersistentDataContainer container = wither.getPersistentDataContainer();

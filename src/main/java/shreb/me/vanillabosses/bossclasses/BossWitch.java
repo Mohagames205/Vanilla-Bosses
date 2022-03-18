@@ -171,7 +171,7 @@ public class BossWitch implements Listener {
         witch.addScoreboardTag("BossWitch");
         witch.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.WITCH.health);
         witch.setHealth(Bosses.WITCH.health);
-        witch.setCustomName(ChatColor.valueOf(Bosses.WITCH.nameColor) + Bosses.WITCH.displayName);
+        witch.setCustomName(net.md_5.bungee.api.ChatColor.of(Bosses.WITCH.nameColor) + Bosses.WITCH.displayName);
         witch.setCustomNameVisible(config.getBoolean("Bosses.WitchBoss.showDisplayNameAlways"));
         if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
             witch.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
@@ -189,7 +189,7 @@ public class BossWitch implements Listener {
         witch.addScoreboardTag("BossWitch");
         witch.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.WITCH.health);
         witch.setHealth(Bosses.WITCH.health);
-        witch.setCustomName(ChatColor.valueOf(Bosses.WITCH.nameColor) + Bosses.WITCH.displayName);
+        witch.setCustomName(net.md_5.bungee.api.ChatColor.of(Bosses.WITCH.nameColor) + Bosses.WITCH.displayName);
         witch.setCustomNameVisible(config.getBoolean("Bosses.WitchBoss.showDisplayNameAlways"));
         if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
             witch.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));

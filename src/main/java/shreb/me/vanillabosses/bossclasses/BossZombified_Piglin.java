@@ -1,6 +1,6 @@
 package shreb.me.vanillabosses.bossclasses;
 
-import org.bukkit.ChatColor;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -32,7 +32,7 @@ public class BossZombified_Piglin  implements Listener {
         pigzombie.addScoreboardTag("BossZombified_Piglin");
         pigzombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.ZOMBIFIED_PIGLIN.health);
         pigzombie.setHealth(Bosses.ZOMBIFIED_PIGLIN.health);
-        pigzombie.setCustomName(ChatColor.valueOf(Bosses.ZOMBIFIED_PIGLIN.nameColor) + Bosses.ZOMBIFIED_PIGLIN.displayName);
+        pigzombie.setCustomName(ChatColor.of(Bosses.ZOMBIFIED_PIGLIN.nameColor) + Bosses.ZOMBIFIED_PIGLIN.displayName);
         pigzombie.setCustomNameVisible(config.getBoolean("Bosses.Zombified_PiglinBoss.showDisplayNameAlways"));
 
         pigzombie.getEquipment().setItemInMainHand(ButchersAxe.makeButchersAxe());
@@ -75,7 +75,7 @@ public class BossZombified_Piglin  implements Listener {
         pigzombie.addScoreboardTag("BossZombified_Piglin");
         pigzombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.ZOMBIFIED_PIGLIN.health);
         pigzombie.setHealth(Bosses.ZOMBIFIED_PIGLIN.health);
-        pigzombie.setCustomName(ChatColor.valueOf(Bosses.ZOMBIFIED_PIGLIN.nameColor) + Bosses.ZOMBIFIED_PIGLIN.displayName);
+        pigzombie.setCustomName(net.md_5.bungee.api.ChatColor.of(Bosses.ZOMBIFIED_PIGLIN.nameColor) + Bosses.ZOMBIFIED_PIGLIN.displayName);
         pigzombie.setCustomNameVisible(config.getBoolean("Bosses.Zombified_PiglinBoss.showDisplayNameAlways"));
 
         pigzombie.getEquipment().setItemInMainHand(ButchersAxe.makeButchersAxe());

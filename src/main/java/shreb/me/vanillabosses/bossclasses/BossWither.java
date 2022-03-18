@@ -124,7 +124,7 @@ public class BossWither implements Listener {
                 Objects.requireNonNull(wither.getAttribute(Attribute.GENERIC_MAX_HEALTH)).setBaseValue(Bosses.WITHER.health);
                 wither.setHealth(Bosses.WITHER.health);
 
-                wither.setCustomName(ChatColor.valueOf(Bosses.WITHER.nameColor) + Bosses.WITHER.displayName);
+                wither.setCustomName(net.md_5.bungee.api.ChatColor.of(Bosses.WITHER.nameColor) + Bosses.WITHER.displayName);
                 wither.setCustomNameVisible(config.getBoolean("Bosses.WitherBoss.showDisplayNameAlways"));
 
                 if (Main.getInstance().getConfig().getBoolean("Bosses.WitherBoss.removeNetheriteBlockOnSpawn")) {
@@ -147,7 +147,7 @@ public class BossWither implements Listener {
         wither.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.WITHER.health);
         wither.setHealth(Bosses.WITHER.health);
 
-        wither.setCustomName(ChatColor.valueOf(Bosses.WITHER.nameColor) + Bosses.WITHER.displayName);
+        wither.setCustomName(net.md_5.bungee.api.ChatColor.of(Bosses.WITHER.nameColor) + Bosses.WITHER.displayName);
         wither.setCustomNameVisible(config.getBoolean("Bosses.WitherBoss.showDisplayNameAlways"));
 
         if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){

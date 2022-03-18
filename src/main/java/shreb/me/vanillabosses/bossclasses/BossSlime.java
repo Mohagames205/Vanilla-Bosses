@@ -1,6 +1,6 @@
 package shreb.me.vanillabosses.bossclasses;
 
-import org.bukkit.ChatColor;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.attribute.Attribute;
@@ -32,7 +32,7 @@ public class BossSlime implements Listener {
         slime.setHealth(Bosses.SLIME.health);
         slime.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 3));
         slime.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 2));
-        slime.setCustomName(ChatColor.valueOf(Bosses.SLIME.nameColor) + Bosses.SLIME.displayName);
+        slime.setCustomName(net.md_5.bungee.api.ChatColor.of(Bosses.SLIME.nameColor) + Bosses.SLIME.displayName);
         slime.setCustomNameVisible(config.getBoolean("Bosses.SlimeBoss.showDisplayNameAlways"));
         slime.setSize(5);
         if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
@@ -53,7 +53,7 @@ public class BossSlime implements Listener {
         slime.setHealth(Bosses.SLIME.health);
         slime.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 3));
         slime.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 2));
-        slime.setCustomName(ChatColor.valueOf(Bosses.SLIME.nameColor) + Bosses.SLIME.displayName);
+        slime.setCustomName(ChatColor.of(Bosses.SLIME.nameColor) + Bosses.SLIME.displayName);
         slime.setCustomNameVisible(config.getBoolean("Bosses.SlimeBoss.showDisplayNameAlways"));
         slime.setSize(5);
         if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){

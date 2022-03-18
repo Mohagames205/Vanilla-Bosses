@@ -1,6 +1,6 @@
 package shreb.me.vanillabosses.bossclasses;
 
-import org.bukkit.ChatColor;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -35,7 +35,7 @@ public class BossSkeleton implements Listener {
         skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.SKELETON.health);
         skeleton.setHealth(Bosses.SKELETON.health);
         skeleton.addScoreboardTag("removeInvulnerableOnDisable");
-        skeleton.setCustomName(ChatColor.valueOf(Bosses.SKELETON.nameColor) + Bosses.SKELETON.displayName);
+        skeleton.setCustomName(ChatColor.of(Bosses.SKELETON.nameColor) + Bosses.SKELETON.displayName);
         skeleton.setCustomNameVisible(config.getBoolean("Bosses.SkeletonBoss.showDisplayNameAlways"));
         EntityEquipment equipment = skeleton.getEquipment();
         ItemStack helmet = new ItemStack(Material.DIAMOND_HELMET);
@@ -128,7 +128,7 @@ public class BossSkeleton implements Listener {
         skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.SKELETON.health);
         skeleton.setHealth(Bosses.SKELETON.health);
         skeleton.addScoreboardTag("removeInvulnerableOnDisable");
-        skeleton.setCustomName(ChatColor.valueOf(Bosses.SKELETON.nameColor) + Bosses.SKELETON.displayName);
+        skeleton.setCustomName(net.md_5.bungee.api.ChatColor.of(Bosses.SKELETON.nameColor) + Bosses.SKELETON.displayName);
         skeleton.setCustomNameVisible(config.getBoolean("Bosses.SkeletonBoss.showDisplayNameAlways"));
 
         EntityEquipment equipment = skeleton.getEquipment();

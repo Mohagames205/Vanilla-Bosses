@@ -16,6 +16,7 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 import shreb.me.vanillabosses.main.Main;
 import shreb.me.vanillabosses.main.Methods;
+import shreb.me.vanillabosses.main.configHelpers.RGBColors;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -150,7 +151,7 @@ public class BossBlaze implements Listener {
         blaze.getScoreboardTags().add("BossBlaze");
         blaze.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.BLAZE.health);
         blaze.setHealth(Bosses.BLAZE.health);
-        blaze.setCustomName(ChatColor.valueOf(Bosses.BLAZE.nameColor) + Bosses.BLAZE.displayName);
+        blaze.setCustomName(RGBColors.deserializeColor(Bosses.BLAZE.nameColor) + Bosses.BLAZE.displayName);
         blaze.setCustomNameVisible(config.getBoolean("Bosses.BlazeBoss.showDisplayNameAlways"));
 
         if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
@@ -171,7 +172,7 @@ public class BossBlaze implements Listener {
         blaze.getScoreboardTags().add("BossBlaze");
         blaze.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.BLAZE.health);
         blaze.setHealth(Bosses.BLAZE.health);
-        blaze.setCustomName(ChatColor.valueOf(Bosses.BLAZE.nameColor) + Bosses.BLAZE.displayName);
+        blaze.setCustomName(RGBColors.deserializeColor(Bosses.BLAZE.nameColor) + Bosses.BLAZE.displayName);
         blaze.setCustomNameVisible(config.getBoolean("Bosses.BlazeBoss.showDisplayNameAlways"));
 
         if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){

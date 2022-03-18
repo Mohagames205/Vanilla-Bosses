@@ -38,7 +38,7 @@ public class RGBColors{
                     String.valueOf(color.charAt(3)) + color.charAt(4),
                     String.valueOf(color.charAt(5)) + color.charAt(6));
         } else {
-            throw new IllegalArgumentException("Provided String too short!");
+            throw new IllegalArgumentException("Bad HexString detected! Could not deserialize String.");
         }
     }
 

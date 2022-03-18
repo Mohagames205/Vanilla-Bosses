@@ -320,9 +320,7 @@ public class EntityDeathEvent implements Listener {
 
 
         if(bossWasKilled){
-            Main.getInstance().getServer().getConsoleSender().sendMessage("CP1");
             if (event.getEntity().getKiller() != null && Main.getInstance().getConfig().getBoolean("Bosses.enableBossKilledMessage")) {
-                Main.getInstance().getServer().getConsoleSender().sendMessage("CP2");
                 event.getEntity().getServer().broadcastMessage(PlaceholderReplacer.replaceInDeathEvent(event, Main.getInstance().getConfig().getString("Bosses." + Bosses.valueOf(event.getEntityType().toString().toUpperCase()).configSectionName + ".killedMessage")));
             }
         }

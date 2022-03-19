@@ -111,10 +111,10 @@ Bosses:
     spawnChance: 20
     thrownTNT:
       throwTNTEnable: true            #creeper will throw TNT in all directions when it blows up. The creeper will not die to exploding like a normal creeper
-      TNTYield: 4                     #recommended to keep low
+      TNTYield: 4                     #recommended to keep low, especially if you intend to set the TNTDoesNoBlockDamage to false. You have been warned!
       TNTFuse: 4                      #in seconds
       TNTSpreadMultiplier: 1.0
-      TNTDoesNoBlockDamage: true # If set to false the creeper boss will do block damage along with the TNT it throws out. Items will also be affected.
+      TNTDoesNoBlockDamage: true # If set to false the TNT the creeper boss throws out will do damage to the environment and items.
 
     killedMessage: "<killedName> was slain by <killer>"
 

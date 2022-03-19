@@ -67,7 +67,7 @@ Bosses:
 
     droppedXP: 125    #sets the amount of experience points dropped on death of the boss
 
-    summonedTNTDoesBlockDamage: true
+    summonedTNTDoesBlockDamage: false # If this setting is set to true, the tnt summoned by the Skeletor will blow up blocks and items.
 
     CommandToBeExecutedOnDeath: 0 #insert the commands you want executed whenever a naturally spawned boss is killed. remember that the numbers start at 0!
 

@@ -114,7 +114,7 @@ Bosses:
       TNTYield: 4                     #recommended to keep low
       TNTFuse: 4                      #in seconds
       TNTSpreadMultiplier: 1.0
-      TNTDoesNoBlockDamage: true
+      TNTDoesNoBlockDamage: true # If set to false the creeper boss will do block damage along with the TNT it throws out. Items will also be affected.
 
     killedMessage: "<killedName> was slain by <killer>"
 

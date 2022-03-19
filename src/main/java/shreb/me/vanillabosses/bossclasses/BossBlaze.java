@@ -16,7 +16,6 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 import shreb.me.vanillabosses.main.Main;
 import shreb.me.vanillabosses.main.Methods;
-import shreb.me.vanillabosses.main.configHelpers.RGBColors;
 
 import java.util.HashMap;
 import java.util.Objects;

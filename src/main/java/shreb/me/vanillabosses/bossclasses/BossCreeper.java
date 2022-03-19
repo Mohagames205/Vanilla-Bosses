@@ -1,7 +1,10 @@
 package shreb.me.vanillabosses.bossclasses;
 
 import net.md_5.bungee.api.ChatColor;
-import org.bukkit.*;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.NamespacedKey;
+import org.bukkit.World;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.entity.Creeper;
@@ -73,6 +76,8 @@ public class BossCreeper implements Listener {
             creeper.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
         }
 
+        if(config.getBoolean("Bosses.CreeperBoss.thrownTNT.TNTDoesNoBlockDamage")) creeper.getScoreboardTags().add("dontBlowUpItems");
+
         return creeper;
     }
 
@@ -96,6 +101,8 @@ public class BossCreeper implements Listener {
         if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
             creeper.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
         }
+
+        if(config.getBoolean("Bosses.CreeperBoss.thrownTNT.TNTDoesNoBlockDamage")) creeper.getScoreboardTags().add("dontBlowUpItems");
 
     }
 

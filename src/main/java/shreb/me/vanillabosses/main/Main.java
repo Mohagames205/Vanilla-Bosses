@@ -20,6 +20,7 @@ import shreb.me.vanillabosses.listeners.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
+import java.util.logging.Level;
 
 
 public final class Main extends JavaPlugin {
@@ -45,7 +46,9 @@ public final class Main extends JavaPlugin {
 
         try {
             currentLanguage = Languages.valueOf(config.getString("Bosses.PluginLanguage"));
-        } catch(IllegalArgumentException e){
+            Main.getInstance().getServer().getLogger().log(Level.INFO, "[VanillaBosses] Language Setting " + config.getString("Bosses.PluginLanguage") + " successfully enabled!");
+        } catch(IllegalArgumentException | NullPointerException e){
+            Main.getInstance().getServer().getLogger().log(Level.WARNING,"[VanillaBosses] Language specified in the config could not be found! Defaulting to English.");
             currentLanguage = Languages.EN;
         }
 

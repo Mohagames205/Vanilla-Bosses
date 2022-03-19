@@ -136,6 +136,7 @@ public class EntityExplodeEvent implements Listener {
                 if (config.getBoolean("Bosses.CreeperBoss.thrownTNT.TNTDoesNoBlockDamage")) {
                     for (Entity e : TNTArry) {
                         e.addScoreboardTag("CancelOnExplode");
+                        e.getScoreboardTags().add("dontBlowUpItems");
                     }
                 }
             }

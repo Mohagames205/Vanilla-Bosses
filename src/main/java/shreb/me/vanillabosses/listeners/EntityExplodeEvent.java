@@ -101,7 +101,7 @@ public class EntityExplodeEvent implements Listener {
                 finalCreeper1.removeScoreboardTag("ExplodingATM");
             }, 20L * config.getInt("Bosses.CreeperBoss.thrownTNT.TNTFuse"));
 
-            creeperNew.setExplosionRadius(20);
+            creeperNew.setExplosionRadius(creeper.getExplosionRadius());
 
             if (config.getBoolean("Bosses.CreeperBoss.thrownTNT.throwTNTEnable")) {
 

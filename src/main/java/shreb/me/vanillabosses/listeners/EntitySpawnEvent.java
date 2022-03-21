@@ -16,6 +16,8 @@ public class EntitySpawnEvent implements Listener {
 
     static Configuration config = Main.getInstance().getConfig();
     public static boolean spawn = true;
+    private static boolean bossSpawned = false;
+    public static String damageTrackerSBTag = "VanillaBossesDamageTracker";
 
     @EventHandler
     public void onEntitySpawn(CreatureSpawnEvent event) {
@@ -42,6 +44,7 @@ public class EntitySpawnEvent implements Listener {
                 if (Methods.randomNumber(0, 1000) <= Bosses.SKELETON.spawnChance) {
 
                     BossSkeleton.editToBossSkeleton((Skeleton) event.getEntity());
+                    bossSpawned = true;
 
                     PersistentDataContainer container = event.getEntity().getPersistentDataContainer();
                     String command = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.SkeletonBoss.CommandToBeExecutedOnDeath"));
@@ -63,6 +66,7 @@ public class EntitySpawnEvent implements Listener {
                 if (Methods.randomNumber(0, 1000) < Bosses.CREEPER.spawnChance) {
 
                     BossCreeper.editToBossCreeper((Creeper) event.getEntity());
+                    bossSpawned = true;
 
                     PersistentDataContainer container = event.getEntity().getPersistentDataContainer();
                     String command = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.CreeperBoss.CommandToBeExecutedOnDeath"));
@@ -84,6 +88,7 @@ public class EntitySpawnEvent implements Listener {
                 if (Methods.randomNumber(0, 1000) < Bosses.SPIDER.spawnChance) {
 
                     BossSpider.editToBossSpider((Spider) event.getEntity());
+                    bossSpawned = true;
 
                     PersistentDataContainer container = event.getEntity().getPersistentDataContainer();
                     String command = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.SpiderBoss.CommandToBeExecutedOnDeath"));
@@ -106,6 +111,7 @@ public class EntitySpawnEvent implements Listener {
                 if (Methods.randomNumber(0, 1000) < Bosses.BLAZE.spawnChance) {
 
                     BossBlaze.editToBossBlaze((Blaze) event.getEntity());
+                    bossSpawned = true;
 
                     PersistentDataContainer container = event.getEntity().getPersistentDataContainer();
                     String command = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.BlazeBoss.CommandToBeExecutedOnDeath"));
@@ -128,6 +134,7 @@ public class EntitySpawnEvent implements Listener {
                 if (Methods.randomNumber(0, 1000) < Bosses.ENDERMAN.spawnChance) {
 
                     BossEnderman.editToBossEnderman((Enderman) event.getEntity());
+                    bossSpawned = true;
 
                     PersistentDataContainer container = event.getEntity().getPersistentDataContainer();
                     String command = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.EndermanBoss.CommandToBeExecutedOnDeath"));
@@ -150,6 +157,7 @@ public class EntitySpawnEvent implements Listener {
                 if (Methods.randomNumber(0, 1000) < Bosses.ZOMBIE.spawnChance) {
 
                     BossZombie.editToBossZombie((Zombie) event.getEntity());
+                    bossSpawned = true;
 
                     Methods.mobHorde(4, 12, "zombie", event.getLocation());
 
@@ -174,6 +182,7 @@ public class EntitySpawnEvent implements Listener {
                 if (Methods.randomNumber(0, 1000) < Bosses.ZOMBIFIED_PIGLIN.spawnChance) {
 
                     BossZombified_Piglin.editToBossZombified_Piglin((PigZombie) event.getEntity());
+                    bossSpawned = true;
 
                     PersistentDataContainer container = event.getEntity().getPersistentDataContainer();
                     String command = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.Zombified_PiglinBoss.CommandToBeExecutedOnDeath"));
@@ -196,6 +205,7 @@ public class EntitySpawnEvent implements Listener {
                 if (Methods.randomNumber(0, 1000) < Bosses.WITCH.spawnChance) {
 
                     BossWitch.editToBossWitch((Witch) event.getEntity());
+                    bossSpawned = true;
 
                     PersistentDataContainer container = event.getEntity().getPersistentDataContainer();
                     String command = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.WitchBoss.CommandToBeExecutedOnDeath"));
@@ -225,6 +235,7 @@ public class EntitySpawnEvent implements Listener {
                 if (Methods.randomNumber(0, 1000) < Bosses.SLIME.spawnChance) {
 
                     BossSlime.editToBossSlime((Slime) event.getEntity());
+                    bossSpawned = true;
 
                     PersistentDataContainer container = event.getEntity().getPersistentDataContainer();
                     String command = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.SlimeBoss.CommandToBeExecutedOnDeath"));
@@ -254,6 +265,7 @@ public class EntitySpawnEvent implements Listener {
                 if (Methods.randomNumber(0, 1000) < Bosses.MAGMA_CUBE.spawnChance) {
 
                     BossMagmacube.editToBossMagmacube((MagmaCube) event.getEntity());
+                    bossSpawned = true;
 
                     PersistentDataContainer container = event.getEntity().getPersistentDataContainer();
                     String command = config.getStringList("Bosses.CommandsExecutedOnBossDeath").get(config.getInt("Bosses.Magma_cubeBoss.CommandToBeExecutedOnDeath"));
@@ -264,6 +276,8 @@ public class EntitySpawnEvent implements Listener {
                 }
             }
         }
+
+        if(bossSpawned) event.getEntity().getScoreboardTags().add("VanillaBossesDamageTracker");
 
     }
 }

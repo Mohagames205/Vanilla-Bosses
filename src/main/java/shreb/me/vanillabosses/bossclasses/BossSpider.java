@@ -25,6 +25,7 @@ public class BossSpider implements Listener {
 
         Spider spider = (Spider) w.spawnEntity(location, EntityType.SPIDER);
         spider.addScoreboardTag("BossSpider");
+        spider.getScoreboardTags().add("VanillaBossesDamageTracker");
         spider.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.SPIDER.health);
         spider.setHealth(Bosses.SPIDER.health);
         spider.addScoreboardTag("removeInvisibilityOnDisable");
@@ -46,6 +47,7 @@ public class BossSpider implements Listener {
     public static void editToBossSpider(Spider spider){
 
         spider.addScoreboardTag("BossSpider");
+        spider.getScoreboardTags().add("VanillaBossesDamageTracker");
         spider.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getDouble("Bosses.SpiderBoss.health"));
         spider.setHealth(spider.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue());
         spider.addScoreboardTag("removeInvisibilityOnDisable");

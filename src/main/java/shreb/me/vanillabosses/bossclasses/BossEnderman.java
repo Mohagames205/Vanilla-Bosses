@@ -61,6 +61,7 @@ public class BossEnderman implements Listener {
 
         Enderman enderman = (Enderman) w.spawnEntity(location, EntityType.ENDERMAN);
         enderman.addScoreboardTag("BossEnderman");
+        enderman.getScoreboardTags().add("VanillaBossesDamageTracker");
         enderman.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.ENDERMAN.health);
         enderman.setHealth(Bosses.ENDERMAN.health);
         enderman.setCustomName(net.md_5.bungee.api.ChatColor.of(Bosses.ENDERMAN.nameColor) + Bosses.ENDERMAN.displayName);
@@ -80,6 +81,7 @@ public class BossEnderman implements Listener {
     public static void editToBossEnderman(Enderman enderman){
 
         enderman.addScoreboardTag("BossEnderman");
+        enderman.getScoreboardTags().add("VanillaBossesDamageTracker");
         enderman.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.ENDERMAN.health);
         enderman.setHealth(Bosses.ENDERMAN.health);
         enderman.setCustomName(ChatColor.of(Bosses.ENDERMAN.nameColor) + Bosses.ENDERMAN.displayName);

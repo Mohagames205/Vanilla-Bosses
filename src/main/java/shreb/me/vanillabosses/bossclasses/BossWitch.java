@@ -169,6 +169,7 @@ public class BossWitch implements Listener {
 
         Witch witch = (Witch) w.spawnEntity(location, EntityType.WITCH);
         witch.addScoreboardTag("BossWitch");
+        witch.getScoreboardTags().add("VanillaBossesDamageTracker");
         witch.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.WITCH.health);
         witch.setHealth(Bosses.WITCH.health);
         witch.setCustomName(net.md_5.bungee.api.ChatColor.of(Bosses.WITCH.nameColor) + Bosses.WITCH.displayName);
@@ -187,6 +188,7 @@ public class BossWitch implements Listener {
     public static void editToBossWitch(Witch witch){
 
         witch.addScoreboardTag("BossWitch");
+        witch.getScoreboardTags().add("VanillaBossesDamageTracker");
         witch.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.WITCH.health);
         witch.setHealth(Bosses.WITCH.health);
         witch.setCustomName(net.md_5.bungee.api.ChatColor.of(Bosses.WITCH.nameColor) + Bosses.WITCH.displayName);

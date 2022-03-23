@@ -38,6 +38,7 @@ public class BossZombie implements Listener {
         Zombie zombie = (Zombie) w.spawnEntity(location, EntityType.ZOMBIE);
 
         zombie.addScoreboardTag("BossZombie");
+        zombie.getScoreboardTags().add("VanillaBossesDamageTracker");
         zombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.ZOMBIE.health);
         zombie.setHealth(Bosses.ZOMBIE.health);
         zombie.setCustomName(net.md_5.bungee.api.ChatColor.of(Bosses.ZOMBIE.nameColor) + Bosses.ZOMBIE.displayName);
@@ -82,6 +83,7 @@ public class BossZombie implements Listener {
         zombie.setAdult();
 
         zombie.addScoreboardTag("BossZombie");
+        zombie.getScoreboardTags().add("VanillaBossesDamageTracker");
         zombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.ZOMBIE.health);
         zombie.setHealth(Bosses.ZOMBIE.health);
         zombie.setCustomName(ChatColor.of(Bosses.ZOMBIE.nameColor) + Bosses.ZOMBIE.displayName);

@@ -148,6 +148,7 @@ public class BossBlaze implements Listener {
 
         Blaze blaze = (Blaze) w.spawnEntity(location, EntityType.BLAZE);
         blaze.getScoreboardTags().add("BossBlaze");
+        blaze.getScoreboardTags().add("VanillaBossesDamageTracker");
         blaze.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.BLAZE.health);
         blaze.setHealth(Bosses.BLAZE.health);
         blaze.setCustomName(ChatColor.of(Bosses.BLAZE.nameColor) + Bosses.BLAZE.displayName);
@@ -169,6 +170,7 @@ public class BossBlaze implements Listener {
     public static void editToBossBlaze(Blaze blaze) {
 
         blaze.getScoreboardTags().add("BossBlaze");
+        blaze.getScoreboardTags().add("VanillaBossesDamageTracker");
         blaze.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.BLAZE.health);
         blaze.setHealth(Bosses.BLAZE.health);
         blaze.setCustomName(ChatColor.of(Bosses.BLAZE.nameColor) + Bosses.BLAZE.displayName);

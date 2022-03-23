@@ -30,6 +30,7 @@ public class BossZombified_Piglin  implements Listener {
         PigZombie pigzombie = (PigZombie) w.spawnEntity(location, EntityType.ZOMBIFIED_PIGLIN);
 
         pigzombie.addScoreboardTag("BossZombified_Piglin");
+        pigzombie.getScoreboardTags().add("VanillaBossesDamageTracker");
         pigzombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.ZOMBIFIED_PIGLIN.health);
         pigzombie.setHealth(Bosses.ZOMBIFIED_PIGLIN.health);
         pigzombie.setCustomName(ChatColor.of(Bosses.ZOMBIFIED_PIGLIN.nameColor) + Bosses.ZOMBIFIED_PIGLIN.displayName);
@@ -73,6 +74,7 @@ public class BossZombified_Piglin  implements Listener {
 
 
         pigzombie.addScoreboardTag("BossZombified_Piglin");
+        pigzombie.getScoreboardTags().add("VanillaBossesDamageTracker");
         pigzombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.ZOMBIFIED_PIGLIN.health);
         pigzombie.setHealth(Bosses.ZOMBIFIED_PIGLIN.health);
         pigzombie.setCustomName(net.md_5.bungee.api.ChatColor.of(Bosses.ZOMBIFIED_PIGLIN.nameColor) + Bosses.ZOMBIFIED_PIGLIN.displayName);

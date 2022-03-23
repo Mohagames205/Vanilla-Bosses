@@ -21,6 +21,7 @@ public class BossMagmacube implements Listener {
 
         MagmaCube magma = (MagmaCube) w.spawnEntity(location, EntityType.MAGMA_CUBE);
         magma.getScoreboardTags().add(Bosses.MAGMA_CUBE.scoreboardBossTag);
+        magma.getScoreboardTags().add("VanillaBossesDamageTracker");
         magma.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.MAGMA_CUBE.health);
         magma.setHealth(Bosses.MAGMA_CUBE.health);
         magma.setCustomName(ChatColor.of(Bosses.MAGMA_CUBE.nameColor) + Bosses.MAGMA_CUBE.displayName);
@@ -35,6 +36,7 @@ public class BossMagmacube implements Listener {
     public static void editToBossMagmacube(MagmaCube magma) {
 
         magma.getScoreboardTags().add(Bosses.MAGMA_CUBE.scoreboardBossTag);
+        magma.getScoreboardTags().add("VanillaBossesDamageTracker");
         magma.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.MAGMA_CUBE.health);
         magma.setHealth(Bosses.MAGMA_CUBE.health);
         magma.setCustomName(ChatColor.of(Bosses.MAGMA_CUBE.nameColor) + Bosses.MAGMA_CUBE.displayName);

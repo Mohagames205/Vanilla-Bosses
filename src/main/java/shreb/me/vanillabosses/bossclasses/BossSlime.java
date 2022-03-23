@@ -28,6 +28,7 @@ public class BossSlime implements Listener {
 
         Slime slime = (Slime) w.spawnEntity(location, EntityType.SLIME);
         slime.addScoreboardTag("BossSlime");
+        slime.getScoreboardTags().add("VanillaBossesDamageTracker");
         slime.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.SLIME.health);
         slime.setHealth(Bosses.SLIME.health);
         slime.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 3));
@@ -49,6 +50,7 @@ public class BossSlime implements Listener {
     public static void editToBossSlime(Slime slime){
 
         slime.addScoreboardTag("BossSlime");
+        slime.getScoreboardTags().add("VanillaBossesDamageTracker");
         slime.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.SLIME.health);
         slime.setHealth(Bosses.SLIME.health);
         slime.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 3));

@@ -63,6 +63,7 @@ public class BossCreeper implements Listener {
 
         Creeper creeper = (Creeper) w.spawnEntity(location, EntityType.CREEPER);
         creeper.addScoreboardTag("BossCreeper");
+        creeper.getScoreboardTags().add("VanillaBossesDamageTracker");
         creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.CREEPER.health);
         creeper.setHealth(Bosses.CREEPER.health);
         creeper.setMaxFuseTicks(40);
@@ -89,6 +90,7 @@ public class BossCreeper implements Listener {
     public static void editToBossCreeper(Creeper creeper){
 
         creeper.addScoreboardTag("BossCreeper");
+        creeper.getScoreboardTags().add("VanillaBossesDamageTracker");
         creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.CREEPER.health);
         creeper.setHealth(Bosses.CREEPER.health);
         creeper.setMaxFuseTicks(40);

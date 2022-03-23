@@ -32,6 +32,7 @@ public class BossSkeleton implements Listener {
         Skeleton skeleton = (Skeleton) w.spawnEntity(location, EntityType.SKELETON);
 
         skeleton.addScoreboardTag("BossSkeleton");
+        skeleton.getScoreboardTags().add("VanillaBossesDamageTracker");
         skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.SKELETON.health);
         skeleton.setHealth(Bosses.SKELETON.health);
         skeleton.addScoreboardTag("removeInvulnerableOnDisable");
@@ -125,6 +126,7 @@ public class BossSkeleton implements Listener {
 
 
         skeleton.addScoreboardTag("BossSkeleton");
+        skeleton.getScoreboardTags().add("VanillaBossesDamageTracker");
         skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.SKELETON.health);
         skeleton.setHealth(Bosses.SKELETON.health);
         skeleton.addScoreboardTag("removeInvulnerableOnDisable");

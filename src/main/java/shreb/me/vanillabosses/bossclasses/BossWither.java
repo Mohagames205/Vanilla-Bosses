@@ -120,6 +120,7 @@ public class BossWither implements Listener {
             if (wither.getWorld().getBlockAt(x, y - 1, z).getType() == Material.NETHERITE_BLOCK) {
 
                 wither.addScoreboardTag("BossWither");
+                wither.getScoreboardTags().add("VanillaBossesDamageTracker");
 
                 Objects.requireNonNull(wither.getAttribute(Attribute.GENERIC_MAX_HEALTH)).setBaseValue(Bosses.WITHER.health);
                 wither.setHealth(Bosses.WITHER.health);
@@ -143,6 +144,7 @@ public class BossWither implements Listener {
 
         Wither wither = (Wither) w.spawnEntity(loc, EntityType.WITHER);
         wither.addScoreboardTag(Bosses.WITHER.scoreboardBossTag);
+        wither.getScoreboardTags().add("VanillaBossesDamageTracker");
 
         wither.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.WITHER.health);
         wither.setHealth(Bosses.WITHER.health);

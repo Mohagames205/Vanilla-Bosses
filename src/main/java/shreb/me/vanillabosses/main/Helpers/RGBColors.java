@@ -1,4 +1,4 @@
-package shreb.me.vanillabosses.main.configHelpers;
+package shreb.me.vanillabosses.main.Helpers;
 
 import net.md_5.bungee.api.ChatColor;
 

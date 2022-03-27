@@ -126,7 +126,7 @@ public class HeatedMagmaCream implements Listener {
                     return;
             }
 
-            Methods.spawnParticles(Particle.SMALL_FLAME, player.getWorld(), loc,  radius, radius, radius, 150, 3);
+            Methods.spawnParticles(Particle.FLAME, player.getWorld(), loc,  radius, radius, radius, 150, 3);
 
             player.getWorld().playSound(loc, Sound.ENTITY_SLIME_SQUISH, 1.0f, 1.0f);
 

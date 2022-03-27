@@ -83,7 +83,7 @@ public class EntityDamagedByEntityEvent implements Listener {
                     int seconds = config.getInt("Bosses.SkeletonBoss.onHitEvents.invulnerability.durationInSeconds");
 
                     entity.setInvulnerable(true);
-                    entity.getWorld().spawnParticle(Particle.SMALL_FLAME, entity.getLocation(), 25);
+                    entity.getWorld().spawnParticle(Particle.FLAME, entity.getLocation(), 25);
 
                     Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () -> {
 

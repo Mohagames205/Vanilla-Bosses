@@ -1,7 +1,7 @@
 name: VanillaBosses
 version: ${project.version}
 main: shreb.me.vanillabosses.main.Main
-api-version: 1.17
+api-version: 1.16
 authors: [ Shreb ]
 description: A plugin to put bosses in the game for Vanilla mobs
 commands:

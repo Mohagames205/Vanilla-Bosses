@@ -9,6 +9,8 @@ import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import shreb.me.vanillabosses.bossclasses.*;
+import shreb.me.vanillabosses.main.BossDamagedTracker;
+import shreb.me.vanillabosses.main.Helpers.BossDamageTrackerHelper;
 import shreb.me.vanillabosses.main.Main;
 import shreb.me.vanillabosses.main.Methods;
 
@@ -272,12 +274,10 @@ public class EntitySpawnEvent implements Listener {
                     if(!command.equals("")){
                         container.set(new NamespacedKey(Main.getInstance(), "VanillaBossesCommandOnDeath"), PersistentDataType.STRING, command);
                     }
-
                 }
             }
         }
 
-        if(bossSpawned) event.getEntity().getScoreboardTags().add("VanillaBossesDamageTracker");
-
+        if(bossSpawned) BossDamagedTracker.bossDamageTracker.put(event.getEntity().getUniqueId(), new BossDamageTrackerHelper());
     }
 }

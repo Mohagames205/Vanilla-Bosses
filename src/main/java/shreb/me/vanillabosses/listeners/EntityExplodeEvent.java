@@ -16,6 +16,7 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.util.Vector;
 import shreb.me.vanillabosses.bossclasses.RespawningBosses;
+import shreb.me.vanillabosses.main.BossDamagedTracker;
 import shreb.me.vanillabosses.main.Main;
 import shreb.me.vanillabosses.main.Methods;
 
@@ -37,7 +38,7 @@ public class EntityExplodeEvent implements Listener {
             Creeper creeperNew = (Creeper) creeper.getWorld().spawnEntity(creeper.getLocation(), EntityType.CREEPER);
             PersistentDataContainer containerNew = creeperNew.getPersistentDataContainer();
 
-            Methods.spawnParticles(Particle.SMALL_FLAME, event.getEntity().getWorld(), event.getLocation(), 4, 2, 4, 30, 3);
+            Methods.spawnParticles(Particle.FLAME, event.getEntity().getWorld(), event.getLocation(), 4, 2, 4, 30, 3);
 
             PersistentDataContainer container = creeper.getPersistentDataContainer();
             String name = creeper.getCustomName();
@@ -102,6 +103,8 @@ public class EntityExplodeEvent implements Listener {
             }, 20L * config.getInt("Bosses.CreeperBoss.thrownTNT.TNTFuse"));
 
             creeperNew.setExplosionRadius(creeper.getExplosionRadius());
+
+            BossDamagedTracker.replaceBossUUID(creeper.getUniqueId(), creeperNew.getUniqueId());
 
             if (config.getBoolean("Bosses.CreeperBoss.thrownTNT.throwTNTEnable")) {
 

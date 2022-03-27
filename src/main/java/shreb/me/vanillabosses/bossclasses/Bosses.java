@@ -89,7 +89,7 @@ public enum Bosses {
     MAGMA_CUBE(Main.getInstance().getConfig().getInt("Bosses.Magma_cubeBoss.spawnChance"),
             Main.getInstance().getConfig().getDouble("Bosses.Magma_cubeBoss.health"),
             Main.getInstance().getConfig().getDouble("Bosses.Magma_cubeBoss.DamageModifier"),
-            "MagmacubeBoss",
+            "Magma_cubeBoss",
             "BossMagmacube",
             Main.getInstance().getConfig().getString("Bosses.Magma_cubeBoss.displayName"),
             Main.getInstance().getConfig().getString("Bosses.Magma_cubeBoss.displayNameColor"));
@@ -102,6 +102,7 @@ public enum Bosses {
     public String scoreboardBossTag;
     public String displayName;
     public String nameColor;
+
 
 
     Bosses(int spawnChance, double health, double damageModifier, String configSectionName, String scoreboardBossTag, String displayName, String nameColor){

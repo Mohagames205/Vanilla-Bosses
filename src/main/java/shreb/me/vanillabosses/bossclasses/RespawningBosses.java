@@ -12,6 +12,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.util.Vector;
+import shreb.me.vanillabosses.main.BossDamagedTracker;
+import shreb.me.vanillabosses.main.Helpers.BossDamageTrackerHelper;
 import shreb.me.vanillabosses.main.Main;
 
 import java.util.*;
@@ -154,6 +156,7 @@ public class RespawningBosses {
                         container.set(new NamespacedKey(Main.getInstance(), "VanillaBossesSpawnLocationZ"), PersistentDataType.DOUBLE, Double.parseDouble(stringArray[3]));
                         container.set(new NamespacedKey(Main.getInstance(), "VanillaBossesRespawnTime"), PersistentDataType.INTEGER, Integer.parseInt(stringArray[4]));
                         respawningBosses.get(entity.getType()).add(entity.getUniqueId());
+                        BossDamagedTracker.bossDamageTracker.put(entity.getUniqueId(), new BossDamageTrackerHelper());
                     }
                 }
             }

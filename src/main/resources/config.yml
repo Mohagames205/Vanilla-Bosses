@@ -1,6 +1,6 @@
 Bosses:
 
-  configVersion: 1.6.1  # This is important to check for an outdated config file. do not change or remove it. to update your config, please consider saving your current config file and using the "resetConfig" Option below.
+  configVersion: 1.7.0  # This is important to check for an outdated config file. do not change or remove it. to update your config, please consider saving your current config file and using the "resetConfig" Option below.
                         # after this you can paste your original values at the appropriate positions if you wish to. (Alternatively to reset the config you can delete the entire config file instead of using the reset option)
   enablePlugin: true
   resetConfig: false  #If set true this will set your configuration to a state that definitely works, aka the state you found it in when you first opened this file.
@@ -26,6 +26,9 @@ Bosses:
   # <killer> to only apply this command to the killer
   # <25> to get all players within a radius (doesn't have to be 25) (radius will have the killed boss at the center)
   # @a to select all players on the server. This does not work with the /items command.
+  # <mostDamage> to input the player which did the most damage to the boss which died.
+  # <killedName> to input the Dead Bosses name. This should not be necessary often, but is possible. (possibly necessary to name items or put text in a book or so?)
+
   # to disable OP players being able to see /give messages and /tp messages go into your server file and disable the broadcast-console-to-ops setting.
   # for the /items command the only currently working syntax is /items <itemname> <killer>.
 

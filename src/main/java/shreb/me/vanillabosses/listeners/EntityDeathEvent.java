@@ -19,7 +19,7 @@ import shreb.me.vanillabosses.bossclasses.*;
 import shreb.me.vanillabosses.items.*;
 import shreb.me.vanillabosses.main.Main;
 import shreb.me.vanillabosses.main.Methods;
-import shreb.me.vanillabosses.main.configHelpers.PlaceholderReplacer;
+import shreb.me.vanillabosses.main.Helpers.PlaceholderReplacer;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -344,7 +344,6 @@ public class EntityDeathEvent implements Listener {
                 RespawningBosses.bossBarHashMap.remove(event.getEntity().getUniqueId());
             }
 
-
             RespawningBosses.respawningBosses.get(event.getEntityType()).remove(event.getEntity().getUniqueId());
 
             PersistentDataContainer container = event.getEntity().getPersistentDataContainer();
@@ -364,9 +363,12 @@ public class EntityDeathEvent implements Listener {
             loc.add(new Vector(x, y, z));
 
             BarColor finalColor = color;
+
+
+
             Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () -> {
 
-                if(!event.getEntity().isDead() || event.getEntity().getHealth() <= 0) return;
+                if(!event.getEntity().isDead() || event.getEntity().getHealth() > 0) return;
 
                 LivingEntity livingEntity = RespawningBosses.bossSpawnMethod(event.getEntityType(), loc, w);
 
@@ -399,7 +401,6 @@ public class EntityDeathEvent implements Listener {
                 if (container.has(new NamespacedKey(Main.getInstance(), "VanillaBossesSpawnLocationZ"), PersistentDataType.DOUBLE) && container.get(new NamespacedKey(Main.getInstance(), "VanillaBossesSpawnLocationZ"), PersistentDataType.DOUBLE) != null) {
                     container1.set(new NamespacedKey(Main.getInstance(), "VanillaBossesSpawnLocationZ"), PersistentDataType.DOUBLE, container.get(new NamespacedKey(Main.getInstance(), "VanillaBossesSpawnLocationZ"), PersistentDataType.DOUBLE));
                 }
-
 
                 livingEntity.getScoreboardTags().add("removeOnDisable");
                 livingEntity.setRemoveWhenFarAway(false);
@@ -437,12 +438,11 @@ public class EntityDeathEvent implements Listener {
                 time = container.get(new NamespacedKey(Main.getInstance(), "VanillaBossesCommandOnDeathTimer"), PersistentDataType.INTEGER);
             }
 
-            if (command != null && command.contains("<killer>")) {
+            if (command != null && (command.contains("<killer>") || command.contains("<killedName>") || command.contains("<mostDamage>"))) {
 
-                command = command.replace("<killer>", event.getEntity().getKiller().getName());
+                command = PlaceholderReplacer.replaceInDeathEvent(event, command);
 
             } else if (command != null && command.contains("<") && command.contains(">")) {
-
                 String[] strings = command.split("<");
                 String first = strings[0];
                 String[] strings1 = strings[1].split(">");

@@ -371,6 +371,7 @@ public class ItemCommands implements CommandExecutor {
         }
 
 
+
         if (args[0].equalsIgnoreCase("list")) {
 
             sender.sendMessage(ChatColor.AQUA + "Available Items:");
@@ -384,6 +385,7 @@ public class ItemCommands implements CommandExecutor {
             sender.sendMessage(ChatColor.GOLD + " -bouncyslime <amount>");
             sender.sendMessage(ChatColor.GOLD + " -Blazer");
             sender.sendMessage(ChatColor.GOLD + " -HeatedMagmaCream <level> <amount>");
+            sender.sendMessage(ChatColor.GOLD + " -egg <bosstype> <amount>");
 
             return true;
         }

@@ -226,6 +226,7 @@ public class Boss implements CommandExecutor {
             Wither wither = (Wither) world.spawnEntity(loc, EntityType.WITHER);
             sender.sendMessage(ChatColor.AQUA + Bosses.WITHER.displayName + Main.getCurrentLanguage().spawnedMessage);
             wither.addScoreboardTag("BossWither");
+            wither.getScoreboardTags().add("VanillaBossesDamageTracker");
 
             wither.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.WITHER.health);
             wither.setHealth(Bosses.WITHER.health);
@@ -511,6 +512,8 @@ public class Boss implements CommandExecutor {
             return true;
 
         }
+
+
 
         return false;
 

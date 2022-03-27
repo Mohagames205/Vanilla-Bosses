@@ -67,7 +67,6 @@ public class BossCreeper implements Listener {
         creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.CREEPER.health);
         creeper.setHealth(Bosses.CREEPER.health);
         creeper.setMaxFuseTicks(40);
-        creeper.setFuseTicks(40);
         PersistentDataContainer container = creeper.getPersistentDataContainer();
         container.set(new NamespacedKey(Main.getInstance(), "VanillaBossesRespawnTime"), PersistentDataType.INTEGER, -1);
         creeper.getAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE).setBaseValue(0.6);
@@ -94,7 +93,6 @@ public class BossCreeper implements Listener {
         creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.CREEPER.health);
         creeper.setHealth(Bosses.CREEPER.health);
         creeper.setMaxFuseTicks(40);
-        creeper.setFuseTicks(40);
         PersistentDataContainer container = creeper.getPersistentDataContainer();
         container.set(new NamespacedKey(Main.getInstance(), "VanillaBossesRespawnTime"), PersistentDataType.INTEGER, -1);
         creeper.getAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE).setBaseValue(0.6);

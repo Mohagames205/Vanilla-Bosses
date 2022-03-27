@@ -2,7 +2,7 @@ import net.md_5.bungee.api.ChatColor;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import shreb.me.vanillabosses.main.configHelpers.RGBColors;
+import shreb.me.vanillabosses.main.Helpers.RGBColors;
 
 
 public class RGBColorsTest {

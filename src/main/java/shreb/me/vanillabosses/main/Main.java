@@ -14,6 +14,7 @@ import shreb.me.vanillabosses.bossclasses.*;
 import shreb.me.vanillabosses.commands.Boss;
 import shreb.me.vanillabosses.commands.ItemCommands;
 import shreb.me.vanillabosses.commands.VBHelp;
+import shreb.me.vanillabosses.gui.ConfigGUI;
 import shreb.me.vanillabosses.items.*;
 import shreb.me.vanillabosses.listeners.*;
 
@@ -80,6 +81,10 @@ public final class Main extends JavaPlugin {
         pm.registerEvents(new EntitySpawnEvent(), this);
         pm.registerEvents(new BossAttackDamageChanger(), this);
 
+        pm.registerEvents(new BossDamagedTracker(), this);
+
+        pm.registerEvents(new ConfigGUI(), this);
+
         if(config.getBoolean("Items.DisableRepairAndEnchant"))pm.registerEvents(new AntiRepairListener(), this);
 
         Objects.requireNonNull(getCommand("boss")).setExecutor(new Boss());
@@ -94,7 +99,6 @@ public final class Main extends JavaPlugin {
         if(config.getBoolean("Items.Blazer.enableCraftingRecipe"))              CraftingRecipes.blazerRecipe();//enables the blazer recipe
         if(config.getBoolean("Items.HeatedMagmaCream.enableImproving")){        CraftingRecipes.heatedMagmaCreamRecipeLv2();
                                                                                      CraftingRecipes.heatedMagmaCreamRecipeLv3();}
-
 
 
         final String version = this.getDescription().getVersion();

@@ -23,6 +23,7 @@ public class ConfigGUI implements Listener {
 
     public ConfigGUI() {
 
+        new GUIOpener();
         // Put the items into the inventory
         initializeItems();
     }
@@ -56,11 +57,14 @@ public class ConfigGUI implements Listener {
     // Check for clicks on items
     @EventHandler
     public void onInventoryClick(final InventoryClickEvent e) {
-        if (!GUIOpener.inventory1Map.containsValue(e.getInventory())
+        if (!e.getInventory().equals(GUIOpener.inventory1)
+                && !GUIOpener.inventory1Map.containsValue(e.getInventory())
                 && !GUIOpener.bossInventoryMap.containsValue(e.getInventory())
                 && !GUIOpener.itemInventoryMap.containsValue(e.getInventory())
                 && !GUIOpener.generalInventoryMap.containsValue(e.getInventory())
         ) return;
+
+        if(GUIOpener.inventory1Map.containsValue(e.getInventory())) System.out.println("CP1");
 
         e.setCancelled(true);
 

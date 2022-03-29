@@ -17,9 +17,9 @@ import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.util.Vector;
 import shreb.me.vanillabosses.bossclasses.*;
 import shreb.me.vanillabosses.items.*;
+import shreb.me.vanillabosses.main.Helpers.PlaceholderReplacer;
 import shreb.me.vanillabosses.main.Main;
 import shreb.me.vanillabosses.main.Methods;
-import shreb.me.vanillabosses.main.Helpers.PlaceholderReplacer;
 
 import java.util.ArrayList;
 import java.util.Objects;

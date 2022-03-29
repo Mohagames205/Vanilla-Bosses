@@ -1,3 +1,4 @@
+/**
 package shreb.me.vanillabosses.gui;
 
 import org.bukkit.Bukkit;
@@ -17,9 +18,6 @@ import shreb.me.vanillabosses.items.*;
 import java.util.Arrays;
 
 public class ConfigGUI implements Listener {
-
-
-
 
     public ConfigGUI() {
 
@@ -91,3 +89,4 @@ public class ConfigGUI implements Listener {
         }
     }
 }
+*/

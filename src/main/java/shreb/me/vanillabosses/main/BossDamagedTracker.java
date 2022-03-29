@@ -7,7 +7,9 @@ import org.bukkit.event.entity.EntityDeathEvent;
 import shreb.me.vanillabosses.listeners.EntitySpawnEvent;
 import shreb.me.vanillabosses.main.Helpers.BossDamageTrackerHelper;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.UUID;
 
 public class BossDamagedTracker implements Listener {
 

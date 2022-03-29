@@ -1,7 +1,6 @@
 package shreb.me.vanillabosses.main.Helpers;
 
 import org.bukkit.ChatColor;
-import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDeathEvent;
 import shreb.me.vanillabosses.bossclasses.Bosses;
 import shreb.me.vanillabosses.main.BossDamagedTracker;

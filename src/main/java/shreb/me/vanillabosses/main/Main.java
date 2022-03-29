@@ -14,7 +14,6 @@ import shreb.me.vanillabosses.bossclasses.*;
 import shreb.me.vanillabosses.commands.Boss;
 import shreb.me.vanillabosses.commands.ItemCommands;
 import shreb.me.vanillabosses.commands.VBHelp;
-import shreb.me.vanillabosses.gui.ConfigGUI;
 import shreb.me.vanillabosses.items.*;
 import shreb.me.vanillabosses.listeners.*;
 
@@ -83,7 +82,7 @@ public final class Main extends JavaPlugin {
 
         pm.registerEvents(new BossDamagedTracker(), this);
 
-        pm.registerEvents(new ConfigGUI(), this);
+        //pm.registerEvents(new ConfigGUI(), this);
 
         if(config.getBoolean("Items.DisableRepairAndEnchant"))pm.registerEvents(new AntiRepairListener(), this);
 

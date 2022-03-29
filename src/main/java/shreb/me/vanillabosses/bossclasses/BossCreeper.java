@@ -6,7 +6,6 @@ import org.bukkit.Location;
 import org.bukkit.NamespacedKey;
 import org.bukkit.World;
 import org.bukkit.attribute.Attribute;
-import org.bukkit.configuration.Configuration;
 import org.bukkit.entity.Creeper;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
@@ -21,8 +20,6 @@ import shreb.me.vanillabosses.main.Main;
 
 
 public class BossCreeper implements Listener {
-
-    static Configuration config = Main.getInstance().getConfig();
 
     @EventHandler
     public void bossLitOnFire(EntityCombustEvent event){
@@ -41,7 +38,7 @@ public class BossCreeper implements Listener {
 
                 creeper.removeScoreboardTag("ExplodingATM");
 
-            },20L * config.getInt("Bosses.CreeperBoss.thrownTNT.TNTFuse") +5 );
+            },20L * Main.getInstance().getConfig().getInt("Bosses.CreeperBoss.thrownTNT.TNTFuse") +5 );
         }
     }
 
@@ -71,12 +68,12 @@ public class BossCreeper implements Listener {
         container.set(new NamespacedKey(Main.getInstance(), "VanillaBossesRespawnTime"), PersistentDataType.INTEGER, -1);
         creeper.getAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE).setBaseValue(0.6);
         creeper.setCustomName(net.md_5.bungee.api.ChatColor.of(Bosses.CREEPER.nameColor) + Bosses.CREEPER.displayName);
-        creeper.setCustomNameVisible(config.getBoolean("Bosses.CreeperBoss.showDisplayNameAlways"));
-        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+        creeper.setCustomNameVisible(Main.getInstance().getConfig().getBoolean("Bosses.CreeperBoss.showDisplayNameAlways"));
+        if(Main.getInstance().getConfig().getBoolean("Bosses.bossesGetGlowingPotionEffect")){
             creeper.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
         }
 
-        if(config.getBoolean("Bosses.CreeperBoss.thrownTNT.TNTDoesNoBlockDamage")) creeper.getScoreboardTags().add("dontBlowUpItems");
+        if(Main.getInstance().getConfig().getBoolean("Bosses.CreeperBoss.thrownTNT.TNTDoesNoBlockDamage")) creeper.getScoreboardTags().add("dontBlowUpItems");
 
         return creeper;
     }
@@ -97,12 +94,12 @@ public class BossCreeper implements Listener {
         container.set(new NamespacedKey(Main.getInstance(), "VanillaBossesRespawnTime"), PersistentDataType.INTEGER, -1);
         creeper.getAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE).setBaseValue(0.6);
         creeper.setCustomName(ChatColor.of(Bosses.CREEPER.nameColor) + Bosses.CREEPER.displayName);
-        creeper.setCustomNameVisible(config.getBoolean("Bosses.CreeperBoss.showDisplayNameAlways"));
-        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+        creeper.setCustomNameVisible(Main.getInstance().getConfig().getBoolean("Bosses.CreeperBoss.showDisplayNameAlways"));
+        if(Main.getInstance().getConfig().getBoolean("Bosses.bossesGetGlowingPotionEffect")){
             creeper.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
         }
 
-        if(config.getBoolean("Bosses.CreeperBoss.thrownTNT.TNTDoesNoBlockDamage")) creeper.getScoreboardTags().add("dontBlowUpItems");
+        if(Main.getInstance().getConfig().getBoolean("Bosses.CreeperBoss.thrownTNT.TNTDoesNoBlockDamage")) creeper.getScoreboardTags().add("dontBlowUpItems");
 
     }
 

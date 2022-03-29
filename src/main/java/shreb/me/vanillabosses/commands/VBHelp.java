@@ -5,11 +5,9 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataType;
-import shreb.me.vanillabosses.gui.ConfigGUI;
 import shreb.me.vanillabosses.items.HeatedMagmaCream;
 import shreb.me.vanillabosses.items.Items;
 import shreb.me.vanillabosses.items.SlimeBoots;
@@ -32,10 +30,10 @@ public class VBHelp implements CommandExecutor {
             return true;
         }
 
-        if (args[0].equalsIgnoreCase("inv")) {
-            ConfigGUI.openInventory((HumanEntity) sender);
-            return true;
-        }
+        //if (args[0].equalsIgnoreCase("inv")) {
+        //    ConfigGUI.openInventory((HumanEntity) sender);
+        //    return true;
+        //}
 
         if (args[0].equalsIgnoreCase("skeleton")) {
             sender.sendMessage(ChatColor.GREEN + Main.getCurrentLanguage().vbhSkeleton);

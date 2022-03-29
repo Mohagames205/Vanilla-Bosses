@@ -5,7 +5,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.attribute.Attribute;
-import org.bukkit.configuration.Configuration;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -23,10 +22,6 @@ import java.util.UUID;
 
 public class BossBlaze implements Listener {
 
-    static Configuration config = Main.getInstance().getConfig();
-    static int projectileChanceWitherSkull = config.getInt("Bosses.BlazeBoss.blazeShootEventsChances.witherSkull");
-    static int projectileChanceDragonFireball = config.getInt("Bosses.BlazeBoss.blazeShootEventsChances.enderDragonFireBall");
-    static int projectileChanceLargeFireball = config.getInt("Bosses.BlazeBoss.blazeShootEventsChances.largeFireBall");
     public static HashMap<Integer, UUID> bossBlazeTargetMap = new HashMap<>();
 
     @EventHandler
@@ -63,7 +58,7 @@ public class BossBlaze implements Listener {
             World w = event.getEntity().getWorld();
             int rn = Methods.randomNumber(0, 100);
 
-            int currentChance = projectileChanceWitherSkull;
+            int currentChance = Main.getInstance().getConfig().getInt("Bosses.BlazeBoss.blazeShootEventsChances.witherSkull");;
             if (rn < currentChance) {
                 WitherSkull entity = (WitherSkull) w.spawnEntity(event.getEntity().getLocation(), EntityType.WITHER_SKULL);
 
@@ -87,7 +82,7 @@ public class BossBlaze implements Listener {
 
                 return;
             }
-            currentChance += projectileChanceDragonFireball;
+            currentChance += Main.getInstance().getConfig().getInt("Bosses.BlazeBoss.blazeShootEventsChances.enderDragonFireBall");
             if (rn < currentChance) {
                 DragonFireball entity = (DragonFireball) w.spawnEntity(event.getEntity().getLocation(), EntityType.DRAGON_FIREBALL);
 
@@ -111,7 +106,7 @@ public class BossBlaze implements Listener {
 
                 return;
             }
-            currentChance += projectileChanceLargeFireball;
+            currentChance += Main.getInstance().getConfig().getInt("Bosses.BlazeBoss.blazeShootEventsChances.largeFireBall");
             if (rn < currentChance) {
                 Fireball entity = (Fireball) w.spawnEntity(event.getEntity().getLocation(), EntityType.FIREBALL);
 
@@ -152,9 +147,9 @@ public class BossBlaze implements Listener {
         blaze.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.BLAZE.health);
         blaze.setHealth(Bosses.BLAZE.health);
         blaze.setCustomName(ChatColor.of(Bosses.BLAZE.nameColor) + Bosses.BLAZE.displayName);
-        blaze.setCustomNameVisible(config.getBoolean("Bosses.BlazeBoss.showDisplayNameAlways"));
+        blaze.setCustomNameVisible(Main.getInstance().getConfig().getBoolean("Bosses.BlazeBoss.showDisplayNameAlways"));
 
-        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+        if(Main.getInstance().getConfig().getBoolean("Bosses.bossesGetGlowingPotionEffect")){
             blaze.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
         }
 
@@ -174,9 +169,9 @@ public class BossBlaze implements Listener {
         blaze.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Bosses.BLAZE.health);
         blaze.setHealth(Bosses.BLAZE.health);
         blaze.setCustomName(ChatColor.of(Bosses.BLAZE.nameColor) + Bosses.BLAZE.displayName);
-        blaze.setCustomNameVisible(config.getBoolean("Bosses.BlazeBoss.showDisplayNameAlways"));
+        blaze.setCustomNameVisible(Main.getInstance().getConfig().getBoolean("Bosses.BlazeBoss.showDisplayNameAlways"));
 
-        if(config.getBoolean("Bosses.bossesGetGlowingPotionEffect")){
+        if(Main.getInstance().getConfig().getBoolean("Bosses.bossesGetGlowingPotionEffect")){
             blaze.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, Integer.MAX_VALUE, 1));
         }
     }

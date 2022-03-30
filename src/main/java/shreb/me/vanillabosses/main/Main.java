@@ -8,6 +8,7 @@ import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Wither;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import shreb.me.vanillabosses.bossclasses.*;
@@ -20,6 +21,7 @@ import shreb.me.vanillabosses.listeners.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
+import java.util.UUID;
 import java.util.logging.Level;
 
 
@@ -82,9 +84,11 @@ public final class Main extends JavaPlugin {
 
         pm.registerEvents(new BossDamagedTracker(), this);
 
+        pm.registerEvents(new AntiRepairListener(), this);
+
         //pm.registerEvents(new ConfigGUI(), this);
 
-        if(config.getBoolean("Items.DisableRepairAndEnchant"))pm.registerEvents(new AntiRepairListener(), this);
+
 
         Objects.requireNonNull(getCommand("boss")).setExecutor(new Boss());
         Objects.requireNonNull(getCommand("vbh")).setExecutor(new VBHelp());
@@ -131,6 +135,20 @@ public final class Main extends JavaPlugin {
             w.getEntities().stream()
                     .filter(n -> n.getScoreboardTags().contains("PassiveWither"))
                     .forEach(n -> BossWither.passiveWitherList.add(n.getUniqueId()));
+        }
+
+        for(UUID uuid:BossWither.passiveWitherList){
+
+            Entity entity = getServer().getEntity(uuid);
+            if(entity instanceof Wither && entity.getScoreboardTags().contains("PassiveWither")){
+                Wither wither = (Wither) entity;
+
+                Bukkit.getScheduler().runTaskTimer(Main.getInstance(), () -> {
+
+                    BossWither.passiveWitherTarget(wither);
+
+                }, 20, 15);
+            }
         }
 
         Bukkit.getScheduler().runTaskAsynchronously(this, () ->{

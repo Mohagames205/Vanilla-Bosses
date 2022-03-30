@@ -8,6 +8,7 @@ import org.bukkit.event.inventory.PrepareAnvilEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataType;
 import shreb.me.vanillabosses.items.Items;
+import shreb.me.vanillabosses.main.Main;
 
 import java.util.ArrayList;
 
@@ -59,19 +60,19 @@ public class AntiRepairListener implements Listener {
                 &&
 
                 !(
-                item2.getItemMeta().getPersistentDataContainer().has(Items.BASEBALLBAT.identifyingPDCKey, PersistentDataType.STRING) ||
+                        item2.getItemMeta().getPersistentDataContainer().has(Items.BASEBALLBAT.identifyingPDCKey, PersistentDataType.STRING) ||
 
-                item2.getItemMeta().getPersistentDataContainer().has(Items.BLAZER.identifyingPDCKey, PersistentDataType.INTEGER) ||
+                                item2.getItemMeta().getPersistentDataContainer().has(Items.BLAZER.identifyingPDCKey, PersistentDataType.INTEGER) ||
 
-                item2.getItemMeta().getPersistentDataContainer().has(Items.BUTCHERSAXE.identifyingPDCKey, PersistentDataType.STRING) ||
+                                item2.getItemMeta().getPersistentDataContainer().has(Items.BUTCHERSAXE.identifyingPDCKey, PersistentDataType.STRING) ||
 
-                item2.getItemMeta().getPersistentDataContainer().has(Items.INVISIBILITYCLOAK.identifyingPDCKey, PersistentDataType.INTEGER) ||
+                                item2.getItemMeta().getPersistentDataContainer().has(Items.INVISIBILITYCLOAK.identifyingPDCKey, PersistentDataType.INTEGER) ||
 
-                item2.getItemMeta().getPersistentDataContainer().has(Items.SKELETOR.identifyingPDCKey, PersistentDataType.STRING) ||
+                                item2.getItemMeta().getPersistentDataContainer().has(Items.SKELETOR.identifyingPDCKey, PersistentDataType.STRING) ||
 
-                item2.getItemMeta().getPersistentDataContainer().has(Items.SLIMEBOOTS.identifyingPDCKey, PersistentDataType.STRING) ||
+                                item2.getItemMeta().getPersistentDataContainer().has(Items.SLIMEBOOTS.identifyingPDCKey, PersistentDataType.STRING) ||
 
-                item2.getItemMeta().getPersistentDataContainer().has(Items.SLINGSHOT.identifyingPDCKey, PersistentDataType.INTEGER))
+                                item2.getItemMeta().getPersistentDataContainer().has(Items.SLINGSHOT.identifyingPDCKey, PersistentDataType.INTEGER))
 
 
         ) {
@@ -79,6 +80,29 @@ public class AntiRepairListener implements Listener {
             event.getInventory().setRepairCost(0);
             event.setResult(null);
         }
+
+        if (Main.getInstance().getConfig().getBoolean("Items.DisableRepairAndEnchant") && item1 != null && item1.hasItemMeta() && item2 != null && (
+
+                //and item1 is a plugin item
+                item1.getItemMeta().getPersistentDataContainer().has(Items.BASEBALLBAT.identifyingPDCKey, PersistentDataType.STRING) ||
+
+                        item1.getItemMeta().getPersistentDataContainer().has(Items.BLAZER.identifyingPDCKey, PersistentDataType.INTEGER) ||
+
+                        item1.getItemMeta().getPersistentDataContainer().has(Items.BUTCHERSAXE.identifyingPDCKey, PersistentDataType.STRING) ||
+
+                        item1.getItemMeta().getPersistentDataContainer().has(Items.INVISIBILITYCLOAK.identifyingPDCKey, PersistentDataType.INTEGER) ||
+
+                        item1.getItemMeta().getPersistentDataContainer().has(Items.SKELETOR.identifyingPDCKey, PersistentDataType.STRING) ||
+
+                        item1.getItemMeta().getPersistentDataContainer().has(Items.SLIMEBOOTS.identifyingPDCKey, PersistentDataType.STRING) ||
+
+                        item1.getItemMeta().getPersistentDataContainer().has(Items.SLINGSHOT.identifyingPDCKey, PersistentDataType.INTEGER))) {
+
+            // prevent anvil action
+            event.getInventory().setRepairCost(0);
+            event.setResult(null);
+        }
+
 
     }
 }

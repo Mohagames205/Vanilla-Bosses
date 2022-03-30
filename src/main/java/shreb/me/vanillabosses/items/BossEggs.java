@@ -1,6 +1,6 @@
 package shreb.me.vanillabosses.items;
 
-import org.bukkit.ChatColor;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.EntityType;
@@ -46,57 +46,57 @@ public class BossEggs implements Listener {
 
             case BLAZE:
                 egg = new ItemStack(Material.BLAZE_SPAWN_EGG, amount);
-                color = ChatColor.valueOf(Bosses.BLAZE.nameColor);
+                color = ChatColor.of(Bosses.BLAZE.nameColor);
                 break;
 
             case CREEPER:
                 egg = new ItemStack(Material.CREEPER_SPAWN_EGG, amount);
-                color = ChatColor.valueOf(Bosses.CREEPER.nameColor);
+                color = ChatColor.of(Bosses.CREEPER.nameColor);
                 break;
 
             case ENDERMAN:
                 egg = new ItemStack(Material.ENDERMAN_SPAWN_EGG, amount);
-                color = ChatColor.valueOf(Bosses.ENDERMAN.nameColor);
+                color = ChatColor.of(Bosses.ENDERMAN.nameColor);
                 break;
 
             case MAGMA_CUBE:
                 egg = new ItemStack(Material.MAGMA_CUBE_SPAWN_EGG, amount);
-                color = ChatColor.valueOf(Bosses.MAGMA_CUBE.nameColor);
+                color = ChatColor.of(Bosses.MAGMA_CUBE.nameColor);
                 break;
 
             case SKELETON:
                 egg = new ItemStack(Material.SKELETON_SPAWN_EGG, amount);
-                color = ChatColor.valueOf(Bosses.SKELETON.nameColor);
+                color = ChatColor.of(Bosses.SKELETON.nameColor);
                 break;
 
             case SLIME:
                 egg = new ItemStack(Material.SLIME_SPAWN_EGG, amount);
-                color = ChatColor.valueOf(Bosses.SLIME.nameColor);
+                color = ChatColor.of(Bosses.SLIME.nameColor);
                 break;
 
             case SPIDER:
                 egg = new ItemStack(Material.SPIDER_SPAWN_EGG, amount);
-                color = ChatColor.valueOf(Bosses.BLAZE.nameColor);
+                color = ChatColor.of(Bosses.BLAZE.nameColor);
                 break;
 
             case WITCH:
                 egg = new ItemStack(Material.WITCH_SPAWN_EGG, amount);
-                color = ChatColor.valueOf(Bosses.WITCH.nameColor);
+                color = ChatColor.of(Bosses.WITCH.nameColor);
                 break;
 
             case ZOMBIE:
                 egg = new ItemStack(Material.ZOMBIE_SPAWN_EGG, amount);
-                color = ChatColor.valueOf(Bosses.ZOMBIE.nameColor);
+                color = ChatColor.of(Bosses.ZOMBIE.nameColor);
                 break;
 
             case ZOMBIFIED_PIGLIN:
                 egg = new ItemStack(Material.ZOMBIFIED_PIGLIN_SPAWN_EGG, amount);
-                color = ChatColor.valueOf(Bosses.ZOMBIFIED_PIGLIN.nameColor);
+                color = ChatColor.of(Bosses.ZOMBIFIED_PIGLIN.nameColor);
                 break;
 
             case WITHER:
                 egg = new ItemStack(Material.BAT_SPAWN_EGG, amount);
-                color = ChatColor.valueOf(Bosses.WITHER.nameColor);
+                color = ChatColor.of(Bosses.WITHER.nameColor);
                 break;
 
             default:

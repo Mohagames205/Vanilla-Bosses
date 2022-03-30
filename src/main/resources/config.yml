@@ -36,6 +36,11 @@ Bosses:
     - ""
     - "give <10> minecraft:diamond 5"   # in case you have essentials installed you may have to remove the 'minecraft:', aka just use the item name.
 
+
+  MaxSpawnChance: 1000 # This is the way to modify the boss spawnchance even more. with a spawnchance of 50 and this set to 1000, every 20th mob will be a boss.
+   # if you set this to 10000, but leave the spawnchance at 50, the bosses will be 10 times more rare!
+
+
 #Most things about the config will be explained inside the SkeletonBoss section! make sure to read carefully if you want to edit this file!
 
 ########################################################################################################################
@@ -55,6 +60,14 @@ Bosses:
 
     killedMessage: "<killedName> was slain by <killer>" #<killedName> is replaced by the name of the killed Entity
                                                         #<killer> is replaced by the name of the killer
+
+    spawnWorlds:
+   #  - world
+   #  - world2
+    #List all world names which you want this boss to spawn in. list none to enable spawning in all worlds.
+    # disable the "spawnNaturally" setting to disable natural spawning.
+
+
 
   # MaterialToDrop: the item you wish the entity to drop upon death
   # minAmount: this is the minimum amount of items the boss will drop upon death.
@@ -121,6 +134,7 @@ Bosses:
 
     killedMessage: "<killedName> was slain by <killer>"
 
+    spawnWorlds:
 
     droppedItems:
       - TNT:2:4:75
@@ -150,6 +164,8 @@ Bosses:
     health: 30
     spawnChance: 20
     killedMessage: "<killedName> was slain by <killer>"
+
+    spawnWorlds:
 
     droppedItems:
       - OBSIDIAN:2:4:50
@@ -192,6 +208,8 @@ Bosses:
     spawnChance: 50
     killedMessage: "<killedName> was slain by <killer>"
 
+    spawnWorlds:
+
     droppedItems:
       - BLAZE_ROD:2:4:50
 
@@ -229,6 +247,8 @@ Bosses:
     health: 50
     spawnChance: 15
     killedMessage: "<killedName> was slain by <killer>"
+
+    spawnWorlds:
 
     droppedItems:
       - ENDER_PEARL:3:8:66
@@ -276,6 +296,8 @@ Bosses:
     spawnChance: 5
     killedMessage: "<killedName> was slain by <killer>"
 
+    spawnWorlds:
+
     droppedItems:
       - IRON_INGOT:3:8:66
 
@@ -305,6 +327,8 @@ Bosses:
     spawnChance: 10
     killedMessage: "<killedName> was slain by <killer>"
 
+    spawnWorlds:
+
     droppedItems:
       - GOLD_INGOT:5:10:66
 
@@ -332,6 +356,8 @@ Bosses:
     health: 45
     spawnChance: 50
     killedMessage: "<killedName> was slain by <killer>"
+
+    spawnWorlds:
 
     droppedItems:
       - NETHER_WART:0:1:20
@@ -401,6 +427,8 @@ Bosses:
     spawnChance: 50
     killedMessage: "<killedName> was slain by <killer>"
 
+    spawnWorlds:
+
     droppedItems:
       - Slime_Ball:2:6:66
 
@@ -459,6 +487,8 @@ Bosses:
     spawnChance: 75
     killedMessage: "<killedName> was slain by <killer>"
 
+    spawnWorlds:
+
     droppedItems:
       - MAGMA_CREAM:2:12:66
 
@@ -484,13 +514,16 @@ Bosses:
 
 Items:
 
-  DisableRepairAndEnchant: true   #if enabled this will prevent repair and enchanting of the items added by this plugin
+  DisableRepairAndEnchant: false   #if enabled this will prevent repair, combining and renaming of items added by this plugin (at an anvil)
 
   WitherEgg:
     witherBossDropsEgg: true
     timeToHatch: 10  #in seconds (Don't reload the plugin or the server while this timer is active, spawning won't work properly if you do. Recommended low values so this wont happen.)
     petWitherHP: 1500
     enableSpawnCommand: true
+    arrowDamageMultiplier: 0.3 #sets the multiplier for the arrows the pet wither shoots. will only target Monsters.
+    arrowRange: 15
+
 
   cloakOfInvisibility:
     enableDropping: true

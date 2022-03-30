@@ -1,5 +1,6 @@
 package shreb.me.vanillabosses.commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -12,6 +13,7 @@ import shreb.me.vanillabosses.items.HeatedMagmaCream;
 import shreb.me.vanillabosses.items.Items;
 import shreb.me.vanillabosses.items.SlimeBoots;
 import shreb.me.vanillabosses.main.Main;
+import shreb.me.vanillabosses.main.UpdateChecker;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -128,21 +130,39 @@ public class VBHelp implements CommandExecutor {
                     }
                 }
                 return true;
-
             }
 
-
-
         if (args[0].equalsIgnoreCase("info")) {
+
             sender.sendMessage(ChatColor.AQUA + Main.getCurrentLanguage().vbhInfo);
 
+            return true;
+        }
+
+        if(args[0].equalsIgnoreCase("update")){
+
+            if(!sender.isOp()){
+                sender.sendMessage("You have to be OP to check for an update.");
+                return true;
+            }
+
+            Bukkit.getScheduler().runTaskAsynchronously(Main.getInstance(), () ->{
+
+                new UpdateChecker(Main.getInstance(), 95205).getVersion(version1 -> {
+                    if (Main.getInstance().getDescription().getVersion().equals(version1)) {
+                        sender.sendMessage("There is not a new update available.");
+                    } else {
+                        sender.sendMessage("There is a new update available.");
+                    }
+                });
+
+            });
             return true;
         }
 
         if(args[0].equalsIgnoreCase("discord")){
             sender.sendMessage("https://discord.gg/stAd5ccDZT");
         }
-
 
 
         //reload config file
